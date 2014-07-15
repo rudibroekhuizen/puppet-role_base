@@ -35,7 +35,30 @@
 #
 # Copyright 2014 Your name here, unless otherwise noted.
 #
-class role_base {
+class role_base (
+  $package_defaults = { ensure   => installed,
+                        provider => chocolatey,
+                      },
 
+  $package_hash = { 'puppet' => { ensure   => latest,
+                                  provider => chocolatey,
+                                },
+
+                    'git'    => { ensure   => latest,
+                                  provider => chocolatey, 
+                                },
+
+              },
+  ) {
+
+# Install files
+#   class { 'windows_base::files':
+#   }
+
+# Install packages
+  class { 'role_base::packages':
+    package_hash     => $package_hash,
+    package_defaults => $package_defaults,
+  }
 
 }
