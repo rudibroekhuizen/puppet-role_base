@@ -40,11 +40,18 @@ class role_base (
                           provider => chocolatey,
                         },
 
-  $package_hash = { 'puppet' => { ensure   => latest,
-                                },
+  $package_hash_debian = { 'puppet' => { ensure   => latest,
+                                       },
 
-                    'git'    => { ensure   => latest,
-                                },
+                           'git'    => { ensure   => latest,
+                                       },
+                                       
+  $package_hash_redhat = { 'puppet' => { ensure   => latest,
+                                       },
+
+                           'git'    => { ensure   => latest,
+                                       },
+                                       
   ) {
 
 # Install files
@@ -53,8 +60,9 @@ class role_base (
 
 # Install packages
   class { 'role_base::packages':
-    package_hash       => $package_hash,
-    attribute_defaults => $attribute_defaults,
+    package_hash_debian => $package_hash_debian,
+    package_hash_redhat => $package_hash_redhat,
+    attribute_defaults  => $attribute_defaults,
   }
 
 }
