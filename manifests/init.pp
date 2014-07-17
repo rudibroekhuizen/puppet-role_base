@@ -36,9 +36,9 @@
 # Copyright 2014 Your name here, unless otherwise noted.
 #
 class role_base (
-  $package_defaults = { ensure   => installed,
-                        provider => chocolatey,
-                      },
+  $attribute_defaults = { ensure   => installed,
+                          provider => chocolatey,
+                        },
 
   $package_hash = { 'puppet' => { ensure   => latest,
                                   provider => chocolatey,
@@ -57,8 +57,8 @@ class role_base (
 
 # Install packages
   class { 'role_base::packages':
-    package_hash     => $package_hash,
-    package_defaults => $package_defaults,
+    package_hash       => $package_hash,
+    attribute_defaults => $attribute_defaults,
   }
 
 }
