@@ -8,5 +8,5 @@ class role_base::packages (
 case $::osfamily {
   debian: { create_resources('base::packages', $package_hash_debian, $attribute_defaults) }
   redhat: { create_resources('base::packages', $package_hash_redhat, $attribute_defaults) }
-
+  }
 }
