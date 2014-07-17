@@ -1,7 +1,8 @@
 # == Class: role_base::packages
 #
 class role_base::packages (
-  $package_hash,
+  $package_hash_debian,
+  $package_hash_redhat,
   $attribute_defaults,
   ){
 
