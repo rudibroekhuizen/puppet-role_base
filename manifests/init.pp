@@ -41,14 +41,10 @@ class role_base (
                         },
 
   $package_hash = { 'puppet' => { ensure   => latest,
-                                  provider => chocolatey,
                                 },
 
                     'git'    => { ensure   => latest,
-                                  provider => chocolatey, 
                                 },
-
-              },
   ) {
 
 # Install files
