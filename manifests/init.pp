@@ -37,7 +37,6 @@
 #
 class role_base (
   $attribute_defaults = { ensure   => installed,
-                          provider => chocolatey,
                         },
 
   $package_hash_debian = { 'puppet' => { ensure   => latest,
