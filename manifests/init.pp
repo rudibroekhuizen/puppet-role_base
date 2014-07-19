@@ -45,13 +45,14 @@ class role_base (
 
                            'git'    => { ensure   => latest,
                                        },
-                                       
+                         }
+                         
   $package_hash_redhat = { 'puppet' => { ensure   => latest,
                                        },
 
                            'git'    => { ensure   => latest,
                                        },
-                                       
+                         }             
   ) {
 
 # Install files
