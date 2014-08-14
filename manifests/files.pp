@@ -2,6 +2,11 @@
 #
 class role_base::files {
 
+# Hiera config file
+  file { '/etc/puppet/hiera.yaml':
+    source  => 'puppet:///modules/base/hiera.yaml',
+  }
+
   # Create hieradata directory
   file { '/etc/puppet/hieradata':
     ensure => 'directory',
