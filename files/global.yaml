@@ -1,0 +1,10 @@
+role_base::package_defaults:
+  ensure:   installed
+
+role_base::package_hash:
+  git:
+    ensure: latest
+  puppet:
+    ensure: latest
+  curl:
+    {}
