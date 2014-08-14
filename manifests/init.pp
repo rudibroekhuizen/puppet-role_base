@@ -42,7 +42,7 @@ class role_base (
   $package_hash_debian = { 'puppet' => { ensure   => latest,
                                        },
 
-                           'git'    => { ensure   => latest,
+                           'htop'   => { ensure   => latest,
                                        },
                          },
                          
