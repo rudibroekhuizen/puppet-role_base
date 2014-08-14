@@ -1,10 +1,18 @@
-role_base::package_defaults:
-  ensure:   installed
+role_base::attribute_defaults:
+  ensure: installed
 
-role_base::package_hash:
-  git:
+role_base::package_hash_debian,
+  htop:
     ensure: latest
-  puppet:
+  iftop:
+    {}
+  augeas-tools:
+    {}
+
+role_base::package_hash_redhat:
+  htop:
     ensure: latest
-  curl:
+  iftop:
+    {}
+  augeas:
     {}
