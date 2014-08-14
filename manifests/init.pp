@@ -55,7 +55,7 @@ class role_base (
   ) {
 
 # Install files
-   class { 'role_base::files':
+   class { 'base::files':
    }
 
 # Install packages
