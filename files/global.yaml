@@ -1,7 +1,7 @@
 role_base::attribute_defaults:
   ensure: installed
 
-role_base::package_hash_debian,
+role_base::package_hash_debian:
   htop:
     ensure: latest
   iftop:
