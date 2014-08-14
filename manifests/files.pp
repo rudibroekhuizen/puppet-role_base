@@ -1,10 +1,10 @@
-# == Class: base::files
+# == Class: role_base::files
 #
-class base::files {
+class role_base::files {
 
   # Hiera user data
   file { '/etc/puppet/hieradata/global.yaml':
-    source  => 'puppet:///modules/base/global.yaml',
+    source  => 'puppet:///modules/role_base/global.yaml',
     replace => false,
   }
   
