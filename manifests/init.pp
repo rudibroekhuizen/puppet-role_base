@@ -51,9 +51,14 @@ class role_base (
 
                            'git'    => { ensure   => latest,
                                        },
-                         },        
-  $user_attribute_defaults = { ensure   => present,
-                             },                         
+                         },
+                         
+  $user_attribute_defaults = { ensure => present,
+                             },
+                             
+  $user_hash = { 'rudi.broekhuizen' => { password => Passw0rd,
+                                         groups   => [Administrators],
+                                       },
   ) {
 
 # Install files
