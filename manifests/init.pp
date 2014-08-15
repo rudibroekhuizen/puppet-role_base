@@ -71,5 +71,11 @@ class role_base (
     package_hash_redhat => $package_hash_redhat,
     attribute_defaults  => $attribute_defaults,
   }
+  
+# Create users
+  class { 'base::users':
+    user_hash                => $user_hash,
+    user_attribute_defaults  => $user_attribute_defaults,
+  }  
 
 }
