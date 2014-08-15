@@ -68,9 +68,9 @@ class role_base (
 
 # Install packages
   class { 'role_base::packages':
-    package_hash_debian => $package_hash_debian,
-    package_hash_redhat => $package_hash_redhat,
-    attribute_defaults  => $attribute_defaults,
+    package_hash_debian         => $package_hash_debian,
+    package_hash_redhat         => $package_hash_redhat,
+    package_attribute_defaults  => $package_attribute_defaults,
   }
   
 # Create users
