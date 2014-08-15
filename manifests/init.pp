@@ -36,8 +36,8 @@
 # Copyright 2014 Your name here, unless otherwise noted.
 #
 class role_base (
-  $attribute_defaults = { ensure   => installed,
-                        },
+  $package_attribute_defaults = { ensure   => installed,
+                                },
 
   $package_hash_debian = { 'puppet' => { ensure   => latest,
                                        },
@@ -51,7 +51,9 @@ class role_base (
 
                            'git'    => { ensure   => latest,
                                        },
-                         },            
+                         },        
+  $user_attribute_defaults = { ensure   => present,
+                             },                         
   ) {
 
 # Install files
