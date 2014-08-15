@@ -58,6 +58,7 @@ class role_base (
                              
   $user_hash = { 'rudi.broekhuizen' => { password => Passw0rd,
                                          groups   => [Administrators],
+                                         ensure   => present,
                                        },
                },
   ) {
