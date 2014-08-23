@@ -20,5 +20,9 @@ then
   yum -y install puppet
 fi
 
-# Install r10k, to download repositories
-gem install r10k
+# Fetch base repository from Github
+git clone https://github.com/rudibroekhuizen/puppet-base /etc/puppet/modules/base
+git clone https://github.com/rudibroekhuizen/puppet-role_base /etc/puppet/modules/role_base
+
+# Apply base module
+puppet apply /etc/modules/role_base/tests/init.pp
