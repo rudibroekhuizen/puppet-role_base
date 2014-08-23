@@ -19,3 +19,6 @@ then
   rpm -i --force git-1.7.10-1.el6.rfx.x86_64.rpm perl-Git-1.7.10-1.el6.rfx.x86_64.rpm
   yum -y install puppet
 fi
+
+# Install r10k, to download repositories
+gem install r10k
