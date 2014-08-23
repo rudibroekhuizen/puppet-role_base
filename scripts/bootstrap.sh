@@ -25,4 +25,4 @@ git clone https://github.com/rudibroekhuizen/puppet-base /etc/puppet/modules/bas
 git clone https://github.com/rudibroekhuizen/puppet-role_base /etc/puppet/modules/role_base
 
 # Apply base module
-puppet apply /etc/modules/role_base/tests/init.pp
+puppet apply /etc/puppet/modules/role_base/tests/init.pp
