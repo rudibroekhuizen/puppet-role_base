@@ -21,7 +21,7 @@ then
 fi
 
 # Install r10k and download modules
-curl https://raw.githubusercontent.com/naturalis/puppet/master/private/scripts/cloud-puppet.sh > /etc/puppet/Puppetfile
+curl https://raw.githubusercontent.com/rudibroekhuizen/puppet-role_base/master/files/Puppetfile > /etc/puppet/Puppetfile
 gem install r10k
 r10k puppetfile install
 
