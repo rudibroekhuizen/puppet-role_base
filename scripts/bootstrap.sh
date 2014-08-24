@@ -25,7 +25,9 @@ if [[ ! `gem list r10k` ]];then
   gem install r10k
 fi
 curl https://raw.githubusercontent.com/rudibroekhuizen/puppet-role_base/master/files/Puppetfile > /etc/puppet/Puppetfile
-r10k puppetfile install
+
+PUPPETFILE=/etc/puppet/Puppetfile PUPPETFILE_DIR=/etc/puppet/modules r10k --verbose 3 puppetfile install
+#r10k puppetfile install
 
 # Fetch base repository from Github
 git clone https://github.com/rudibroekhuizen/puppet-base /etc/puppet/modules/base
