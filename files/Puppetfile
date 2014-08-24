@@ -1,14 +1,14 @@
 # Installs from the puppet forge
-mod 'puppetlabs/apt'
+mod "puppetlabs/apt"
 mod "puppetlabs/stdlib"
 mod "elasticsearch/elasticsearch"
 mod "elasticsearch/logstash"
 
 # Installs from git
-mod 'base'
+mod 'base',
 :git => 'https://github.com/rudibroekhuizen/puppet-base'
 
-mod 'role_base'
+mod 'role_base',
 :git => 'https://github.com/rudibroekhuizen/puppet-role_base'
 
 mod 'role_elasticsearch',
