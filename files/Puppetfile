@@ -1,4 +1,3 @@
-
 # Installs from the puppet forge
 mod 'puppetlabs/apt'
 mod "puppetlabs/stdlib"
