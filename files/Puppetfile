@@ -1,9 +1,9 @@
 
-# installs from the puppet forge
+# Installs from the puppet forge
 mod 'puppetlabs/apt'
 mod "puppetlabs/stdlib"
 
-# installs from git
+# Installs from git
 mod 'role_elasticsearch',
 :git => 'https://github.com/naturalis/puppet-role_elasticsearch'
 
