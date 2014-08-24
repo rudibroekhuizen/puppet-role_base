@@ -1,6 +1,7 @@
 # Installs from the puppet forge
 mod "puppetlabs/apt"
 mod "puppetlabs/stdlib"
+mod "ispavailability/file_concat"
 mod "elasticsearch/elasticsearch"
 mod "elasticsearch/logstash"
 
