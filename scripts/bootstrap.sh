@@ -21,7 +21,9 @@ then
 fi
 
 # Install r10k and download modules
-gem install r10k
+if [[ ! `gem list r10k` ]];then
+  gem install r10k
+fi
 curl https://raw.githubusercontent.com/rudibroekhuizen/puppet-role_base/master/files/Puppetfile > /etc/puppet/Puppetfile
 r10k puppetfile install
 
