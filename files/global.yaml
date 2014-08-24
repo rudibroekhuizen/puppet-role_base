@@ -1,4 +1,4 @@
-role_base::attribute_defaults:
+role_base::package_attribute_defaults:
   ensure: installed
 
 role_base::package_hash_debian:
