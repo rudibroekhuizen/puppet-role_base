@@ -8,12 +8,18 @@ role_base::package_hash_debian:
     {}
   augeas-tools:
     {}
-  vim: {}
-  zsh: {}
-  mc: {}
-  curl: {}
-  sudo: {}
-  screen: {}
+  vim:
+    {}
+  zsh:
+    {}
+  mc:
+    {}
+  curl:
+    {}
+  sudo:
+    {}
+  screen: 
+    {}
   
 role_base::package_hash_redhat:
   htop:
