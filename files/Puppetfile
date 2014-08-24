@@ -1,6 +1,8 @@
 # Installs from the puppet forge
 mod 'puppetlabs/apt'
 mod "puppetlabs/stdlib"
+mod "elasticsearch/elasticsearch"
+mod "elasticsearch/logstash"
 
 # Installs from git
 mod 'role_elasticsearch',
