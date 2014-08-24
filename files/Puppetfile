@@ -5,8 +5,15 @@ mod "elasticsearch/elasticsearch"
 mod "elasticsearch/logstash"
 
 # Installs from git
+mod 'base'
+:git => 'https://github.com/rudibroekhuizen/puppet-base'
+
+mod 'role_base'
+:git => 'https://github.com/rudibroekhuizen/puppet-role_base'
+
 mod 'role_elasticsearch',
 :git => 'https://github.com/naturalis/puppet-role_elasticsearch'
 
 mod 'role_logstash',
 :git => 'https://github.com/naturalis/puppet-role_logstash'
+
