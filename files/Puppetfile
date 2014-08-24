@@ -1,0 +1,4 @@
+mod 'puppetlabs/apt'
+
+mod 'role_elasticsearch',
+:git => 'https://github.com/naturalis/puppet-role_elasticsearch'
