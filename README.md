@@ -47,7 +47,7 @@ etc.), mention it here.
 
 Install latest Puppet and Git versions, run this as root:
 
-curl https://raw.githubusercontent.com/rudibroekhuizen/puppet-role_base/master/scripts/bootstrap.sh > bootstrap.sh; chmod +x bootstrap.sh;./bootstrap.sh
+    curl https://raw.githubusercontent.com/rudibroekhuizen/puppet-role_base/master/scripts/bootstrap.sh > bootstrap.sh; chmod +x bootstrap.sh;./bootstrap.sh
 
 If your most recent release breaks compatibility or requires particular steps
 for upgrading, you may wish to include an additional section here: Upgrading
