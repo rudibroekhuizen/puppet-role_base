@@ -1,5 +1,9 @@
 #!/bin/sh
 
+# Update the system
+sudo apt-get update -y
+sudo apt-get upgrade -y
+
 # Install Puppet and Git on osfamily debian
 if [ -f /usr/bin/dpkg ];then
   wget http://apt.puppetlabs.com/puppetlabs-release-stable.deb
