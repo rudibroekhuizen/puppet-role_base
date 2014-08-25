@@ -67,7 +67,6 @@ class role_base (
   class { 'base::config':
   }
 
-
 # Install files
   class { 'base::files':
   }
