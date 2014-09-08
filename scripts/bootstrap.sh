@@ -31,7 +31,7 @@ PUPPETFILE=/etc/puppet/Puppetfile PUPPETFILE_DIR=/etc/puppet/modules r10k --verb
 
 
 # Copy hiera.yaml to /etc/puppet for hiera configuration settings
-
+curl https://raw.githubusercontent.com/rudibroekhuizen/puppet-role_base/master/files/global.yaml > /etc/puppet/global.yaml
 
 # Apply base module
 puppet apply /etc/puppet/modules/role_base/tests/init.pp
