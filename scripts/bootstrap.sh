@@ -29,7 +29,6 @@ fi
 curl https://raw.githubusercontent.com/rudibroekhuizen/puppet-role_base/master/files/Puppetfile > /etc/puppet/Puppetfile
 PUPPETFILE=/etc/puppet/Puppetfile PUPPETFILE_DIR=/etc/puppet/modules r10k --verbose 3 puppetfile install
 
-
 # Copy hiera.yaml to /etc/puppet for hiera configuration settings
 curl https://raw.githubusercontent.com/rudibroekhuizen/puppet-role_base/master/files/global.yaml > /etc/puppet/global.yaml
 
