@@ -30,10 +30,10 @@ curl https://raw.githubusercontent.com/rudibroekhuizen/puppet-role_base/master/f
 PUPPETFILE=/etc/puppet/Puppetfile PUPPETFILE_DIR=/etc/puppet/modules r10k --verbose 3 puppetfile install
 
 # Copy hiera.yaml to /etc/puppet for hiera configuration settings
-https://raw.githubusercontent.com/rudibroekhuizen/puppet-base/master/files/hiera.yaml > /etc/puppet/hiera.yaml
+curl https://raw.githubusercontent.com/rudibroekhuizen/puppet-base/master/files/hiera.yaml > /etc/puppet/hiera.yaml
 
 # Copy global.yaml to /etc/puppet/hieradata, which contains userdata
-curl https://raw.githubusercontent.com/rudibroekhuizen/puppet-role_base/master/files/global.yaml > /etc/puppet/hieradata/global.yaml
+mkdir /etc/puppet/hieradata && curl https://raw.githubusercontent.com/rudibroekhuizen/puppet-role_base/master/files/global.yaml > /etc/puppet/hieradata/global.yaml
 
 # Apply base module
 puppet apply /etc/puppet/modules/role_base/tests/init.pp
