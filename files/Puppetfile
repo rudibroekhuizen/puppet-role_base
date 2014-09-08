@@ -21,3 +21,9 @@ mod 'role_logstash',
 
 mod 'role_collectd',
 :git => 'https://github.com/rudibroekhuizen/puppet-role_collectd'
+
+mod 'topdesk',
+:git => 'https://github.com/rudibroekhuizen/puppet-topdesk'
+
+mod 'role_topdesk',
+:git => 'https://github.com/rudibroekhuizen/puppet-role_topdesk'
