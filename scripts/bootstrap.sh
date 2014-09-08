@@ -35,7 +35,5 @@ https://raw.githubusercontent.com/rudibroekhuizen/puppet-base/master/files/hiera
 # Copy global.yaml to /etc/puppet/hieradata, which contains userdata
 curl https://raw.githubusercontent.com/rudibroekhuizen/puppet-role_base/master/files/global.yaml > /etc/puppet/hieradata/global.yaml
 
-
-
 # Apply base module
 puppet apply /etc/puppet/modules/role_base/tests/init.pp
