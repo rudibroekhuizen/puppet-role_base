@@ -38,7 +38,7 @@ class role_base (
   }
 
 # Install packages
-  class { 'role_base::packages':
+  class { 'base::packages':
     package_hash_debian         => $package_hash_debian,
     package_hash_redhat         => $package_hash_redhat,
     package_attribute_defaults  => $package_attribute_defaults,
