@@ -18,8 +18,10 @@ role_base::package_hash_debian:
     {}
   sudo:
     {}
-  screen: 
+  screen:
     {}
+  r10k:
+    provider: gem
   
 role_base::package_hash_redhat:
   htop:
