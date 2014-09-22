@@ -2,7 +2,7 @@
 #
 #
 class role_base (
-  $package_attribute_defaults = { ensure   => installed,
+  $package_attribute_defaults = { ensure => installed,
                                 },
 
   $package_hash_debian = { 'puppet' => { ensure   => latest,
@@ -22,9 +22,10 @@ class role_base (
   $user_attribute_defaults = { ensure => present,
                              },
                              
-  $user_hash = { 'rudi.broekhuizen' => { password => Passw0rd,
-                                         groups   => admin,
+  $user_hash = { 'rudi.broekhuizen' => { password => 'Passw0rd',
+                                         groups   => 'wheel',
                                          ensure   => present,
+                                         shell    => '/bin/zsh',
                                        },
                },
   ) {
