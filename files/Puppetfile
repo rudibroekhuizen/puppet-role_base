@@ -5,6 +5,7 @@ mod "ispavailability/file_concat"
 mod "elasticsearch/elasticsearch"
 mod "elasticsearch/logstash"
 mod "pdxcat/collectd"
+mod "maestrodev/wget"
 
 # Installs from git
 mod 'base',
