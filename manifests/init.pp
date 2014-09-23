@@ -2,7 +2,9 @@
 #
 #
 class role_base (
-  $ppas_array = [ 'ppa:webupd8team/atom' ],
+  $ppas_array = [ 'ppa:webupd8team/atom',
+                  'ppa:nilarimogard/webupd8',
+                ],
                 
   $packages_attribute_defaults = { ensure => installed,
                                  },
