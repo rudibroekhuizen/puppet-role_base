@@ -25,8 +25,11 @@ class role_base (
   $user_hash = { 'rudi.broekhuizen' => { comment  => 'Rudi Broekhuizen',
                                          groups   => 'wheel',
                                          ensure   => present,
-                                         ssh_key  => 
                                          shell    => '/bin/zsh',
+                                         ssh_key  => { type    => "ssh-rsa",
+                                                       comment => "rudi.broekhuizen@naturalis.nl",
+                                                       key     => "AAAAB3NzaC1yc2EAAAADAQABAAABAQDeRrVuojExYBWgIV7UlLfYLvzGpW9hSzrjl9qJ7Kb3E/x+kq2ruma3LXlvMzFXoCKJMYvqvXUFj2Dzwh+iJ2bCyh5ilWgTMLvAwzRl1LdAV8IbDVYNZGCHCzXkyxLMAEdxXMHVYl6N/q+RBP+HQCySpwOjv86c5PgXoL4BOnxLy5TAoxSsfvxRcHT42ThYK1C/R5QC8UoBdpJ1RBhQRjBJPMWp9zRyOafNwE7Iti15gKHp04bn9UGqHRTA1ul+Q6YEFzjoqUxe4VCHObM6BS/DpD++TPMXjzU+aeJ8tkxhmYkGRKYJx/KK3uaKPv+/EkODePvwTVshiQ8v9qOXx0YJ",
+                                                     },
                                        },
                },
   ) {
