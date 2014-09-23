@@ -45,6 +45,7 @@ class role_base (
 
 # Add ppas
   class { 'base::ppas':
+     ppas_array => $ppas_array,
   }
 
 # Install packages
