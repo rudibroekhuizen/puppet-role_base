@@ -22,9 +22,10 @@ class role_base (
   $user_attribute_defaults = { ensure => present,
                              },
                              
-  $user_hash = { 'rudi.broekhuizen' => { password => 'Passw0rd',
+  $user_hash = { 'rudi.broekhuizen' => { comment  => 'Rudi Broekhuizen',
                                          groups   => 'wheel',
                                          ensure   => present,
+                                         ssh_key  => 
                                          shell    => '/bin/zsh',
                                        },
                },
