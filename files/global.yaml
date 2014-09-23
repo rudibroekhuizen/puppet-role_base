@@ -1,7 +1,7 @@
-role_base::package_attribute_defaults:
+role_base::packages_attribute_defaults:
   ensure: installed
 
-role_base::package_hash_debian:
+role_base::packages_hash_debian:
   htop:
     ensure: latest
   iftop:
@@ -25,7 +25,7 @@ role_base::package_hash_debian:
   r10k:
     provider: gem
   
-role_base::package_hash_redhat:
+role_base::packages_hash_redhat:
   htop:
     ensure: latest
   iftop:
