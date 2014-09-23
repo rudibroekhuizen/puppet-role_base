@@ -2,6 +2,7 @@
 #
 #
 class role_base (
+  $ppas_array = [ 'ppa:webupd8team/atom', 'ppa:googlegadgets/ppa' ]
   $package_attribute_defaults = { ensure => installed,
                                 },
 
@@ -34,6 +35,10 @@ class role_base (
                },
   ) {
 
+# Add ppas
+  class { 'base::ppas':
+  }
+
 # Various configure items
   class { 'base::config':
   }
@@ -47,7 +52,8 @@ class role_base (
     package_hash_debian         => $package_hash_debian,
     package_hash_redhat         => $package_hash_redhat,
     package_attribute_defaults  => $package_attribute_defaults,
-    require                     => Host[$::fqdn],
+    require                     => [Host[$::fqdn],
+                                    Class ['base::ppas']],
   }
   
 # Create users
