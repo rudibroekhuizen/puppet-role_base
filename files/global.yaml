@@ -10,6 +10,8 @@ role_base::package_hash_debian:
     {}
   vim:
     {}
+  sysstat:
+    {}
   zsh:
     {}
   mc:
