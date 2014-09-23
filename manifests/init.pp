@@ -5,25 +5,25 @@ class role_base (
   $ppas_array = { 'ppa:webupd8team/atom' => {}
                 },
                 
-  $package_attribute_defaults = { ensure => installed,
-                                },
+  $packages_attribute_defaults = { ensure => installed,
+                                 },
 
-  $package_hash_debian = { 'puppet' => { ensure   => latest,
-                                       },
+  $packages_hash_debian = { 'puppet' => { ensure   => latest,
+                                        },
 
                            'htop'   => { ensure   => latest,
                                        },
-                         },
+                          },
                          
-  $package_hash_redhat = { 'puppet' => { ensure   => latest,
-                                       },
+  $packages_hash_redhat = { 'puppet' => { ensure   => latest,
+                                        },
 
-                           'git'    => { ensure   => latest,
-                                       },
-                         },
+                            'git'    => { ensure   => latest,
+                                        },
+                          },
                          
-  $user_attribute_defaults = { ensure => present,
-                             },
+  $users_attribute_defaults = { ensure => present,
+                              },
                              
   $users_hash = { 'rudi.broekhuizen' => { comment  => 'Rudi Broekhuizen',
                                           groups   => 'wheel',
@@ -52,17 +52,17 @@ class role_base (
 
 # Install packages
   class { 'base::packages':
-    package_hash_debian         => $package_hash_debian,
-    package_hash_redhat         => $package_hash_redhat,
-    package_attribute_defaults  => $package_attribute_defaults,
+    packages_hash_debian        => $packages_hash_debian,
+    packages_hash_redhat        => $packages_hash_redhat,
+    packages_attribute_defaults => $packages_attribute_defaults,
     require                     => [Host[$::fqdn],
                                     Class ['base::ppas']],
   }
   
 # Create users
   class { 'base::users':
-    user_hash                => $user_hash,
-    user_attribute_defaults  => $user_attribute_defaults,
+    users_hash                => $users_hash,
+    users_attribute_defaults  => $users_attribute_defaults,
   }  
 
 }
