@@ -2,7 +2,9 @@
 #
 #
 class role_base (
-  $ppas_array = [ 'ppa:webupd8team/atom', 'ppa:googlegadgets/ppa' ],
+  $ppas_array = { 'ppa:webupd8team/atom' => {}
+                },
+                
   $package_attribute_defaults = { ensure => installed,
                                 },
 
