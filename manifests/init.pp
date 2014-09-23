@@ -35,16 +35,16 @@ class role_base (
                },
   ) {
 
-# Add ppas
-  class { 'base::ppas':
-  }
-
 # Various configure items
   class { 'base::config':
   }
 
 # Install files
   class { 'base::files':
+  }
+
+# Add ppas
+  class { 'base::ppas':
   }
 
 # Install packages
