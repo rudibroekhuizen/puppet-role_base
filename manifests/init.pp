@@ -10,8 +10,8 @@ class role_base (
   $packages_hash_debian = { 'puppet' => { ensure   => latest,
                                         },
 
-                           'htop'   => { ensure   => latest,
-                                       },
+                            'htop'   => { ensure   => latest,
+                                        },
                           },
                          
   $packages_hash_redhat = { 'puppet' => { ensure   => latest,
