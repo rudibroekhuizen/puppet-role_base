@@ -64,6 +64,7 @@ class role_base (
   class { 'base::users':
     users_hash                => $users_hash,
     users_attribute_defaults  => $users_attribute_defaults,
+    require                   => Class ['base::packages'],
   }  
 
 }
