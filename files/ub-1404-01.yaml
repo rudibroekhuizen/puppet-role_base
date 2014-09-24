@@ -1,1 +1,37 @@
-d
+role_base::ppas_array:
+  - ppa:webupd8team/atom
+
+role_base::packages_attribute_defaults:
+  ensure: installed
+
+role_base::packages_hash_debian:
+  htop:
+    ensure: latest
+  iftop:
+    {}
+  augeas-tools:
+    {}
+  vim:
+    {}
+  sysstat:
+    {}
+  zsh:
+    {}
+  mc:
+    {}
+  curl:
+    {}
+  sudo:
+    {}
+  screen:
+    {}
+  r10k:
+    provider: gem
+  
+role_base::packages_hash_redhat:
+  htop:
+    ensure: latest
+  iftop:
+    {}
+  augeas:
+    {}
