@@ -32,9 +32,7 @@ role_base::packages_hash_redhat:
     {}
   augeas:
     {}
-  vim:
-    {}
-  sysstat:
+ sysstat:
     {}
   zsh:
     {}
