@@ -32,7 +32,13 @@ role_base::packages_hash_redhat:
     {}
   augeas:
     {}
-
+  vim:
+    {}
+  sysstat:
+    {}
+  zsh:
+    {}
+  
 role_topdesk::username:
   username
 
