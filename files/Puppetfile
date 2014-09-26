@@ -8,6 +8,7 @@ mod "pdxcat/collectd"
 mod "maestrodev/wget"
 mod "example42/yum"
 mod "example42/puppi"
+mod "stahnma/epel"
 
 # Installs from git
 mod 'base',
