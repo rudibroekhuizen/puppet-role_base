@@ -44,11 +44,13 @@ class role_base (
 
 # Install files
   class { 'base::files':
+    require => Class ['base::config'],
   }
 
 # Add repositories
   class { 'base::repos':
     repos_array_debian => $repos_array_debian,
+    require            => Class ['base::files'],
   }
 
 # Install packages
@@ -56,9 +58,7 @@ class role_base (
     packages_hash_debian        => $packages_hash_debian,
     packages_hash_redhat        => $packages_hash_redhat,
     packages_attribute_defaults => $packages_attribute_defaults,
-    require                     => [Class ['base::config'],
-                                    Class ['base::files'],
-                                    Class ['base::repos']],
+    require                     => Class ['base::repos'],
   }
   
 # Create users
