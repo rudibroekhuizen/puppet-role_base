@@ -57,7 +57,7 @@ class role_base (
     packages_hash_redhat        => $packages_hash_redhat,
     packages_attribute_defaults => $packages_attribute_defaults,
     require                     => [Host[$::fqdn],
-                                    Class ['base::ppas']],
+                                    Class ['base::repos']],
   }
   
 # Create users
