@@ -2,9 +2,9 @@
 #
 #
 class role_base (
-  $ppas_array = [ 'ppa:webupd8team/atom',
-                  'ppa:nilarimogard/webupd8',
-                ],
+  $repos_array_debian = [ 'ppa:webupd8team/atom',
+                          'ppa:nilarimogard/webupd8',
+                        ],
                 
   $packages_attribute_defaults = { ensure => installed,
                                  },
@@ -46,9 +46,9 @@ class role_base (
   class { 'base::files':
   }
 
-# Add ppas
-  class { 'base::ppas':
-    ppas_array => $ppas_array,
+# Add repositories
+  class { 'base::repos':
+    repos_array_debian => $repos_array_debian,
   }
 
 # Install packages
