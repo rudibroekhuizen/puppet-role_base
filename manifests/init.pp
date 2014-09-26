@@ -56,7 +56,8 @@ class role_base (
     packages_hash_debian        => $packages_hash_debian,
     packages_hash_redhat        => $packages_hash_redhat,
     packages_attribute_defaults => $packages_attribute_defaults,
-    require                     => [Host[$::fqdn],
+    require                     => [Class ['base::config'],
+                                    Class ['base::files'],
                                     Class ['base::repos']],
   }
   
