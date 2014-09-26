@@ -43,7 +43,7 @@ etc.), mention it here.
 
 ### Beginning with role_base
 
-Install latest Puppet and Git versions, run this as root:
+Run this as root:
 
     curl https://raw.githubusercontent.com/rudibroekhuizen/puppet-role_base/master/scripts/bootstrap.sh > bootstrap.sh; chmod +x bootstrap.sh;./bootstrap.sh
 
