@@ -7,7 +7,7 @@ mod "elasticsearch/logstash"
 mod "pdxcat/collectd"
 mod "maestrodev/wget"
 mod "stahnma/epel"
-mod "puppetlabs/git "
+mod "puppetlabs/git"
 
 # Installs from git
 mod 'base',
