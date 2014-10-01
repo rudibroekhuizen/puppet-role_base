@@ -29,6 +29,8 @@ role_base::packages_hash_debian:
     provider: gem
   remmina:
     {}
+  atom:
+    {}
   
 role_base::packages_hash_redhat:
   htop:
