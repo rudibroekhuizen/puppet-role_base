@@ -1,8 +1,8 @@
 #!/bin/sh
 
 # Update the system
-sudo apt-get update -y
-sudo apt-get upgrade -y
+#sudo apt-get update -y
+#sudo apt-get upgrade -y
 
 # Install Puppet and Git on osfamily debian
 if [ -f /usr/bin/dpkg ];then
@@ -22,10 +22,12 @@ if [ -f /bin/rpm ];then
   yum -y install puppet
 fi
 
-# Install r10k and download modules
+# Install r10k
 if [ ! `gem list r10k` ];then
   gem install r10k
 fi
+
+# Download modules from Git and Puppetforge
 curl https://raw.githubusercontent.com/rudibroekhuizen/puppet-role_base/master/files/Puppetfile > /etc/puppet/Puppetfile
 PUPPETFILE=/etc/puppet/Puppetfile PUPPETFILE_DIR=/etc/puppet/modules r10k --verbose 3 puppetfile install
 
