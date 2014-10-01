@@ -8,6 +8,7 @@ mod "pdxcat/collectd"
 mod "maestrodev/wget"
 mod "stahnma/epel"
 mod "puppetlabs/git"
+mod "saz/timezone"
 
 # Installs from git
 mod 'base',
