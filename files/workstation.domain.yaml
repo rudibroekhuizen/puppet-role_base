@@ -27,6 +27,8 @@ role_base::packages_hash_debian:
     {}
   r10k:
     provider: gem
+  remmina:
+    {}
   
 role_base::packages_hash_redhat:
   htop:
