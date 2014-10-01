@@ -27,6 +27,8 @@ class role_base (
                               },
                              
   $users_hash = { 'rudi.broekhuizen' => { comment  => 'Rudi Broekhuizen',
+                                          password => 'Changeme01',
+                                          email    => 'rudi.broekhuizen@naturalis.nl',
                                           groups   => 'wheel',
                                           ensure   => present,
                                           shell    => '/bin/zsh',
