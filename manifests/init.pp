@@ -26,13 +26,12 @@ class role_base (
   $users_attribute_defaults = { ensure => present,
                               },
                              
-  $users_hash = { 'rudi.broekhuizen' => { comment  => 'Rudi Broekhuizen',
-                                          #password => '',
-                                          email    => 'rudi.broekhuizen@naturalis.nl',
-                                          groups   => 'wheel',
-                                          ensure   => present,
-                                          shell    => '/bin/zsh',
-                                          ssh_key  => { type => "ssh-rsa",
+  $users_hash = { 'rudi.broekhuizen' => { comment => 'Rudi Broekhuizen',
+                                          email   => 'rudi.broekhuizen@naturalis.nl',
+                                          groups  => 'wheel',
+                                          ensure  => present,
+                                          shell   => '/bin/zsh',
+                                          ssh_key => { type => "ssh-rsa",
                                                         key  => "AAAAB3NzaC1yc2EAAAADAQABAAABAQDeRrVuojExYBWgIV7UlLfYLvzGpW9hSzrjl9qJ7Kb3E/x+kq2ruma3LXlvMzFXoCKJMYvqvXUFj2Dzwh+iJ2bCyh5ilWgTMLvAwzRl1LdAV8IbDVYNZGCHCzXkyxLMAEdxXMHVYl6N/q+RBP+HQCySpwOjv86c5PgXoL4BOnxLy5TAoxSsfvxRcHT42ThYK1C/R5QC8UoBdpJ1RBhQRjBJPMWp9zRyOafNwE7Iti15gKHp04bn9UGqHRTA1ul+Q6YEFzjoqUxe4VCHObM6BS/DpD++TPMXjzU+aeJ8tkxhmYkGRKYJx/KK3uaKPv+/EkODePvwTVshiQ8v9qOXx0YJ",
                                                       },
                                         },
@@ -64,9 +63,9 @@ class role_base (
   
 # Create users
   class { 'base::users':
-    users_hash                => $users_hash,
-    users_attribute_defaults  => $users_attribute_defaults,
-    require                   => Class ['base::packages'],
+    users_hash               => $users_hash,
+    users_attribute_defaults => $users_attribute_defaults,
+    require                  => Class ['base::packages'],
   }  
 
 }
