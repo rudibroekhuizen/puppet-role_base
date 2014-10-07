@@ -1,4 +1,4 @@
-role_base::ppas_array:
+role_base::repos_array_debian:
   - ppa:webupd8team/atom
   - ppa:webupd8team/java
 
