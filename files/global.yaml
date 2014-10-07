@@ -26,6 +26,8 @@ role_base::packages_hash_debian:
     {}
   screen:
     {}
+  oracle-java8-installer:
+    {}
   r10k:
     provider: gem
   
