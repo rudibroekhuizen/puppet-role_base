@@ -3,7 +3,7 @@
 #
 class role_base (
   $repos_array_debian = [ 'ppa:webupd8team/atom',
-                          'ppa:nilarimogard/webupd8',
+                          'ppa:webupd8team/java',
                         ],
                 
   $packages_attribute_defaults = { ensure => installed,
