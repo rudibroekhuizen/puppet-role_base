@@ -27,7 +27,7 @@ class role_base (
                               },
                              
   $users_hash = { 'rudi.broekhuizen' => { comment  => 'Rudi Broekhuizen',
-                                          password => 'Changeme01',
+                                         #password => '',
                                           email    => 'rudi.broekhuizen@naturalis.nl',
                                           groups   => 'wheel',
                                           ensure   => present,
