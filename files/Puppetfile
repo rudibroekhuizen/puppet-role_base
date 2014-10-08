@@ -26,8 +26,8 @@ mod 'role_logstash',
 mod 'role_collectd',
 :git => 'https://github.com/rudibroekhuizen/puppet-role_collectd'
 
-mod 'topdesk',
-:git => 'https://github.com/rudibroekhuizen/puppet-topdesk'
+mod 'sqlplus',
+:git => 'https://github.com/rudibroekhuizen/puppet-sqlplus'
 
-mod 'role_topdesk',
-:git => 'https://github.com/rudibroekhuizen/puppet-role_topdesk'
+mod 'role_sqlplus',
+:git => 'https://github.com/rudibroekhuizen/puppet-role_sqlplus'
