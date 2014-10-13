@@ -26,7 +26,7 @@ mod 'role_logstash',
 
 mod 'role_collectd',
 :git => 'https://github.com/rudibroekhuizen/puppet-role_collectd',
-:ref => 'development-01'
+#:ref => 'development-01'
 
 #mod 'sqlplus',
 #:git => 'https://github.com/rudibroekhuizen/puppet-sqlplus'
