@@ -2,7 +2,7 @@
 #kind: finish
 #name: Ubuntu ec2 Finish
 
-#oses:
+#OS:
 #- Debian 6.0
 #- Debian 7.0
 #- Ubuntu 10.04
