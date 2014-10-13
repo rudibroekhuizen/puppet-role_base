@@ -8,6 +8,7 @@
 #- Ubuntu 10.04
 #- Ubuntu 12.04
 #- Ubuntu 13.04
+#- Ubuntu 14.04
 #- CentOS 6
 
 environment=1402production
