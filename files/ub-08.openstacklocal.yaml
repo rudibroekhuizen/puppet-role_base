@@ -1,7 +1,6 @@
 role_base::users_hash:
   foppe.pieters:
     comment: "Foppe Pieters"
-    password: "Changeme01"
     email: "foppe.pieters@naturalis.nl"
     shell: "/bin/zsh"
     ssh_key:
