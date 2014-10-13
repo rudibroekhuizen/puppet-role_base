@@ -2,6 +2,7 @@ role_base::users_hash:
   foppe.pieters:
     comment: "Foppe Pieters"
     email: "foppe.pieters@naturalis.nl"
+    groups: "wheel"
     shell: "/bin/zsh"
     ssh_key:
       type: "ssh-rsa"
