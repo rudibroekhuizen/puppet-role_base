@@ -20,28 +20,6 @@ then
   read hostname
 fi
 
-if [ -f /usr/bin/dpkg ]
-then
-  wget http://apt.puppetlabs.com/puppetlabs-release-stable.deb
-  dpkg -i puppetlabs-release-stable.deb
-  apt-get --yes --quiet update
-  apt-get --yes -o Dpkg::Options::="--force-confold" --quiet install git puppet-common puppet libaugeas-ruby
-fi
-
-# centos
-if [ -f /bin/rpm ]
-then
-  rpm -Uhv --force http://yum.puppetlabs.com/el/6/products/x86_64/puppetlabs-release-6-7.noarch.rpm
-  curl -O http://apt.sw.be/redhat/el6/en/x86_64/extras/RPMS/git-1.7.10-1.el6.rfx.x86_64.rpm
-  curl -O http://apt.sw.be/redhat/el6/en/x86_64/extras/RPMS/perl-Git-1.7.10-1.el6.rfx.x86_64.rpm
-  curl -O http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
-  rpm -i --force epel-release-6*.rpm
-  yum -y install perl-DBI rsync openssh-clients wget
-  rpm -i --force git-1.7.10-1.el6.rfx.x86_64.rpm perl-Git-1.7.10-1.el6.rfx.x86_64.rpm
-  yum -y install puppet
-fi
-
-
 cat << EOF > /etc/puppet/puppet.conf
 #kind: snippet
 #name: puppet.conf
