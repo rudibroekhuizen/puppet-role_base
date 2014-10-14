@@ -19,7 +19,7 @@ class role_base (
   $packages_hash_redhat = { 'puppet' => { ensure   => latest,
                                         },
 
-                            'git'    => { ensure   => latest,
+                            'htop'   => { ensure   => latest,
                                         },
                           },
                          
