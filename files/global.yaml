@@ -3,7 +3,7 @@ role_base::repos_array_debian:
   - ppa:webupd8team/java
 
 role_base::users_hash:
-  rudi.broekhuizen
+  rudi.broekhuizen:
     comment: "Rudi Broekhuizen"
     email: "rudi.broekhuizen@naturalis.nl"
     groups: "wheel"
