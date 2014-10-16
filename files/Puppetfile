@@ -23,7 +23,7 @@ mod 'role_elasticsearch',
 
 mod 'role_logstash',
 :git => 'https://github.com/naturalis/puppet-role_logstash',
-:ref => 'development-01'
+#:ref => 'development-01'
 
 mod 'role_collectd',
 :git => 'https://github.com/rudibroekhuizen/puppet-role_collectd'
