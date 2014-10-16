@@ -59,6 +59,8 @@ role_base::packages_hash_redhat:
     {}
   zsh:
     {}
+  screen:
+    {}
   
 role_topdesk::username:
   username
