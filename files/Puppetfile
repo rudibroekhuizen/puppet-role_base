@@ -9,7 +9,7 @@ mod "maestrodev/wget"
 mod "stahnma/epel"
 mod "puppetlabs/git"
 mod "saz/timezone"
-mod "gbrown/yumrepos"
+#mod "gbrown/yumrepos"
 
 # Installs from git
 mod 'base',
