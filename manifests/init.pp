@@ -9,17 +9,17 @@ class role_base (
   $packages_attribute_defaults = { ensure => installed,
                                  },
 
-  $packages_hash_debian = { 'puppet' => { ensure   => latest,
+  $packages_hash_debian = { 'puppet' => { ensure => latest,
                                         },
 
-                            'htop'   => { ensure   => latest,
+                            'htop'   => { ensure => latest,
                                         },
                           },
                          
-  $packages_hash_redhat = { 'puppet' => { ensure   => latest,
+  $packages_hash_redhat = { 'puppet' => { ensure => latest,
                                         },
 
-                            'htop'   => { ensure   => latest,
+                            'htop'   => { ensure => latest,
                                         },
                           },
                          
@@ -32,8 +32,8 @@ class role_base (
                                           ensure  => present,
                                           shell   => '/bin/zsh',
                                           ssh_key => { type => "ssh-rsa",
-                                                        key  => "AAAAB3NzaC1yc2EAAAADAQABAAABAQDeRrVuojExYBWgIV7UlLfYLvzGpW9hSzrjl9qJ7Kb3E/x+kq2ruma3LXlvMzFXoCKJMYvqvXUFj2Dzwh+iJ2bCyh5ilWgTMLvAwzRl1LdAV8IbDVYNZGCHCzXkyxLMAEdxXMHVYl6N/q+RBP+HQCySpwOjv86c5PgXoL4BOnxLy5TAoxSsfvxRcHT42ThYK1C/R5QC8UoBdpJ1RBhQRjBJPMWp9zRyOafNwE7Iti15gKHp04bn9UGqHRTA1ul+Q6YEFzjoqUxe4VCHObM6BS/DpD++TPMXjzU+aeJ8tkxhmYkGRKYJx/KK3uaKPv+/EkODePvwTVshiQ8v9qOXx0YJ",
-                                                      },
+                                                       key  => "AAAAB3NzaC1yc2EAAAADAQABAAABAQDeRrVuojExYBWgIV7UlLfYLvzGpW9hSzrjl9qJ7Kb3E/x+kq2ruma3LXlvMzFXoCKJMYvqvXUFj2Dzwh+iJ2bCyh5ilWgTMLvAwzRl1LdAV8IbDVYNZGCHCzXkyxLMAEdxXMHVYl6N/q+RBP+HQCySpwOjv86c5PgXoL4BOnxLy5TAoxSsfvxRcHT42ThYK1C/R5QC8UoBdpJ1RBhQRjBJPMWp9zRyOafNwE7Iti15gKHp04bn9UGqHRTA1ul+Q6YEFzjoqUxe4VCHObM6BS/DpD++TPMXjzU+aeJ8tkxhmYkGRKYJx/KK3uaKPv+/EkODePvwTVshiQ8v9qOXx0YJ",
+                                                     },
                                         },
                },
   ) {
