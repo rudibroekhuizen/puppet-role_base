@@ -25,11 +25,3 @@ role_base::packages_hash_debian:
     {}
   oracle-java8-installer:
     {}
-  
-role_base::packages_hash_redhat:
-  htop:
-    ensure: latest
-  iftop:
-    {}
-  augeas:
-    {}
