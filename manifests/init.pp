@@ -28,7 +28,7 @@ class role_base (
                              
   $users_hash = { 'rudi.broekhuizen' => { comment => 'Rudi Broekhuizen',
                                           email   => 'rudi.broekhuizen@naturalis.nl',
-                                          groups  => [ 'wheel','adm' ],
+                                          groups  => [ 'wheel','adm','dialout','cdrom','plugdev','lpadmin','sambashare' ],
                                           ensure  => present,
                                           shell   => '/bin/zsh',
                                           ssh_key => { type => "ssh-rsa",
