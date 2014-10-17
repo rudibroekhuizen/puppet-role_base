@@ -33,11 +33,5 @@ role_base::packages_hash_debian:
     provider: gem
   atom:
     {}
-  
-role_base::packages_hash_redhat:
-  htop:
-    ensure: latest
-  iftop:
-    {}
-  augeas:
+  oracle-java8-installer:
     {}
