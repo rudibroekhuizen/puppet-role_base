@@ -38,4 +38,5 @@ curl https://raw.githubusercontent.com/rudibroekhuizen/puppet-base/master/files/
 mkdir /etc/puppet/hieradata && curl https://raw.githubusercontent.com/rudibroekhuizen/puppet-role_base/master/files/global.yaml > /etc/puppet/hieradata/global.yaml
 
 # Apply base module
-puppet apply /etc/puppet/modules/role_base/tests/init.pp
+export FACTER_role=workstation
+puppet apply -e 'include role_base'
