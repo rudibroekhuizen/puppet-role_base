@@ -37,7 +37,7 @@ curl https://raw.githubusercontent.com/rudibroekhuizen/puppet-base/master/files/
 # Copy global.yaml to /etc/puppet/hieradata, which contains userdata
 mkdir /etc/puppet/hieradata && curl https://raw.githubusercontent.com/rudibroekhuizen/puppet-role_base/master/files/global.yaml > /etc/puppet/hieradata/global.yaml
 
-# Set role (optional)
+# Set role (optional), using custom fact
 export FACTER_role=workstation
 facter | grep role
 
