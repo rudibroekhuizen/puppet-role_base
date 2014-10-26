@@ -9,6 +9,7 @@ mod "maestrodev/wget"
 mod "stahnma/epel"
 mod "puppetlabs/git"
 mod "saz/timezone"
+mod "meltwater/puppet-facts"
 #mod "gbrown/yumrepos"
 
 # Installs from git
