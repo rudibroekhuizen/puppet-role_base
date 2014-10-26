@@ -1,6 +1,8 @@
 facts::external::instance:
-  roles:
-    value: "Dont reboot me!"
+  include_modules:
+    value:
+      - role_collectd
+      - role_logstash
 
 role_base::users_hash:
   rudi.broekhuizen:
