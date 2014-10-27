@@ -35,7 +35,8 @@ PUPPETFILE=/etc/puppet/Puppetfile PUPPETFILE_DIR=/etc/puppet/modules r10k --verb
 curl https://raw.githubusercontent.com/rudibroekhuizen/puppet-base/master/files/hiera.yaml > /etc/puppet/hiera.yaml
 
 # Copy global.yaml to /etc/puppet/hieradata, which contains userdata
-mkdir /etc/puppet/hieradata && curl https://raw.githubusercontent.com/rudibroekhuizen/puppet-role_base/master/files/global.yaml > /etc/puppet/hieradata/global.yaml
+#mkdir /etc/puppet/hieradata && curl https://raw.githubusercontent.com/rudibroekhuizen/puppet-role_base/master/files/global.yaml > /etc/puppet/hieradata/global.yaml
+cp /etc/puppet/modules/role_base/files/*.yaml /etc/puppet/hieradata
 
 # Set role (optional), using custom fact
 export FACTER_data_source=workstation.yaml
