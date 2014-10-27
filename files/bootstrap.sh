@@ -35,6 +35,7 @@ PUPPETFILE=/etc/puppet/Puppetfile PUPPETFILE_DIR=/etc/puppet/modules r10k --verb
 curl https://raw.githubusercontent.com/rudibroekhuizen/puppet-base/master/files/hiera.yaml > /etc/puppet/hiera.yaml
 
 # Copy data sources to /etc/puppet/hieradata
+mkdir -p /etc/puppet/hieradata
 cp /etc/puppet/modules/role_base/files/*.yaml /etc/puppet/hieradata
 
 # Create external fact to set yaml data source
