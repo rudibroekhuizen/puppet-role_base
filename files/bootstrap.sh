@@ -47,7 +47,7 @@ fi
 puppet apply -e 'include role_base'
 
 # Retreive include modules array
-$include_modules=hiera -c /etc/puppet/hiera.yaml include_modules data_source=$1
+include_modules="hiera -c /etc/puppet/hiera.yaml include_modules data_source=$1"
 
 # Apply additional modules
 puppet apply -e 'include $include_modules'
