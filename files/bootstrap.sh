@@ -39,7 +39,9 @@ mkdir -p /etc/puppet/hieradata
 cp /etc/puppet/modules/role_base/files/*.yaml /etc/puppet/hieradata
 
 # Create external fact to set yaml data source
-puppet apply -e 'facts::instance { 'data_source': value => '$1', }'
+if [ -n "$1" ];then
+  puppet apply -e 'facts::instance { 'data_source': value => '$1', }'
+fi
 
 # Apply base module
 puppet apply -e 'include role_base'
