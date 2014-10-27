@@ -1,8 +1,6 @@
-facts::external::instance:
-  include_modules:
-    value:
-      - role_collectd
-      - role_logstash
+include_modules:
+  - role_collectd
+  - role_logstash
 
 role_base::users_hash:
   rudi.broekhuizen:
