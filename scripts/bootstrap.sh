@@ -38,8 +38,8 @@ curl https://raw.githubusercontent.com/rudibroekhuizen/puppet-base/master/files/
 mkdir /etc/puppet/hieradata && curl https://raw.githubusercontent.com/rudibroekhuizen/puppet-role_base/master/files/global.yaml > /etc/puppet/hieradata/global.yaml
 
 # Set role (optional), using custom fact
-export FACTER_role=workstation
-facter | grep role
+export FACTER_data_source=workstation.yaml
+facter | grep data_source
 
 # Apply base module
 puppet apply -e 'include role_base'
