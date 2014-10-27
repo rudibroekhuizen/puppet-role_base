@@ -39,7 +39,7 @@ cp /etc/puppet/modules/role_base/files/*.yaml /etc/puppet/hieradata
 
 # Set data source (optional), using custom fact
 #export FACTER_data_source=workstation.yaml
-puppet apply -e 'facts::instance { 'data_source': value => $1, }'
+puppet apply -e 'facts::instance { 'data_source': value => '$1', }'
 facter | grep data_source
 
 # Apply base module
