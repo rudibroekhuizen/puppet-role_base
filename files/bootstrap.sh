@@ -37,10 +37,8 @@ curl https://raw.githubusercontent.com/rudibroekhuizen/puppet-base/master/files/
 # Copy data sources to /etc/puppet/hieradata
 cp /etc/puppet/modules/role_base/files/*.yaml /etc/puppet/hieradata
 
-# Set data source (optional), using custom fact
-#export FACTER_data_source=workstation.yaml
+# Create external fact to set yaml data source
 puppet apply -e 'facts::instance { 'data_source': value => '$1', }'
-facter | grep data_source
 
 # Apply base module
 puppet apply -e 'include role_base'
