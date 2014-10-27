@@ -43,4 +43,6 @@ facter | grep role
 
 # Apply base module
 puppet apply -e 'include role_base'
+
+# Apply additional modules
 #puppet apply -e 'include [ 'role_logstash', 'role_elasticsearch' ]'
