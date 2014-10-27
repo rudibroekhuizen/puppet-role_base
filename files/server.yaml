@@ -3,7 +3,7 @@ include_modules:
   - role_logstash
 
 role_base::users_hash:
-  rudi.broekhuizen:
+  rudi.broekhuizen
     comment: "Rudi Broekhuizen"
     email: "rudi.broekhuizen@naturalis.nl"
     groups: "wheel"
