@@ -38,7 +38,7 @@ curl https://raw.githubusercontent.com/rudibroekhuizen/puppet-base/master/files/
 mkdir -p /etc/puppet/hieradata
 cp /etc/puppet/modules/role_base/files/*.yaml /etc/puppet/hieradata
 
-# Create external fact to set yaml data source
+# Create external fact to set yaml data_source
 if [ -n "$1" ];then
   puppet apply -e 'facts::instance { 'data_source': value => '$1', }'
 fi
@@ -46,9 +46,8 @@ fi
 # Apply base module
 puppet apply -e 'include role_base'
 
-# Retreive include modules array
-include_modules="hiera -c /etc/puppet/hiera.yaml include_modules data_source=$1"
+# Retreive include modules array from data_source
+include_modules=$(hiera -c /etc/puppet/hiera.yaml include_modules data_source=$1)
 
-# Apply additional modules
-puppet apply -e 'include $include_modules'
-#puppet apply -e 'include [ 'role_logstash', 'role_elasticsearch' ]'
+# Apply additional modules. Test: echo "$include_modules"
+puppet apply -e "include $include_modules"
