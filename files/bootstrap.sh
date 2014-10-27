@@ -44,5 +44,8 @@ puppet apply -e 'facts::instance { 'data_source': value => '$1', }'
 # Apply base module
 puppet apply -e 'include role_base'
 
+# Retreive include modules array
+hiera -c /etc/puppet/hiera.yaml include_modules data_source=$1
+
 # Apply additional modules
 #puppet apply -e 'include [ 'role_logstash', 'role_elasticsearch' ]'
