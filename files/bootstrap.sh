@@ -46,7 +46,7 @@ fi
 # Apply base module
 puppet apply -e 'include role_base'
 
-# Apply additional modules.
+# Apply additional modules
 puppet apply -e 'hiera_include('include_modules')'
 
 
