@@ -38,7 +38,7 @@ curl https://raw.githubusercontent.com/rudibroekhuizen/puppet-base/master/files/
 mkdir -p /etc/puppet/hieradata
 cp /etc/puppet/modules/role_base/files/*.yaml /etc/puppet/hieradata
 
-# Create external fact to set primary data_source
+# Create external fact to set primary data_source, using "meltwater/facts" module
 if [ -n "$1" ];then
   puppet apply -e 'facts::instance { 'data_source': value => '$1', }'
 fi
