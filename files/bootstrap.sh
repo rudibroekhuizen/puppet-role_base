@@ -50,7 +50,7 @@ puppet apply -e 'include role_base'
 if [ -n "$1" ];then
   include_modules=$(hiera -c /etc/puppet/hiera.yaml include_modules data_source=$1)
 else
-  include_modules=$(hiera -c /etc/puppet/hiera.yaml include_modules
+  include_modules=$(hiera -c /etc/puppet/hiera.yaml include_modules)
 fi
 
 # Apply additional modules. Test: echo "$include_modules"
