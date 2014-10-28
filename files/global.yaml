@@ -1,5 +1,4 @@
 role_base::repos_array_debian:
-  - ppa:webupd8team/atom
   - ppa:webupd8team/java
 
 role_base::packages_attribute_defaults:
