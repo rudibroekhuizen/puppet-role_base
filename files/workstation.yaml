@@ -31,5 +31,7 @@ role_base::packages_hash_debian:
     {}
   oracle-java8-installer:
     {}
+  arandr:
+    {}
   r10k:
     provider: gem
