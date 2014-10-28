@@ -1,3 +1,7 @@
+role_base::repos_array_debian:
+  - ppa:webupd8team/atom
+  - ppa:webupd8team/java
+
 role_base::users_hash:
   rudi.broekhuizen:
     comment: "Rudi Broekhuizen"
