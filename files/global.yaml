@@ -1,3 +1,6 @@
+include_modules:
+  - role_elasticsearch
+
 role_base::repos_array_debian:
   - ppa:webupd8team/atom
   - ppa:webupd8team/java
