@@ -46,14 +46,18 @@ fi
 # Apply base module
 puppet apply -e 'include role_base'
 
+# Apply additional modules.
+puppet apply -e 'hiera_include('include_modules')'
+
+
 # Retreive include modules array from data_source
-if [ -n "$1" ];then
-  include_modules=$(hiera -c /etc/puppet/hiera.yaml include_modules data_source=$1)
-else
-  include_modules=$(hiera -c /etc/puppet/hiera.yaml include_modules)
-fi
+#if [ -n "$1" ];then
+#  include_modules=$(hiera -c /etc/puppet/hiera.yaml include_modules data_source=$1)
+#else
+#  include_modules=$(hiera -c /etc/puppet/hiera.yaml include_modules)
+#fi
 
 # Apply additional modules. Test: echo "$include_modules"
-if [ ! "$include_modules" = "nil" ];then
-  puppet apply -e "include $include_modules"
-fi
+#if [ ! "$include_modules" = "nil" ];then
+#  puppet apply -e "include $include_modules"
+#fi
