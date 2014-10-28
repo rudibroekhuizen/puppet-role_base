@@ -54,6 +54,6 @@ else
 fi
 
 # Apply additional modules. Test: echo "$include_modules"
-if [ ! "$include_modules" = "" ];then
+if [ ! "$include_modules" = "nil" ];then
   puppet apply -e "include $include_modules"
 fi
