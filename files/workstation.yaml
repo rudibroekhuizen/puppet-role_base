@@ -37,5 +37,7 @@ role_base::packages_hash_debian:
     {}
   arandr:
     {}
+  p7zip:
+    {}
   r10k:
     provider: gem
