@@ -65,5 +65,7 @@ role_base::packages_hash_debian:
     {}
   screen:
     {}
+  nmap:
+    {}
   r10k:
     provider: gem
