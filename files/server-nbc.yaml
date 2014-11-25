@@ -43,29 +43,3 @@ role_base::users_hash:
     ssh_key:
       type: "ssh-rsa"
       key: "AAAAB3NzaC1yc2EAAAABJQAAAIEAmdU9//WJ4BqGWoH1TW3VmRnIcTbCaog38evKayf6hNe/jBuLRU9/MjDLsd3CfiLXVMKmMPOaGiovXQ5r4R0sSq9GknZU+SBB1oYLQUDi/+XseJG1dnTucDQ/Gz5gyV1QvWf86aaT7169qRCy7iWRIoRYaua/R3HIpWMXrNlzL/0="
-
-role_base::packages_hash_debian:
-  htop:
-    ensure: latest
-  iftop:
-    {}
-  augeas-tools:
-    {}
-  vim:
-    {}
-  sysstat:
-    {}
-  zsh:
-    {}
-  mc:
-    {}
-  curl:
-    {}
-  sudo:
-    {}
-  screen:
-    {}
-  nmap:
-    {}
-  r10k:
-    provider: gem
