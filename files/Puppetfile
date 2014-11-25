@@ -10,6 +10,7 @@ mod "stahnma/epel"
 mod "puppetlabs/git"
 mod "saz/timezone"
 mod "meltwater/facts"
+mod "razorsedge/snmp"
 #mod "gbrown/yumrepos"
 
 # Installs from git
@@ -30,8 +31,11 @@ mod 'role_collectd',
 :git => 'https://github.com/rudibroekhuizen/puppet-role_collectd'
 #:ref => 'development-01'
 
-mod 'sqlplus',
-:git => 'https://github.com/naturalis/puppet-sqlplus'
+mod 'role_test',
+:git => 'https://github.com/rudibroekhuizen/puppet-role_test'
 
-mod 'role_sqlplus',
-:git => 'https://github.com/naturalis/puppet-role_sqlplus'
+#mod 'sqlplus',
+#:git => 'https://github.com/naturalis/puppet-sqlplus'
+
+#mod 'role_sqlplus',
+#:git => 'https://github.com/naturalis/puppet-role_sqlplus'
