@@ -46,5 +46,7 @@ role_base::packages_hash_debian:
     {}
   p7zip:
     {}
+  nmap:
+    {}
   r10k:
     provider: gem
