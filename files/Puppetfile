@@ -31,6 +31,9 @@ mod 'role_collectd',
 :git => 'https://github.com/rudibroekhuizen/puppet-role_collectd'
 #:ref => 'development-01'
 
+mod 'rold_snmp'
+:git => 'https://github.com/naturalis/puppet-role_snmp'
+
 mod 'role_test',
 :git => 'https://github.com/rudibroekhuizen/puppet-role_test'
 
