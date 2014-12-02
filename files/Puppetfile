@@ -12,6 +12,7 @@ mod "saz/timezone"
 mod "meltwater/facts"
 mod "razorsedge/snmp"
 mod "saz/rsyslog"
+mod "gini/archive"
 #mod "gbrown/yumrepos"
 
 # Installs from git
