@@ -1,4 +1,5 @@
 classes:
+  - role_base
   - role_elasticsearch
   - role_collectd
   - role_logstash
