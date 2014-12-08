@@ -43,8 +43,5 @@ if [ -n "$1" ];then
   puppet apply -e 'facts::instance { 'data_source': value => '$1', }'
 fi
 
-# Apply base module
-puppet apply -e 'include role_base'
-
-# Apply additional modules
+# Apply base module and additional modules if configured in yaml datasource
 puppet apply -e 'hiera_include('classes')'
