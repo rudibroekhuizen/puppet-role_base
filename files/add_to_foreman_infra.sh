@@ -60,10 +60,10 @@ pluginsync      = true
 report          = true
 ignoreschedules = true
 daemon          = false
-ca_server       = foreman-webservices.naturalis.nl
+ca_server       = foreman-001.servers.naturalis.nl
 certname        = dummyhostname
 environment     = production
-server          = foreman-webservices.naturalis.nl
+server          = foreman-001.servers.naturalis.nl
 
 EOF
 
