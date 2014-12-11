@@ -10,7 +10,7 @@
 #- Ubuntu 13.04
 #- CentOS 6
 
-environment=1402production
+environment=production
 hostname=$(hostname -f)
 
 if [ "$hostname" = "" ]
@@ -60,10 +60,10 @@ pluginsync      = true
 report          = true
 ignoreschedules = true
 daemon          = false
-ca_server       = foreman.naturalis.nl
+ca_server       = foreman-webservices.naturalis.nl
 certname        = dummyhostname
 environment     = production
-server          = foreman.naturalis.nl
+server          = foreman-webservices.naturalis.nl
 
 EOF
 
