@@ -41,8 +41,8 @@ mod 'role_test',
 mod 'archive',
 :git => 'https://github.com/camptocamp/puppet-archive'
 
-#mod 'sqlplus',
-#:git => 'https://github.com/naturalis/puppet-sqlplus'
+mod 'sqlplus',
+:git => 'https://github.com/naturalis/puppet-sqlplus'
 
-#mod 'role_sqlplus',
-#:git => 'https://github.com/naturalis/puppet-role_sqlplus'
+mod 'role_sqlplus',
+:git => 'https://github.com/naturalis/puppet-role_sqlplus'
