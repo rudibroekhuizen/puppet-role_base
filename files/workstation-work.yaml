@@ -49,5 +49,7 @@ role_base::packages_hash_debian:
     {}
   network-manager-vpnc:
     {}
+  dia:
+    {}
   r10k:
     provider: gem
