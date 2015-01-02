@@ -1,0 +1,9 @@
+classes:
+  - role_base
+  - role_elasticsearch
+  - role_collectd
+  - role_logstash
+  - role_sensu::server
+  
+role_logstash::configfile:
+  logstash-sensu-01.conf
