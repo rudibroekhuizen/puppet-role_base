@@ -8,5 +8,5 @@ classes:
 role_logstash::configfile:
   logstash-sensu-01.conf
 
-role_sensu::client::rabbitmq_password:
+role_sensu::server::rabbitmq_password:
   Passw0rd
