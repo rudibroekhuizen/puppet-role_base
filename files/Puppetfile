@@ -15,6 +15,7 @@ mod "razorsedge/snmp"
 mod "saz/rsyslog"
 mod "sensu/sensu"
 mod "arioch/redis"
+mod "yelp/uchiwa"
 #mod "gbrown/yumrepos"
 
 # Installs from git
