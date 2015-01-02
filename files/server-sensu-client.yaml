@@ -7,6 +7,3 @@ role_sensu::client::sensu_server:
   
 role_sensu::client::rabbitmq_password:
   Passw0rd
-  
-role_sensu::client::sensu_cluster_name:
-  sensu_cluster_01
