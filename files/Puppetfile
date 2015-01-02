@@ -12,6 +12,7 @@ mod "saz/timezone"
 mod "meltwater/facts"
 mod "razorsedge/snmp"
 mod "saz/rsyslog"
+mod "sensu/sensu"
 #mod "gbrown/yumrepos"
 
 # Installs from git
@@ -46,3 +47,6 @@ mod 'sqlplus',
 
 mod 'role_sqlplus',
 :git => 'https://github.com/naturalis/puppet-role_sqlplus'
+
+mod 'role_sensu',
+:git => 'https://github.com/rudibroekhuizen/puppet-role_sensu'
