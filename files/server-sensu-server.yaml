@@ -17,8 +17,8 @@ role_sensu::server::api_user:
 role_sensu::server::api_password:
   secret
   
-role_sensu::server::uchiwa_user:
+role_sensu::dashboard::uchiwa_user:
   admin
   
-role_sensu::server::uchiwa_pass:
+role_sensu::dashboard::uchiwa_pass:
   secret
