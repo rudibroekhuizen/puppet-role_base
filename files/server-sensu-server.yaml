@@ -9,4 +9,16 @@ role_logstash::configfile:
   logstash-sensu-01.conf
 
 role_sensu::server::rabbitmq_password:
-  Passw0rd
+  secret
+
+role_sensu::server::api_user:
+  admin
+  
+role_sensu::server::api_password:
+  secret
+  
+role_sensu::server::uchiwa_user:
+  admin
+  
+role_sensu::server::uchiwa_pass:
+  secret
