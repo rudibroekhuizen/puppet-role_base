@@ -1,6 +1,3 @@
 classes:
   - role_base
   - role_sensu::client
-
-role_logstash::configfile:
-  logstash-sensu-01.conf
