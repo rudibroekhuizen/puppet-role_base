@@ -22,3 +22,8 @@ role_sensu::dashboard::uchiwa_user:
   
 role_sensu::dashboard::uchiwa_pass:
   secret
+
+mykey:
+      a: "common value"
+      b: "other common value"
+      z: "default local value"
