@@ -23,7 +23,7 @@ role_sensu::dashboard::uchiwa_pass:
   secret
 
 role_sensu::dashboard::uchiwa_api_config:
-  - name: sensu
+  - name: sensu-01
     host: localhost
     ssl: false
     insecure: false
