@@ -30,4 +30,4 @@ role_sensu::dashboard::uchiwa_api_config:
     port: 4567
     user: admin
     pass: secret
-    timeout: 50
+    timeout: 6
