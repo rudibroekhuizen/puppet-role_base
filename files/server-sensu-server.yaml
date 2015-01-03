@@ -35,9 +35,9 @@ role_sensu::dashboard::uchiwa_api_config:
     pass: secret
     timeout: 5
 
-check_defaults:
+checks_defaults:
   handlers:
-    - slack
+    - default
   standalone: false
 
 checks_hash:
