@@ -7,6 +7,9 @@ classes:
 role_logstash::configfile:
   logstash-sensu-01.conf
 
+role_sensu::rabbitmq::rabbitmq_password:
+  secret
+
 role_sensu::server::rabbitmq_password:
   secret
 
