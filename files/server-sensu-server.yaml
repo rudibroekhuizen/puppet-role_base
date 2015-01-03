@@ -34,3 +34,25 @@ role_sensu::dashboard::uchiwa_api_config:
     user: admin
     pass: secret
     timeout: 5
+
+check_defaults:
+  handlers:
+    - slack
+  standalone: false
+
+checks_hash:
+  check_load:
+    command: '/etc/sensu/sensu-community-plugins/plugins/system/check-load.rb'
+    subscribers: 'system_checks'
+
+  check_disk:
+    command: '/etc/sensu/sensu-community-plugins/plugins/system/check-disk.rb'
+    subscribers: 'system_checks'
+
+  check_cpu:
+    command: '/etc/sensu/sensu-community-plugins/plugins/system/check-cpu.rb'
+    subscribers: 'system_checks'
+
+  check_mem:
+    command: '/etc/sensu/sensu-community-plugins/plugins/system/check-mem.sh'
+    subscribers: 'system_checks'
