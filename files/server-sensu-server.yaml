@@ -23,7 +23,11 @@ role_sensu::dashboard::uchiwa_user:
 role_sensu::dashboard::uchiwa_pass:
   secret
 
-mykey:
-      a: "common value"
-      b: "other common value"
-      z: "default local value"
+role_sensu::dashboard::uchiwa_api_config:
+  host: localhost
+  ssl: false
+  insecure: false
+  port: 4567
+  user: admin
+  pass: secret
+  timeout: 5
