@@ -41,18 +41,6 @@ checks_defaults:
   standalone: false
 
 checks_hash:
-  check_load:
-    command: '/etc/sensu/sensu-community-plugins/plugins/system/check-load.rb'
-    subscribers: 'system_checks'
-
-  check_disk:
-    command: '/etc/sensu/sensu-community-plugins/plugins/system/check-disk.rb'
-    subscribers: 'system_checks'
-
-  check_cpu:
-    command: '/etc/sensu/sensu-community-plugins/plugins/system/check-cpu.rb'
-    subscribers: 'system_checks'
-
-  check_mem:
-    command: '/etc/sensu/sensu-community-plugins/plugins/system/check-mem.sh'
-    subscribers: 'system_checks'
+  check-procs_cron:
+    command: '/opt/sensu-community-plugins/plugins/processes/check-procs.rb -p cron -C 1 '
+    subscribers: 'sensu-test-rudi'
