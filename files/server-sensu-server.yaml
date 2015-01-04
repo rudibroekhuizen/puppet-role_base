@@ -35,12 +35,12 @@ role_sensu::dashboard::uchiwa_api_config:
     pass: secret
     timeout: 5
 
-checks_defaults:
+role_sensu::checks::checks_defaults:
   handlers:
     - default
   standalone: false
 
-checks_hash:
+role_sensu::checks::checks_hash:
   check-procs_cron:
     command: '/opt/sensu-community-plugins/plugins/processes/check-procs.rb -p cron -C 1 '
     subscribers: 'sensu-test-rudi'
