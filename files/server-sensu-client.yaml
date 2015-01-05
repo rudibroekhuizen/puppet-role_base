@@ -3,7 +3,7 @@ classes:
   - role_sensu::client
 
 role_sensu::client::sensu_server:
-  172.16.3.14
+  172.16.3.15
   
 role_sensu::client::rabbitmq_password:
   secret
