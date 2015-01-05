@@ -9,7 +9,7 @@ role_sensu::server::rabbitmq_password:
   secret
 
 role_sensu::server::api_user:
-  admin
+  api_user
   
 role_sensu::server::api_password:
   secret
@@ -26,7 +26,7 @@ role_sensu::dashboard::uchiwa_api_config:
     ssl: false
     insecure: false
     port: 4567
-    user: admin
+    user: api_user
     pass: secret
     timeout: 5
 
