@@ -2,6 +2,7 @@
 mod "puppetlabs/apt"
 mod "puppetlabs/stdlib"
 mod "puppetlabs/vcsrepo"
+mod "puppetlabs/rabbitmq"
 mod "ispavailability/file_concat"
 mod "elasticsearch/elasticsearch"
 mod "elasticsearch/logstash"
