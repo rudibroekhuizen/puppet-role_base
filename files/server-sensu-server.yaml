@@ -49,5 +49,5 @@ role_sensu::checks::checks_hash:
     subscribers: 'sensu-test-rudi'
 
   check_www_naturalis_nl:
-    command: "/opt/sensu/embedded/bin/ruby /opt/sensu-community-plugins/plugins/http/check-http.rb --url http://www.naturalis.nl -q 'Bezoekersinfo'"
+    command: "/opt/sensu/embedded/bin/ruby /opt/sensu-community-plugins/plugins/http/check-http.rb --url http://www.naturalis.nl/nl/ -q 'Bezoekersinfo'"
     subscribers: 'sensu-test-rudi'
