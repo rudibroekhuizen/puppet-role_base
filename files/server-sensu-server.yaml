@@ -38,7 +38,7 @@ role_sensu::checks::checks_defaults:
 
 role_sensu::checks::checks_hash:
   check-procs_cron:
-    command: '/opt/sensu/embedded/bin/ruby /opt/sensu-community-plugins/plugins/processes/check-procs.rb -p cron -C 1 '
+    command: "/opt/sensu/embedded/bin/ruby /opt/sensu-community-plugins/plugins/processes/check-procs.rb -p cron -C 1 "
     subscribers: 'sensu-test-rudi'
     handlers:
       - default
