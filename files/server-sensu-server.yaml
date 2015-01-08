@@ -45,9 +45,9 @@ role_sensu::checks::checks_hash:
       - mailer
 
   check-disk:
-    command: '/opt/sensu/embedded/bin/ruby /opt/sensu-community-plugins/plugins/system/check-disk.rb'
+    command: "/opt/sensu/embedded/bin/ruby /opt/sensu-community-plugins/plugins/system/check-disk.rb"
     subscribers: 'sensu-test-rudi'
 
   check_www_naturalis_nl:
-    command: '/opt/sensu/embedded/bin/ruby /opt/sensu-community-plugins/plugins/http/check-http.rb --url http://www.naturalis.nl -q \'Bezoekersinfo\''
+    command: "/opt/sensu/embedded/bin/ruby /opt/sensu-community-plugins/plugins/http/check-http.rb --url http://www.naturalis.nl -q 'Bezoekersinfo'"
     subscribers: 'sensu-test-rudi'
