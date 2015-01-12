@@ -51,5 +51,7 @@ role_base::packages_hash_debian:
     {}
   dia:
     {}
+  iperf:
+    {}
   r10k:
     provider: gem
