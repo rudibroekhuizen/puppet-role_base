@@ -2,3 +2,6 @@ classes:
   - role_base
   - role_logstash
   - role_sqlplus
+
+role_logstash::configfile:
+  - logstash-oraclelog-02.conf
