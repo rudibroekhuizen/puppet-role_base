@@ -17,7 +17,7 @@ mod "saz/rsyslog"
 mod "sensu/sensu"
 mod "arioch/redis"
 mod "yelp/uchiwa"
-mod "nanliu/staging"
+#mod "nanliu/staging"
 #mod "gbrown/yumrepos"
 
 # Installs from git
