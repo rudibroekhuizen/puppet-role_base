@@ -54,3 +54,4 @@ role_sensu::checks::checks_hash:
 
   check-http_crs_naturalis_nl:
     command: "/opt/sensu/embedded/bin/ruby /opt/sensu-community-plugins/plugins/http/check-http.rb --url http://crs.naturalis.nl/Atlantisweb/ -q 'Naturalis Biodiversity Center'"
+    subscribers: 'sub-001'
