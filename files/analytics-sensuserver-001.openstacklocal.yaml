@@ -16,10 +16,10 @@ role_sensu::server::api_password:
   secret
   
 role_sensu::dashboard::uchiwa_user:
-  admin
+  ictsupport
   
 role_sensu::dashboard::uchiwa_pass:
-  secret
+  ictsupport
 
 role_sensu::dashboard::uchiwa_api_config:
   - name: ICTSUPPORT-01
@@ -27,8 +27,8 @@ role_sensu::dashboard::uchiwa_api_config:
     ssl: false
     insecure: false
     port: 4567
-    user:
-    pass:
+    user: admin
+    pass: secret
     timeout: 5
 
 role_sensu::checks::checks_defaults:
