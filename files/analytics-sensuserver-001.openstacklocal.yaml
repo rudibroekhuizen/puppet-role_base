@@ -79,3 +79,7 @@ role_sensu::checks::checks_hash:
   check-http_bioportal_naturalis_nl:
     command: "/opt/sensu/embedded/bin/ruby /opt/sensu-community-plugins/plugins/http/check-http.rb --url http://bioportal.naturalis.nl/ -q 'Browse through Dutch natural history collections'"
     subscribers: 'sub-001'
+    
+  check-http_www_nationaalherbarium_nl_invasieven:
+    command: "/opt/sensu/embedded/bin/ruby /opt/sensu-community-plugins/plugins/http/check-http.rb --url http://www.nationaalherbarium.nl/invasieven/ -q 'Table of Contents'"
+    subscribers: 'sub-001'
