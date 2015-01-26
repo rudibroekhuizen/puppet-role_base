@@ -83,3 +83,23 @@ role_sensu::checks::checks_hash:
   check-http_www_nationaalherbarium_nl_invasieven:
     command: "/opt/sensu/embedded/bin/ruby /opt/sensu-community-plugins/plugins/http/check-http.rb --url http://www.nationaalherbarium.nl/invasieven/ -q 'Table of Contents'"
     subscribers: 'sub-001'
+    
+  check-http_www_nationaalherbarium_nl_FMCollectors:
+    command: "/opt/sensu/embedded/bin/ruby /opt/sensu-community-plugins/plugins/http/check-http.rb --url http://www.nationaalherbarium.nl/FMCollectors/ -q 'Cyclopaedia of'"
+    subscribers: 'sub-001'
+
+  check-http_www_nationaalherbarium_nl_Euphorbs:
+    command: "/opt/sensu/embedded/bin/ruby /opt/sensu-community-plugins/plugins/http/check-http.rb --url http://www.nationaalherbarium.nl/Euphorbs/ -q 'Euphorbiaceae'"
+    subscribers: 'sub-001'
+    
+  check-http_www_nationaalherbarium_nl_ThaiEuph:
+    command: "/opt/sensu/embedded/bin/ruby /opt/sensu-community-plugins/plugins/http/check-http.rb --url http://www.nationaalherbarium.nl/ThaiEuph/ -q 'Flora of Thailand'"
+    subscribers: 'sub-001'
+    
+  check-http_iawa_website_org:
+    command: "/opt/sensu/embedded/bin/ruby /opt/sensu-community-plugins/plugins/http/check-http.rb --url http://iawa-website.org/ -q 'IAWA: The International Association'"
+    subscribers: 'sub-001'
+    
+  check-http_seedlists_naturalis_nl:
+    command: "/opt/sensu/embedded/bin/ruby /opt/sensu-community-plugins/plugins/http/check-http.rb --url http://seedlists.naturalis.nl/ -q 'Seed lists'"
+    subscribers: 'sub-001'
