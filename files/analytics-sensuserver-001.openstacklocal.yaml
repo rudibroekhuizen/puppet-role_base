@@ -22,7 +22,7 @@ role_sensu::dashboard::uchiwa_pass:
   ictsupport
 
 role_sensu::dashboard::uchiwa_api_config:
-  - name: ICTSUPPORT-01
+  - name: ICTSUPPORT
     host: localhost
     ssl: false
     insecure: false
