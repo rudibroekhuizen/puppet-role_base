@@ -22,13 +22,13 @@ role_sensu::dashboard::uchiwa_pass:
   secret
 
 role_sensu::dashboard::uchiwa_api_config:
-  - name: DATACENTER-01
+  - name: ICTSUPPORT-01
     host: localhost
     ssl: false
     insecure: false
     port: 4567
-    user: api_user
-    pass: secret
+    user:
+    pass:
     timeout: 5
 
 role_sensu::checks::checks_defaults:
