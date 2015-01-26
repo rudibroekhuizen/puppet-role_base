@@ -59,3 +59,7 @@ role_sensu::checks::checks_hash:
   check-http_www_nederlandsesoorten_nl:
     command: "/opt/sensu/embedded/bin/ruby /opt/sensu-community-plugins/plugins/http/check-http.rb --url http://www.nederlandsesoorten.nl/ -q 'Home | Nederlands Soortenregister'"
     subscribers: 'sub-001'
+
+   check-http_www_catalogueoflife_org:
+    command: "/opt/sensu/embedded/bin/ruby /opt/sensu-community-plugins/plugins/http/check-http.rb --url http://www.catalogueoflife.org/ -q 'Welcome to the Catalogue of Life website'"
+    subscribers: 'sub-001'
