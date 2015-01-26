@@ -60,6 +60,22 @@ role_sensu::checks::checks_hash:
     command: "/opt/sensu/embedded/bin/ruby /opt/sensu-community-plugins/plugins/http/check-http.rb --url http://www.nederlandsesoorten.nl/ -q 'Home | Nederlands Soortenregister'"
     subscribers: 'sub-001'
 
-   check-http_www_catalogueoflife_org:
+  check-http_www_catalogueoflife_org:
     command: "/opt/sensu/embedded/bin/ruby /opt/sensu-community-plugins/plugins/http/check-http.rb --url http://www.catalogueoflife.org/ -q 'Welcome to the Catalogue of Life website'"
+    subscribers: 'sub-001'
+
+  check-http_www_walvisstrandingen_nl:
+    command: "/opt/sensu/embedded/bin/ruby /opt/sensu-community-plugins/plugins/http/check-http.rb --url http://www.walvisstrandingen.nl/ -q 'Alle geregistreerde Nederlandse walvisstrandingen'"
+    subscribers: 'sub-001'
+    
+  check-http_www_soortenbank_nl:
+    command: "/opt/sensu/embedded/bin/ruby /opt/sensu-community-plugins/plugins/http/check-http.rb --url http://www.soortenbank.nl/ -q 'Zoek naar de soort'"
+    subscribers: 'sub-001'
+  
+  check-http_3d_soortenbank_nl:
+    command: "/opt/sensu/embedded/bin/ruby /opt/sensu-community-plugins/plugins/http/check-http.rb --url http://3d.naturalis.nl/ -q 'biodiversity in cyberspace'"
+    subscribers: 'sub-001'
+    
+  check-http_bioportal_naturalis_nl:
+    command: "/opt/sensu/embedded/bin/ruby /opt/sensu-community-plugins/plugins/http/check-http.rb --url http://bioportal.naturalis.nl/ -q 'Browse through Dutch natural history collections'"
     subscribers: 'sub-001'
