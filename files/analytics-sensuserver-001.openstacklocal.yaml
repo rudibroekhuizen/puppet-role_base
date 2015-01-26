@@ -43,6 +43,7 @@ role_sensu::checks::checks_hash:
     subscribers: 'sub-001'
     handlers:
       - default
+      - mailer
   
   check-disk:
     command: "/opt/sensu/embedded/bin/ruby /opt/sensu-community-plugins/plugins/system/check-disk.rb"
