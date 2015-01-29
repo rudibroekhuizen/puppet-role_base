@@ -1,4 +1,6 @@
 classes:
+  - role_base
+  - role_elasticsearch
 
 role_elasticsearch::clustername:
   cluster-burp
