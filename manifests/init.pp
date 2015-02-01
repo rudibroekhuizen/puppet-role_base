@@ -40,6 +40,7 @@ class role_base (
 
 # Various configure items
   class { 'base::config':
+    owner_email => $owner_email
   }
 
 # Install files
