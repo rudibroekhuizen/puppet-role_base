@@ -53,6 +53,8 @@ role_base::packages_hash_debian:
     {}
   iperf:
     {}
+  glances:
+    {}
   r10k:
     provider: gem
 
