@@ -50,7 +50,7 @@ role_sensu::checks::checks_hash:
     subscribers: "sub-001"
 
   check-http_www_naturalis_nl:
-    command: "/opt/sensu/embedded/bin/ruby /opt/sensu-community-plugins/plugins/http/check-http.rb --url http://www.naturalis.nl/nl/ -q 'Bezoekersinfo'"
+    command: "/opt/sensu/embedded/bin/ruby /opt/sensu-community-plugins/plugins/http/check-http.rb --url http://www.naturalis.nl/nl/ -q \'Bezoekersinfo\'"
     subscribers: "sub-001"
 
   check-http_crs_naturalis_nl:
