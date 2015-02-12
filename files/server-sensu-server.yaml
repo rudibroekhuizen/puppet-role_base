@@ -1,8 +1,7 @@
 classes:
   - role_base
-  - role_sensu::server
-  - role_sensu::dashboard
-  
+  - role_sensu
+
 #role_sensu::rabbitmq::rabbitmq_password:
 #  secret
 
