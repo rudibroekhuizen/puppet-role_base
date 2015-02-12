@@ -2,23 +2,23 @@ classes:
   - role_base
   - role_sensu
 
-#role_sensu::rabbitmq::rabbitmq_password:
-#  secret
+role_sensu::rabbitmq::rabbitmq_password:
+  secret
 
-#role_sensu::server::rabbitmq_password:
-#  secret
+role_sensu::server::rabbitmq_password:
+  secret
 
-#role_sensu::server::api_user:
-#  api_user
+role_sensu::server::api_user:
+  api_user
   
-#role_sensu::server::api_password:
-#  secret
+role_sensu::server::api_password:
+  secret
   
-#role_sensu::dashboard::uchiwa_user:
-#  ictsupport
+role_sensu::dashboard::uchiwa_user:
+  ictsupport
   
-#role_sensu::dashboard::uchiwa_pass:
-#  ictsupport
+role_sensu::dashboard::uchiwa_pass:
+  ictsupport
 
 role_sensu::dashboard::uchiwa_api_config:
   - name: ICTSUPPORT
