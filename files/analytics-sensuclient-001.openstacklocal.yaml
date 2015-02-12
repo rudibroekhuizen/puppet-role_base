@@ -1,9 +1,0 @@
-classes:
-  - role_base
-  - role_sensu::client
-
-role_sensu::client::sensu_server:
-  192.168.7.12
-  
-role_sensu::client::rabbitmq_password:
-  secret
