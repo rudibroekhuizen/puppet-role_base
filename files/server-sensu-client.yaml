@@ -7,3 +7,6 @@ role_sensu::client::sensu_server:
   
 role_sensu::client::rabbitmq_password:
   secret
+
+role_sensu::client::subscriptions:
+  sub-001
