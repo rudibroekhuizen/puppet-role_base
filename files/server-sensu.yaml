@@ -24,10 +24,10 @@ role_sensu::server::api_password:
   secret
   
 role_sensu::dashboard::uchiwa_user:
-  ictsupport
-  
+
+
 role_sensu::dashboard::uchiwa_pass:
-  ictsupport
+
 
 role_sensu::dashboard::uchiwa_api_config:
   - name: ICTSUPPORT
