@@ -1,6 +1,6 @@
 classes:
-  role_base
-  role_burp
+  - role_base
+  - role_burp
 
 role_burp::mode: server
 role_burp::ssl_key_password: password
