@@ -2,5 +2,5 @@ classes:
   - role_base
   - role_test
 
-role_burp::mode
+role_burp::mode:
   client
