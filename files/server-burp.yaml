@@ -7,14 +7,6 @@ role_burp::main::ssl_key_password: ssl_key_password
 role_burp::main::password: password
 role_burp::main::backup_stats_logstash: true
 role_burp::main::directory: "/mnt/backup/burpdata"
-role_burp::main::max_children: 25
-role_burp::main::max_status_children: 25
-role_burp::main::keep: 100
-role_burp::main::waittime: 20h
-role_burp::main::common_clientconfig: working_dir_recovery_method=resume
-role_burp::main::starttime:
-  Mon,Tue,Wed,Thu,Fri,Sat,Sun,00,01,02,03,04,05,06,07,08,09,10,11,12,13,14,15,16,17,18,19,20,21,22,23
-
 role_burp::main::clientconf_hash:
   anotherexample.domain:
     includes:
