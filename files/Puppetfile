@@ -55,3 +55,9 @@ mod 'role_sqlplus',
 
 mod 'role_sensu',
 :git => 'https://github.com/rudibroekhuizen/puppet-role_sensu'
+
+mod 'burp',
+:git => 'https://github.com/rudibroekhuizen/puppet-burp'
+
+mod 'role_burp',
+:git => 'https://github.com/rudibroekhuizen/puppet-role_burp'
