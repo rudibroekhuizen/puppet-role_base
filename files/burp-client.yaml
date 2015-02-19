@@ -9,4 +9,4 @@ role_burp::main::password: password
 role_burp::main::includes:
   - "/etc/burp"
 role_burp::main::includes:
-  - "/etc/burp"
+  - "/etc/burp/clientconf"
