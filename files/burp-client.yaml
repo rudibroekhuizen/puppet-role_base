@@ -9,5 +9,5 @@ role_burp::main::password: password
 role_burp::main::includes:
   - "/home/"
   - "/tmp"
-role_burp::main::includes:
+role_burp::main::excludes:
   - "/home/ubuntu"
