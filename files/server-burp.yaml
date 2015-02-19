@@ -9,4 +9,6 @@ role_burp::main::directory: "/mnt/backup/burpdata"
 role_burp::main::backup_stats_logstash: true
 role_burp::main::clientconf_hash:
   rudi-burpclient-01.openstacklocal:
+    password: password
+  anotherclient.openstacklocal:
     password: passwooooord
