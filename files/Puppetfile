@@ -57,9 +57,9 @@ mod 'role_sensu',
 :git => 'https://github.com/rudibroekhuizen/puppet-role_sensu'
 
 mod 'burp',
-:git => 'https://github.com/rudibroekhuizen/puppet-burp'
+:git => 'https://github.com/rudibroekhuizen/puppet-burp',
 :ref => '0.1'
 
 mod 'role_burp',
-:git => 'https://github.com/rudibroekhuizen/puppet-role_burp'
+:git => 'https://github.com/rudibroekhuizen/puppet-role_burp',
 :ref => '0.1'
