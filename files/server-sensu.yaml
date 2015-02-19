@@ -3,7 +3,7 @@ classes:
   - role_sensu
 
 role_burp::main::mode: server
-role_burp::main::server: 172.16.3.14
+role_burp::main::server: 127.0.0.1
 role_burp::main::ssl_key_password: ssl_key_password
 role_burp::main::password: password
 
