@@ -8,6 +8,7 @@ role_burp::main::password: password
 role_burp::main::directory: "/mnt/backup/burpdata"
 role_burp::main::backup_stats_logstash: true
 role_burp::main::clientconf_hash:
+role_burp::main::serverside_options: ratelimit=20
   rudi-burpclient-01.openstacklocal:
     password: password
   anotherclient.openstacklocal:
