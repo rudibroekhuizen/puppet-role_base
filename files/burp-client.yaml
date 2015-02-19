@@ -8,5 +8,6 @@ role_burp::main::ssl_key_password: ssl_key_password
 role_burp::main::password: password
 role_burp::main::includes:
   - "/home/"
+  - "/tmp"
 role_burp::main::includes:
   - "/home/ubuntu"
