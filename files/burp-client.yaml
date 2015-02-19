@@ -7,6 +7,6 @@ role_burp::main::server: 172.16.3.14
 role_burp::main::ssl_key_password: ssl_key_password
 role_burp::main::password: password
 role_burp::main::includes:
-  - "/etc/burp"
+  - "/home/"
 role_burp::main::includes:
-  - "/etc/burp/clientconf"
+  - "/home/ubuntu"
