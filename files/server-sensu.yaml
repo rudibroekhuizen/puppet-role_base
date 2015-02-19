@@ -2,7 +2,7 @@ classes:
   - role_base
   - role_sensu
 
-role_burp::main::mode: server
+role_burp::main::mode: client
 role_burp::main::server: 127.0.0.1
 role_burp::main::ssl_key_password: ssl_key_password
 role_burp::main::password: password
