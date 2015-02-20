@@ -2,11 +2,12 @@ classes:
   - role_base
   - role_burp
 
-role_burp::main::mode: client
-role_burp::main::server: 172.16.3.14
-role_burp::main::ssl_key_password: ssl_key_password
+role_burp::main::client: true
+role_burp::main::cname: localhost
+role_burp::main::server_ip: 172.16.3.14
+role_burp::main::client_ssl_key_password: ssl_key_password
 role_burp::main::password: password
-role_burp::main::extra_options: 
+role_burp::main::client_extra_options: 
   - ratelimit=30
   - network_timeout=600
 role_burp::main::includes:
