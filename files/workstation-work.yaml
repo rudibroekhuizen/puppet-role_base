@@ -57,6 +57,8 @@ role_base::packages_hash_debian:
     {}
   r10k:
     provider: gem
+  puppet-lint:
+    provider: gem
 
 role_base::config:
   owner_email: rudi.broekhuizen@naturalis.nl
