@@ -3,6 +3,7 @@ classes:
   - role_burp
 
 role_burp::main::mode: server
+role_burp::main::directory: "/tmp"
 role_burp::main::ssl_key_password: ssl_key_password
 role_burp::main::password: password
 role_burp::main::directory: "/mnt/backup/burpdata"
