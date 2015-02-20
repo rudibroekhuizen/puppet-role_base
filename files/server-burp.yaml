@@ -2,16 +2,15 @@ classes:
   - role_base
   - role_burp
 
-role_burp::main::mode: server
+role_burp::main::server: true
+role_burp::main::server_ssl_key_password: ssl_key_password
 role_burp::main::directory: "/tmp"
-role_burp::main::ssl_key_password: ssl_key_password
-role_burp::main::password: password
 role_burp::main::backup_stats_logstash: true
-role_burp::main::extra_options: 
+role_burp::main::server_extra_options: 
   - ratelimit=60
   - network_timeout=600
 role_burp::main::clientconf_hash:
-  rudi-burpclient-01.openstacklocal:
+  anotherclient.openstacklocal:
     password: password
   win-2012-01.virtualboxlocal:
     password: password
