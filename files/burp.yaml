@@ -1,0 +1,21 @@
+classes:
+  - role_base
+  - role_burp
+
+# burp client and server on one instance
+
+role_burp::main::client: true
+role_burp::main::cname: localhost
+role_burp::main::server_ip: 127.0.0.1
+role_burp::main::client_ssl_key_password: ssl_key_password
+role_burp::main::password: password
+
+role_burp::main::server: true
+role_burp::main::server_ssl_key_password: ssl_key_password
+role_burp::main::directory: "/tmp"
+role_burp::main::backup_stats_logstash: true
+role_burp::main::clientconf_hash:
+  localhost:
+    password: password
+  rudi-burpclient-01.openstacklocal:
+    password: password
