@@ -13,5 +13,5 @@ role_burp::main::extra_options:
 role_burp::main::clientconf_hash:
   rudi-burpclient-01.openstacklocal:
     password: password
-  win-2012-01.virtualbox:
+  win-2012-01.virtualboxlocal:
     password: password
