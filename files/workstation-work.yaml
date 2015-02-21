@@ -60,7 +60,7 @@ role_base::packages_hash_debian:
   puppet-lint:
     provider: gem
 
-role_base::config:
+role_base:
   owner_email: rudi.broekhuizen@naturalis.nl
 
 # burp client settings
