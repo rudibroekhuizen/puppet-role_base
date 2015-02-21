@@ -70,8 +70,8 @@ role_burp::main::server_ip: 127.0.0.1
 role_burp::main::client_ssl_key_password: ssl_key_password
 role_burp::main::password: password
 role_burp::main::client_extra_options: 
-  - ratelimit=30
   - exclude_ext=vdi
+  - compression=0
 role_burp::main::includes:
   - "/home/"
 role_burp::main::excludes:
