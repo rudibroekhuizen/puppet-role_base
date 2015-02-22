@@ -86,3 +86,5 @@ role_burp::main::server_extra_options:
 role_burp::main::clientconf_hash:
   localhost:
     password: password
+  laptop-home:
+    password: password
