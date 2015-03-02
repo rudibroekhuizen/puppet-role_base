@@ -6,7 +6,7 @@ class role_base (
   ) {
   
   class { 'base':
-    owner_email => bla,  
+    owner_email => $owner_email  
   }
 
 }
