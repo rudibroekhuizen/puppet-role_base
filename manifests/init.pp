@@ -4,7 +4,7 @@
 class role_base {
   
   class { 'base':
-    $users_hash,  
+    $owner_email => bla,  
   }
 
 }
