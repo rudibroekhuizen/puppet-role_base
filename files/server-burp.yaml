@@ -15,5 +15,4 @@ role_burp::main::clientconf_hash:
   win-2012-01.virtualboxlocal:
     password: password
 
-role_base::owner_email: role_base@bla.com
-base::owner_email: base@bla.com
+role_base::owner_email: rudi.broekhuizen@naturalis.nl
