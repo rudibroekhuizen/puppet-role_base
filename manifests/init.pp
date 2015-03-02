@@ -3,6 +3,8 @@
 #
 class role_base {
   
-  class { 'base': }
+  class { 'base':
+    users_hash,  
+  }
 
 }
