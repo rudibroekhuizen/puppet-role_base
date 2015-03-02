@@ -2,7 +2,7 @@
 #
 #
 class role_base (
-  $owner_email = 'email'
+  $owner_email,
   ) {
   
   class { 'base':
