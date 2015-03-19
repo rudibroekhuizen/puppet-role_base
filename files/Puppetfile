@@ -62,3 +62,6 @@ mod 'burp',
 
 mod 'role_burp',
 :git => 'https://github.com/rudibroekhuizen/puppet-role_burp'
+
+mod 'role_rsyslog',
+:git => 'https://github.com/naturalis/puppet-role_rsyslog'
