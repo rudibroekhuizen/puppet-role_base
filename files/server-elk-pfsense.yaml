@@ -1,0 +1,10 @@
+classes:
+  - role_base
+  - role_logstash
+  - role_elasticsearch
+
+role_elasticsearch::clustername:
+  cluster-pfsense
+
+role_logstash::configfile:
+  logstash-rsyslog-pfsense-01.conf
