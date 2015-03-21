@@ -9,6 +9,13 @@ role_burp::main::password: password
 role_burp::main::client_extra_options: 
   - ratelimit=30
   - network_timeout=600
+  - exclude_comp=zip
+  - exclude_comp=rar
+  - exclude_comp=gz
+  - exclude_comp=mp3
+  - exclude_comp=mp4
+  - exclude_comp=avi
+  - exclude_comp=jpg
 role_burp::main::includes:
   - "/home/"
   - "/tmp"
