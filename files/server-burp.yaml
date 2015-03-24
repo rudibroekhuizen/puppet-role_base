@@ -2,7 +2,7 @@ classes:
   - role_base
   - role_burp
 
-# burp client settings
+# burp client settings, a burp installation always has server and client component
 role_burp::main::client: true
 role_burp::main::cname: localhost
 role_burp::main::server_ip: 127.0.0.1
