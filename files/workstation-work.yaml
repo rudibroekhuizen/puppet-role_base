@@ -85,6 +85,8 @@ role_burp::main::directory: "/media/Ssdbay/Backup-Burp"
 role_burp::main::backup_stats_logstash: true
 role_burp::main::server_extra_options: 
   - compression=0
+  - notify_success_script=/etc/burp/notify_script
+  - notify_failure_script=/etc/burp/notify_script
 role_burp::main::clientconf_hash:
   localhost:
     password: password
