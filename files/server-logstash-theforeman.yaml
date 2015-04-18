@@ -1,0 +1,12 @@
+classes:
+  - role_base
+  - role_logstash
+  - role_cron
+
+role_logstash::configfile:
+  logstash-theforeman-01.conf
+  
+role_cron::cron_job_hash:
+  logstash-theforeman:
+    user: "logstash"
+    command: "/usr/local/bin/hammer -c /etc/hammer/cli.modules.d/foreman-mirantis.yml --output json host list | jq -c '.[]' >> /var/log/logstash/theforeman"
