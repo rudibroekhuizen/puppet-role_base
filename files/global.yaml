@@ -1,11 +1,6 @@
 classes:
   - role_base
 
-role_cron::cron_job:
-  test:
-    minute: 1
-    command: "date > /tmp/date"
-
 role_base::repos_array_debian:
   - ppa:webupd8team/java
 
