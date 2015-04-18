@@ -20,6 +20,7 @@ mod "sensu/sensu"
 mod "arioch/redis"
 mod "yelp/uchiwa"
 mod "nanliu/staging"
+mod "torrancew/cron"
 #mod "gbrown/yumrepos"
 
 # Installs from git
