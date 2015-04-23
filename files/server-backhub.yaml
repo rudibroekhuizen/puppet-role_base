@@ -3,7 +3,7 @@ classes:
   - role_backhub
 
 backhub::scp_hash:
-  /home/ubuntu/running-config:
+  /home/backhub/running-config:
     source: 172.16.1.100:cfg/running-config
     repeat: everyday
 
