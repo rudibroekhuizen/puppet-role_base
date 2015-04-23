@@ -5,3 +5,16 @@ classes:
 backhub::scp_hash:
   /home/ubuntu/running-config:
     source: 172.16.1.100:cfg/running-config
+    repeat: everyday
+
+backhub::password:
+  verydifficultpassword
+
+backhub::id_rsa:
+  -----BEGIN RSA PRIVATE KEY-----
+
+examplekeyAAAAB3NzaC1yc2EAAAADAQABAAABAQDeRrVuojExYBWg
+
+IV7UlLfYLvzGpW9hSzIV7UlLfYLvzGpW9hSzIV7UlLfYLvzGpW9hSz
+
+etc.
