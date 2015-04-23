@@ -1,3 +1,7 @@
 classes:
   - role_base
   - role_backhub
+
+backhub::scp_hash:
+  /home/ubuntu/running-config:
+    source: 172.16.1.100:cfg/running-config
