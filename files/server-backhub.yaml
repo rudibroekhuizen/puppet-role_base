@@ -12,9 +12,7 @@ backhub::password:
 
 backhub::id_rsa:
   -----BEGIN RSA PRIVATE KEY-----
-
-  DC1yc1ycDB3NzaC1yc2EAC1ycDC1ycQcodDeRC1ycojEC1ycQxYBWg
-
-  IV7UlLfYLvzGpW9hSzIV7UlLfYLvzGpW9hSzIV7UlLfYLvzGpW9hSz
-
+  
+  backhub private key
+  
   -----END RSA PRIVATE KEY-----
