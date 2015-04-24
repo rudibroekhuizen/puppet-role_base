@@ -3,10 +3,12 @@ classes:
   - role_backhub
 
 backhub::scp_hash:
-  /home/backhub/172_16_1_100_running-config:
-    source: 172.16.1.100:cfg/running-config
+  "SW001234":
+    save_as: running-config    
+    source: 171.16.1.100:cfg/running-config
     repeat: everyday
-  /home/backhub/pfsense-01_config.xml:
+  "FW001234":
+    save_as: config.xml   
     source: 172.16.1.1:/conf/config.xml
     repeat: everyday
 
