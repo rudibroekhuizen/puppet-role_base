@@ -6,11 +6,11 @@ backhub::scp_hash:
   "SW001234":
     save_as: running-config    
     source: 171.16.1.100:cfg/running-config
-    repeat: everyday
+    run: everyday
   "FW001234":
     save_as: config.xml   
     source: 172.16.1.1:/conf/config.xml
-    repeat: everyday
+    run: everyday
 
 backhub::password:
   verydifficultpassword
