@@ -71,3 +71,6 @@ mod 'role_rsyslog',
 
 mod 'role_cron',
 :git => 'https://github.com/naturalis/puppet-role_cron'
+
+mod 'hammer_cli_foreman',
+:git => 'https://github.com/naturalis/puppet-hammer_cli_foreman'
