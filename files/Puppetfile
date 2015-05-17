@@ -68,3 +68,6 @@ mod 'role_burp',
 
 mod 'role_rsyslog',
 :git => 'https://github.com/naturalis/puppet-role_rsyslog'
+
+mod 'role_cron',
+:git => 'https://github.com/naturalis/puppet-role_cron'
