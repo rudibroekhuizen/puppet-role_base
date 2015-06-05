@@ -7,3 +7,6 @@ role_elasticsearch::clustername:
 
 role_elasticsearch::es_version:
   '1.5.2'
+  
+role_kibana::elasticsearch_url:
+  'http://10.42.1.121:9200'
