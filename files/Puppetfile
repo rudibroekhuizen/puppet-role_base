@@ -78,3 +78,6 @@ mod 'hammer_cli_foreman',
 
 mod 'kibana4',
 :git => 'https://github.com/echocat/puppet-kibana4'
+
+mod 'role_kibana',
+:git => 'https://github.com/rudibroekhuizen/puppet-role_kibana'
