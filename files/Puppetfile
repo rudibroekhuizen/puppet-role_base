@@ -75,3 +75,6 @@ mod 'role_cron',
 
 mod 'hammer_cli_foreman',
 :git => 'https://github.com/rudibroekhuizen/puppet-hammer_cli_foreman'
+
+mod 'kibana4',
+:git => 'https://github.com/echocat/puppet-kibana4'
