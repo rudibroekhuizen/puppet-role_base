@@ -3,4 +3,7 @@ classes:
   - role_elasticsearch
 
 role_elasticsearch::clustername:
-  cluster-burp
+  'cluster-04'
+
+role_elasticsearch::es_version:
+  '1.5.2'
