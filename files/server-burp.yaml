@@ -3,11 +3,11 @@ classes:
   - role_burp
 
 # burp server settings
-role_burp::main::server: true
-role_burp::main::server_ssl_key_password: ssl_key_password
-role_burp::main::directory: "/tmp"
-role_burp::main::backup_stats_logstash: true
-role_burp::main::server_extra_options: 
+role_burp::server: true
+role_burp::server_ssl_key_password: ssl_key_password
+role_burp::directory: "/tmp"
+role_burp::backup_stats_logstash: true
+role_burp::server_extra_options:
   - ratelimit=60
   - network_timeout=600
 role_burp::main::clientconf_hash:
@@ -17,8 +17,13 @@ role_burp::main::clientconf_hash:
     password: password
 
 # burp client settings, a burp installation always has server and client component, with these settings you can backup data on the burp server itself
-role_burp::main::client: true
-role_burp::main::cname: localhost
-role_burp::main::server_ip: 127.0.0.1
-role_burp::main::client_ssl_key_password: ssl_key_password
-role_burp::main::password: password
+role_burp::client: true
+role_burp::cname: localhost
+role_burp::server_ip: 127.0.0.1
+role_burp::client_ssl_key_password: ssl_key_password
+role_burp::password: password
+role_burp::settings_hash:
+  bla:
+    foosetting: bladiebla
+    foovalue: "bladievalue"
+
