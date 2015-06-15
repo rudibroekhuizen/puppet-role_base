@@ -73,6 +73,7 @@ role_burp::client_extra_options:
   - exclude_ext=iso
 role_burp::includes:
   - "/home/"
+  - "/etc/vpnc"
 role_burp::excludes:
   - "/home/ubuntu"
 
