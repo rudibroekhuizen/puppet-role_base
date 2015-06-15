@@ -70,29 +70,29 @@ role_base:
   owner_email: rudi.broekhuizen@naturalis.nl
 
 # burp client settings
-role_burp::main::client: true
-role_burp::main::cname: localhost
-role_burp::main::server_ip: 127.0.0.1
-role_burp::main::client_ssl_key_password: ssl_key_password
-role_burp::main::password: password
-role_burp::main::client_extra_options: 
+role_burp::client: true
+role_burp::cname: localhost
+role_burp::server_ip: 127.0.0.1
+role_burp::client_ssl_key_password: ssl_key_password
+role_burp::password: password
+role_burp::client_extra_options: 
   - exclude_ext=vdi
   - exclude_ext=iso
-role_burp::main::includes:
+role_burp::includes:
   - "/home/"
-role_burp::main::excludes:
+role_burp::excludes:
   - "/home/ubuntu"
 
 # burp server settings
-role_burp::main::server: true
-role_burp::main::server_ssl_key_password: ssl_key_password
-role_burp::main::directory: "/media/Ssdbay/Backup-Burp"
-role_burp::main::backup_stats_logstash: true
-role_burp::main::server_extra_options: 
+role_burp::server: true
+role_burp::server_ssl_key_password: ssl_key_password
+role_burp::directory: "/media/Ssdbay/Backup-Burp"
+role_burp::backup_stats_logstash: true
+role_burp::server_extra_options: 
   - compression=0
   - notify_success_script=/etc/burp/notify_script
   - notify_failure_script=/etc/burp/notify_script
-role_burp::main::clientconf_hash:
+role_burp::clientconf_hash:
   localhost:
     password: password
   laptop-home:
