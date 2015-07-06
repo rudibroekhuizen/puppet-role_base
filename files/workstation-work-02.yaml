@@ -63,8 +63,16 @@ role_base:
   owner_email: rudi.broekhuizen@naturalis.nl
 
 # burp client settings
+role_burp::version: 1.4.36
 role_burp::client: true
-role_burp::cname: localhost
+role_burp::clientconf_hash:
+  localhost:
+    clientconf:
+      - password = password
+      - key      = value
+    
+role_burp::common:
+  - 'randomise = 1200'
 role_burp::server_ip: 127.0.0.1
 role_burp::client_ssl_key_password: ssl_key_password
 role_burp::password: password
