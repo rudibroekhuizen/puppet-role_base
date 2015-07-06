@@ -62,40 +62,47 @@ role_base::packages_hash_debian:
 role_base:
   owner_email: rudi.broekhuizen@naturalis.nl
 
-# burp client settings
+# burp general
 role_burp::version: 1.4.36
+role_burp::server: true
 role_burp::client: true
+
+# burp server create client config files in /etc/burp/clientconfdir
 role_burp::clientconf_hash:
   localhost:
     clientconf:
-      - password = password
-      - key      = value
-    
-role_burp::common:
-  - 'randomise = 1200'
-role_burp::server_ip: 127.0.0.1
-role_burp::client_ssl_key_password: ssl_key_password
-role_burp::password: password
-role_burp::client_extra_options: 
-  - exclude_ext=vdi
-  - exclude_ext=iso
-role_burp::includes:
-  - "/home/"
-  - "/etc/vpnc"
-role_burp::excludes:
-  - "/home/ubuntu"
+      - 'password = password'
 
-# burp server settings
-role_burp::server: true
-role_burp::server_ssl_key_password: ssl_key_password
-role_burp::directory: "/backup"
-role_burp::backup_stats_logstash: true
-role_burp::server_extra_options: 
-  - compression=0
-  - notify_success_script=/etc/burp/notify_script
-  - notify_failure_script=/etc/burp/notify_script
-role_burp::clientconf_hash:
-  localhost:
-    password: password
-  laptop-home:
-    password: password
+# burp server: settings that apply to all clients /etc/burp/clientconfdir/incexc/common
+role_burp::common:
+  - 'randomise   = 1200'
+  - 'exclude_ext = vdi'
+  - 'exclude_ext = iso'
+
+# burp server: settings for /etc/burp-server.conf
+role_burp::burp_server_hash:
+  ssl_key_password:
+    - value: 'password'  
+  directory:
+    - value: '/media/Ssdbay/Backup-Burp'
+  compression:
+    - value: 0
+
+# burp client: settings for /etc/burp/burp.conf
+role_burp::burp_hash:
+  server:
+    - value: '127.0.0.1'
+  ssl_key_password:
+    - value: 'password'
+  password:
+    - value: 'password'
+  cname:
+    - value: 'cname'
+  server_can_restore:
+    - value: 1
+  include:
+    - value: '/home'
+    - section: '/home'
+  exclude:
+    - value: '/home/ubuntu'
+    - section: '/home/ubuntu'
