@@ -82,27 +82,27 @@ role_burp::common:
 # burp server: settings for /etc/burp-server.conf
 role_burp::burp_server_hash:
   ssl_key_password:
-    - value: 'password'  
+    value: 'password'  
   directory:
-    - value: '/media/Ssdbay/Backup-Burp'
+    value: '/media/Ssdbay/Backup-Burp'
   compression:
-    - value: 0
+    value: 0
 
 # burp client: settings for /etc/burp/burp.conf
 role_burp::burp_hash:
   server:
-    - value: '127.0.0.1'
+    value: '127.0.0.1'
   ssl_key_password:
-    - value: 'password'
+    value: 'password'
   password:
-    - value: 'password'
+    value: 'password'
   cname:
-    - value: 'cname'
+    value: 'cname'
   server_can_restore:
-    - value: 1
+    value: 1
   include:
-    - value: '/home'
-    - section: '/home'
+    value: '/home'
+    section: '/home'
   exclude:
-    - value: '/home/ubuntu'
-    - section: '/home/ubuntu'
+    value: '/home/ubuntu'
+    section: '/home/ubuntu'
