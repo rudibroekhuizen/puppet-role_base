@@ -98,7 +98,7 @@ role_burp::burp_hash:
   password:
     value: 'password'
   cname:
-    value: 'LT003791'
+    value: 'localhost'
   server_can_restore:
     value: 1
   include:
