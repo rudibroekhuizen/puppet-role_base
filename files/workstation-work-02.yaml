@@ -97,12 +97,15 @@ role_burp::burp_hash:
   password:
     value: 'password'
   cname:
-    value: 'cname'
+    value: 'LT003791'
   server_can_restore:
     value: 1
   include:
     value: '/home'
     section: '/home'
+  include:
+    value: '/etc/NetworkManager/system-connections'
+    section: '/etc/NetworkManager/system-connections'
   exclude:
     value: '/home/ubuntu'
     section: '/home/ubuntu'
