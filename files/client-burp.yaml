@@ -1,5 +1,4 @@
 classes:
-  - role_base
   - role_burp
 
 role_burp::main::client: true
