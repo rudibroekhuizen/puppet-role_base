@@ -85,7 +85,7 @@ role_burp::burp_server_hash:
   ssl_key_password:
     value: 'password'  
   directory:
-    value: '/media/Ssdbay/Backup-Burp'
+    value: '/media/Ssd/Backup-Burp'
   compression:
     value: 0
 
