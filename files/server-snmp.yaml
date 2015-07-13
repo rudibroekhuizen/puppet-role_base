@@ -1,5 +1,4 @@
 classes:
-  - role_base
   - role_test
 
 role_burp::mode:
