@@ -73,6 +73,7 @@ role_burp::clientconf_hash:
   localhost:
     clientconf:
       - 'password = password'
+      - '. incexc/common'
 
 # burp server: settings that apply to all clients /etc/burp/clientconfdir/incexc/common
 role_burp::common:
