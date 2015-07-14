@@ -70,7 +70,7 @@ role_burp::client: true
 
 # burp server create client config files in /etc/burp/clientconfdir
 role_burp::clientconf_hash:
-  localhost:
+  fullyqualifieddomainname:
     clientconf:
       - 'password = password'
       - '. incexc/common'
@@ -98,8 +98,6 @@ role_burp::burp_hash:
     value: 'password'
   password:
     value: 'password'
-#  cname:
-#    value: 'localhost'
   server_can_restore:
     value: 1
   include:
