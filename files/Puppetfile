@@ -83,3 +83,6 @@ mod 'kibana4',
 
 mod 'role_kibana',
 :git => 'https://github.com/rudibroekhuizen/puppet-role_kibana'
+
+mod 'role_tftp',
+:git => 'https://github.com/rudibroekhuizen/puppet-role_tftp'
