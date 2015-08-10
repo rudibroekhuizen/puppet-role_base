@@ -4,7 +4,7 @@ classes:
 
 role_burp::main::server: true
 role_burp::main::server_ssl_key_password: ssl_key_password
-role_burp::main::directory: "/tmp"
+role_burp::main::directory: "/backup"
 role_burp::main::backup_stats_logstash: true
 role_burp::main::server_extra_options: 
   - ratelimit=60
