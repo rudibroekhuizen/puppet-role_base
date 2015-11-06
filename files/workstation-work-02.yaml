@@ -75,7 +75,7 @@ role_burp::clientconf_hash:
     clientconf:
       - 'password = password'
       - '. incexc/common'
-  003403:
+  LT003403:
     clientconf:
       - 'password = password'
       - '. incexc/common'
