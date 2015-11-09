@@ -2,21 +2,22 @@ classes:
   - role_base
   - role_burp
 
-burp::server:
-  true
+#burp::server:
+#  true
 
-burp::server_ssl_key_password:
-  'ssl_key_password'
+#burp::server_ssl_key_password:
+#  'ssl_key_password'
+
+burp:
+  server: true
+  server_ssl_key_password: 'ssl_key_password'
+#  true
   
 burp::directory: 
   '/backup'
 
 burp::backup_stats_logstash: 
   true
-
-burp::server_extra_options: 
-  - ratelimit=60
-  - network_timeout=600
 
 burp::clientconf_hash:
   localhost:
@@ -32,17 +33,13 @@ burp::burp_hash:
   /tmp:
     exclude_regex: '/tmp'
 
-
-
 burp::burp_server_hash_defaults:
   section_prefix: '#['
   path: '/etc/burp/burp-server.conf'
 
 burp::burp_server_hash:
   extra:
-    ratelimit: '70'
-
-
-
+    ratelimit: '60'
+    network_timeout: '600'
 
 role_base::owner_email: rudi.broekhuizen@naturalis.nl
