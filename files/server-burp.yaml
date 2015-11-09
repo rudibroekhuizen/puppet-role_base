@@ -19,10 +19,10 @@ burp::server_extra_options:
   - network_timeout=600
 
 burp::clientconf_hash:
-  anotherclient.openstacklocal:
-    password: password
-  win-2012-01.virtualboxlocal:
-    password: password
+  localhost:
+    clientconf:
+      - 'password = pass'
+      - '. incexc/common'
 
 burp::burp_hash_defaults:
   section_prefix: '#['
