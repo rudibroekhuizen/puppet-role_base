@@ -26,7 +26,7 @@ burp::clientconf_hash:
 
 burp::burp_hash_defaults:
   section_prefix: '#['
-  path: 'C:/Program Files/Burp/burp.conf'
+  path: '/etc/burp/burp.conf'
 
 burp::burp_hash:
   /tmp:
@@ -36,7 +36,7 @@ burp::burp_hash:
 
 burp::burp_server_hash_defaults:
   section_prefix: '#['
-  path: 'C:/Program Files/Burp/burp-server.conf'
+  path: '/etc/burp/burp-server.conf'
 
 burp::burp_server_hash:
   extra:
