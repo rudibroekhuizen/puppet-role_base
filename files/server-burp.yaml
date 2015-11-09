@@ -2,17 +2,45 @@ classes:
   - role_base
   - role_burp
 
-role_burp::main::server: true
-role_burp::main::server_ssl_key_password: ssl_key_password
-role_burp::main::directory: "/backup"
-role_burp::main::backup_stats_logstash: true
-role_burp::main::server_extra_options: 
+burp::server:
+  true
+
+burp::server_ssl_key_password:
+  'ssl_key_password'
+  
+burp::directory: 
+  '/backup'
+
+burp::backup_stats_logstash: 
+  true
+
+burp::server_extra_options: 
   - ratelimit=60
   - network_timeout=600
-role_burp::main::clientconf_hash:
+
+burp::clientconf_hash:
   anotherclient.openstacklocal:
     password: password
   win-2012-01.virtualboxlocal:
     password: password
+
+burp::burp_hash_defaults:
+  section_prefix: '#['
+  path: 'C:/Program Files/Burp/burp.conf'
+
+burp::burp_hash:
+  /tmp:
+    exclude_regex: '/tmp'
+
+burp::burp_server_hash_defaults:
+  section_prefix: '#['
+  path: 'C:/Program Files/Burp/burp.conf'
+
+burp::burp_server_hash:
+  /tmp:
+    exclude_regex: '/tmp'
+
+
+
 
 role_base::owner_email: rudi.broekhuizen@naturalis.nl
