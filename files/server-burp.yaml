@@ -32,13 +32,15 @@ burp::burp_hash:
   /tmp:
     exclude_regex: '/tmp'
 
+
+
 burp::burp_server_hash_defaults:
   section_prefix: '#['
-  path: 'C:/Program Files/Burp/burp.conf'
+  path: 'C:/Program Files/Burp/burp-server.conf'
 
 burp::burp_server_hash:
-  /tmp:
-    exclude_regex: '/tmp'
+  extra:
+    ratelimit: '70'
 
 
 
