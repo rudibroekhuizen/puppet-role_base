@@ -97,20 +97,15 @@ role_burp::burp_server_hash:
 
 # burp client: settings for /etc/burp/burp.conf
 role_burp::burp_hash:
-  server:
-    value: '127.0.0.1'
-  ssl_key_password:
-    value: 'password'
-  password:
-    value: 'password'
-  server_can_restore:
-    value: 1
-  include:
-    value: '/home'
-    section: '/home'
-  include:
-    value: '/etc/NetworkManager/system-connections'
-    section: '/etc/NetworkManager/system-connections'
-  exclude:
-    value: '/home/ubuntu'
-    section: '/home/ubuntu'
+  '':
+    server: '127.0.0.1'
+    ssl_key_password: 'password'
+    password: 'password'
+    server_can_restore: 1
+  home:
+    include: '/home'
+  system-connections:
+    include: '/etc/NetworkManager/system-connections'
+  extra:
+    ratelimit: '60'
+    network_timeout: '600'
