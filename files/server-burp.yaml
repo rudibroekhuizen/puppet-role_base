@@ -27,9 +27,9 @@ role_burp::common:
 # burp server: settings for /etc/burp-server.conf
 role_burp::burp_server_hash:
   '':
-    split_vss: 1
     ssl_key_password: 'password'
     directory: '/media/Ssd/Backup-Burp'
+    split_vss: 1
     compression: 0
 
 # burp client: settings for /etc/burp/burp.conf
