@@ -19,11 +19,6 @@ burp::backup_stats_logstash:
   true
 
 # server
-burp::burp_server_hash_defaults:
-  section_prefix: '#['
-  path: '/etc/burp/burp-server.conf'
-
-# server
 burp::burp_server_hash:
   extra:
     ratelimit: '60'
@@ -35,11 +30,6 @@ burp::clientconf_hash:
     clientconf:
       - 'password = pass'
       - '. incexc/common'
-
-# client
-burp::burp_hash_defaults:
-  section_prefix: '#['
-  path: '/etc/burp/burp.conf'
 
 # client
 burp::burp_hash:
