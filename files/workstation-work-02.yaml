@@ -65,7 +65,7 @@ role_base:
   owner_email: rudi.broekhuizen@naturalis.nl
 
 # burp general
-role_burp::version: 1.4.36
+role_burp::version: 1.4.38
 role_burp::server: true
 role_burp::client: true
 
@@ -88,12 +88,13 @@ role_burp::common:
 
 # burp server: settings for /etc/burp-server.conf
 role_burp::burp_server_hash:
-  ssl_key_password:
-    value: 'password'  
-  directory:
-    value: '/media/Ssd/Backup-Burp'
-  compression:
-    value: 0
+  '':
+    ssl_key_password: 'password'
+    directory: '/media/Ssd/Backup-Burp'
+    split_vss: 1
+    compression: 0
+  extra:
+    network_timeout: '60'
 
 # burp client: settings for /etc/burp/burp.conf
 role_burp::burp_hash:
@@ -106,6 +107,3 @@ role_burp::burp_hash:
     include: '/home'
   system-connections:
     include: '/etc/NetworkManager/system-connections'
-  extra:
-    ratelimit: '60'
-    network_timeout: '600'
