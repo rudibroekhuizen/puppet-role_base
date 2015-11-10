@@ -65,12 +65,12 @@ role_base:
   owner_email: rudi.broekhuizen@naturalis.nl
 
 # burp general
-role_burp::version: 1.4.38
-role_burp::server: true
-role_burp::client: true
+burp::version: 1.4.38
+burp::server: true
+burp::client: true
 
 # burp server create client config files in /etc/burp/clientconfdir
-role_burp::clientconf_hash:
+burp::clientconf_hash:
   fullyqualifieddomainname:
     clientconf:
       - 'password = password'
@@ -81,13 +81,13 @@ role_burp::clientconf_hash:
       - '. incexc/common'
 
 # burp server: settings that apply to all clients /etc/burp/clientconfdir/incexc/common
-role_burp::common:
+burp::common:
   - 'randomise   = 1200'
   - 'exclude_ext = vdi'
   - 'exclude_ext = iso'
 
 # burp server: settings for /etc/burp-server.conf
-role_burp::burp_server_hash:
+burp::burp_server_hash:
   '':
     ssl_key_password: 'password'
     directory: '/media/Ssd/Backup-Burp'
@@ -97,7 +97,7 @@ role_burp::burp_server_hash:
     network_timeout: '60'
 
 # burp client: settings for /etc/burp/burp.conf
-role_burp::burp_hash:
+burp::burp_hash:
   '':
     server: '127.0.0.1'
     ssl_key_password: 'password'
