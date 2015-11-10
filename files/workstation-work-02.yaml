@@ -108,7 +108,5 @@ burp::burp_hash:
     ssl_key_password: 'password'
     password: 'password'
     server_can_restore: 1
-  home:
-    include: '/home'
   system-connections:
     include: '/etc/NetworkManager/system-connections'
