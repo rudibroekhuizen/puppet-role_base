@@ -1,3 +1,5 @@
+# Check workstation-02.yaml for burp settings
+
 classes:
   - role_base
   - role_burp
