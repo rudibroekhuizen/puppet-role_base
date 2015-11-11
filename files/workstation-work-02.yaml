@@ -93,6 +93,7 @@ burp::burp_server_hash:
     directory: '/media/Ssd/Backup-Burp'
     split_vss: 1
     compression: 0
+    working_dir_recovery_method: 'resume'
     # different notation because of same section/setting in server and client config file: 'Ini_setting[[] ssl_key_password] is already declared; cannot redeclare':
     ssl_key_password_server:
       setting: 'ssl_key_password'
