@@ -28,11 +28,18 @@ burp::common:
 
 # burp server: settings for /etc/burp-server.conf
 burp::burp_server_hash:
+  # main section
   '':
-    ssl_key_password: 'password'
     directory: '/media/Ssd/Backup-Burp'
     split_vss: 1
     compression: 0
+    # different notation because of same section/setting in server and client config file: 'Ini_setting[[] ssl_key_password] is already declared; cannot redeclare':
+    ssl_key_password_server:
+      setting: 'ssl_key_password'
+      value: 'password'
+  # extra section at bottom of file
+  extra:
+    network_timeout: '60'
 
 # burp client: settings for /etc/burp/burp.conf
 burp::burp_hash:
