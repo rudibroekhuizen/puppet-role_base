@@ -54,6 +54,5 @@ burp::burp_hash:
     include: '/etc/NetworkManager/system-connections'
   extra:
     ratelimit: '60'
-    network_timeout: '600'
 
 role_base::owner_email: rudi.broekhuizen@naturalis.nl
