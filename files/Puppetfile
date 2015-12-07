@@ -94,3 +94,7 @@ mod 'logrotate',
 mod 'scp',
 :git => 'https://github.com/GeoffWilliams/puppet_scp',
 :ref => 'v0.1.0'
+
+mod 'backhub',
+:git => 'https://github.com/rudibroekhuizen/puppet-backhub',
+:ref => 'v0.1.0'
