@@ -88,9 +88,9 @@ mod 'role_tftp',
 :git => 'https://github.com/rudibroekhuizen/puppet-role_tftp'
 
 mod 'logrotate',
-:git => 'https://github.com/yo61/puppet-logrotate'
+:git => 'https://github.com/yo61/puppet-logrotate',
 :ref => 'v1.3.0'
 
 mod 'scp',
-:git => 'https://github.com/GeoffWilliams/puppet_scp'
+:git => 'https://github.com/GeoffWilliams/puppet_scp',
 :ref => 'v0.1.0'
