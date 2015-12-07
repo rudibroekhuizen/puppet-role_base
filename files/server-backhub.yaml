@@ -1,6 +1,6 @@
 classes:
   - role_base
-  - role_backhub
+  - backhub
 
 backhub::scp_hash:
   "SW001234":
