@@ -97,4 +97,4 @@ mod 'scp',
 
 mod 'backhub',
 :git => 'https://github.com/rudibroekhuizen/puppet-backhub',
-:ref => 'v0.1.0'
+:ref => 'v0.1.1'
