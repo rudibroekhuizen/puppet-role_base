@@ -3,13 +3,13 @@ classes:
   - backhub
 
 backhub::scp_hash:
-  "SW001234":
+  'SW001234':
     save_as: running-config    
-    source: 171.16.1.100:cfg/running-config
+    source: backhub@171.16.1.100:cfg/running-config
     run: everyday
-  "FW001234":
+  'FW001234':
     save_as: config.xml   
-    source: 172.16.1.1:/conf/config.xml
+    source: backhub@172.16.1.1:/conf/config.xml
     run: everyday
 
 backhub::password:
