@@ -1,5 +1,9 @@
 classes:
   - role_base
   - role_elasticsearch
-  - role_collectd
-  - role_logstash
+  - role_kibana
+
+role_kibana::kibana_hash:
+  '':
+    server: '127.0.0.1'
+    ssl_key_password: 'password'
