@@ -3,6 +3,6 @@ classes:
   - role_elasticsearch
   - role_kibana
 
-role_kibana::kibana_hash:
+kibana::kibana_hash:
   '':
     host: 'localhost'
