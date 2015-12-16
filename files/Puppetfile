@@ -106,3 +106,7 @@ mod 'nginx',
 mod 'datacat',
 :git => 'https://github.com/richardc/puppet-datacat',
 :ref => '0.6.2'
+
+mod 'httpauth',
+:git => 'https://github.com/jamtur01/jamtur01-httpauth',
+:ref => 'v0.0.2'
