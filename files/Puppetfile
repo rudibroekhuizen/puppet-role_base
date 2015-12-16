@@ -100,7 +100,7 @@ mod 'backhub',
 :ref => 'v0.1.1'
 
 mod 'nginx',
-:git => 'https://forge.puppetlabs.com/jfryman/nginx',
+:git => 'https://github.com/jfryman/puppet-nginx',
 :ref => 'v0.2.7'
 
 mod 'datacat',
