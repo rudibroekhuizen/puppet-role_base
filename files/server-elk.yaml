@@ -5,5 +5,4 @@ classes:
 
 role_kibana::kibana_hash:
   '':
-    server: '127.0.0.1'
-    ssl_key_password: 'password'
+    host: 'localhostttt'
