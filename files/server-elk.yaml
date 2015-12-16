@@ -5,4 +5,4 @@ classes:
 
 role_kibana::kibana_hash:
   '':
-    host: 'localhostttt'
+    host: 'localhost'
