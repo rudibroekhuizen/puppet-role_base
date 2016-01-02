@@ -1,8 +1,10 @@
 classes:
   - role_base
 
-#role_base::repos_array_debian:
+role_base::repos_array_debian:
+  - ppa:wireshark-dev/stable
 #  - ppa:webupd8team/java
+
 
 role_base::packages_attribute_defaults:
   ensure: installed
