@@ -1,5 +1,4 @@
 classes:
-  - role_base
   - role_logstash
 
 role_logstash::configfile:
