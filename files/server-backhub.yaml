@@ -1,5 +1,4 @@
 classes:
-  - role_base
   - backhub
 
 backhub::scp_hash:
