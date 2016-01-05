@@ -110,3 +110,10 @@ mod 'datacat',
 mod 'httpauth',
 :git => 'https://github.com/jamtur01/jamtur01-httpauth',
 :ref => 'v0.0.2'
+
+mod 'mysql',
+:git => 'https://github.com/puppetlabs/puppetlabs-mysql',
+:ref => '3.6.2'
+
+mod 'role_mysql',
+:git => 'https://github.com/naturalis/puppet-role_mysql',
