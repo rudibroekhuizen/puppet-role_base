@@ -1,5 +1,4 @@
 classes:
-  - role_base
   - role_sensu
 
 role_sensu::client::sensu_server:
