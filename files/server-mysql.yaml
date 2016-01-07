@@ -16,3 +16,8 @@ role_mysql::db_hash:
       - SELECT
       - UPDATE
     import_timeout: 900
+
+role_mysql::user_hash:
+  redmine@localhost:
+    ensure: 'present'
+    password_hash: mysql_password('redmine')
