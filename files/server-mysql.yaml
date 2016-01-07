@@ -7,7 +7,7 @@ role_mysql::override_options:
   mysqld:
     bind-address: '0.0.0.0'
 
-role_mysql::database_hash:
+role_mysql::db_hash:
   mydb:
     user: 'myuser'
     password: 'mypass'
