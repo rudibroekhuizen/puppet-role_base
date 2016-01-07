@@ -1,7 +1,7 @@
 classes:
   - role_mysql
 
-role_mysql::root_password: 'test123'
+role_mysql::root_password: 'mypass'
 
 role_mysql::override_options:
   mysqld:
