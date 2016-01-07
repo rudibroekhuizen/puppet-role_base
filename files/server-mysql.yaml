@@ -1,7 +1,18 @@
 classes:
   - role_mysql
 
-role_mysql::root_password: test123
+role_mysql::root_password: 'test123'
+
 role_mysql::override_options:
   mysqld:
     bind-address: '0.0.0.0'
+
+role_mysql::database_hash:
+  mydb:
+    user: 'myuser'
+    password: 'mypass'
+    host: 'localhost'
+    grant:
+      - SELECT
+      - UPDATE
+    import_timeout: 900
