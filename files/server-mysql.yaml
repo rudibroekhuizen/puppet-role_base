@@ -3,14 +3,16 @@ classes:
 
 role_mysql::root_password: 'mypass'
 
-role_mysql::users:
-  user@localhost:
-    ensure: 'present'
-    password_hash: '*6C8989366EAF75BB670AD8EA7A7FC1176A95CEF4'
-
 role_mysql::override_options:
   mysqld:
     bind-address: '0.0.0.0'
+    
+role_mysql::users:
+  my@localhost:
+    ensure: 'present'
+    password_hash: '*6C8989366EAF75BB670AD8EA7A7FC1176A95CEF4'
+    
+#role_mysql::grants:
 
 role_mysql::db_hash:
   mydb:
@@ -21,9 +23,3 @@ role_mysql::db_hash:
       - SELECT
       - UPDATE
     import_timeout: 900
-
-
-role_mysql::user_hash:
-  redmine@localhost:
-    ensure: 'present'
-    password_hash: '*6C8989366EAF75BB670AD8EA7A7FC1176A95CEF4'
