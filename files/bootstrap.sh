@@ -24,7 +24,7 @@ fi
 
 # Install r10k
 if [ ! `gem list r10k` ];then
-  gem install r10k
+  gem install r10k --no-rdoc --no-ri
 fi
 
 # Download modules from Git and Puppetforge
