@@ -40,9 +40,10 @@ cp /etc/puppet/modules/role_base/files/*.yaml /etc/puppet/hieradata
 
 # Create external fact to set primary data_source, using "meltwater/facts" module
 # Better option: export FACTER_data_source=$1
-if [ -n "$1" ];then
-  puppet apply -e 'facts::instance { 'data_source': value => '$1', }'
-fi
+#if [ -n "$1" ];then
+#  puppet apply -e 'facts::instance { 'data_source': value => '$1', }'
+#fi
+echo "data_source=$1" > /etc/facter/facts.d/data_source.txt
 
 # Apply base module
 puppet apply -e 'include role_base'
