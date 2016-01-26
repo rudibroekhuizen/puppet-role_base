@@ -8,6 +8,7 @@ role_mysql::root_password: 'mypass'
 role_mysql::override_options:
   mysqld:
     bind-address: '0.0.0.0'
+    max_allowed_packet: '512M'
 
 # Install MySQL server using mysql::server: users
 role_mysql::users:
