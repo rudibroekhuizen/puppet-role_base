@@ -1,4 +1,5 @@
-# Example YAML file to override parameters using hiera or the Foreman
+classes:
+  - role_mysql
 
 # Install MySQL server using mysql::server
 role_mysql::root_password: 'mypass'
