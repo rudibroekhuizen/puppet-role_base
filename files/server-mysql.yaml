@@ -1,12 +1,26 @@
 # Example YAML file to override parameters using hiera or the Foreman
 
-# Install MySQL server
+# Install MySQL server using mysql::server
 role_mysql::root_password: 'mypass'
 role_mysql::override_options:
   mysqld:
     bind-address: '0.0.0.0'
 
-# Create database
+# Install MySQL server using mysql::server: users
+role_mysql::users:
+  my@localhost:
+    ensure: 'present'
+    password_hash: '*6C8989366EAF75BB670AD8EA7A7FC1176A95CEF4'
+
+# Install MySQL server using mysql::server: grants
+role_mysql::grants:
+  'my@localhost/mydb.*':
+    privileges:
+      - all
+    table: 'mydb.*'
+    user: 'my@localhost'
+
+# Create databases using mysql::db
 role_mysql::db_hash:
   mydb:
     user: 'myuser'
@@ -16,17 +30,3 @@ role_mysql::db_hash:
       - SELECT
       - UPDATE
     import_timeout: 900
-
-# Remote access
-role_mysql::grants:
-  'my@localhost/mydb.*':
-    privileges:
-      - all
-    table: 'mydb.*'
-    user: 'my@localhost'
-
-# Create extra user    
-role_mysql::users:
-  my@localhost:
-    ensure: 'present'
-    password_hash: '*6C8989366EAF75BB670AD8EA7A7FC1176A95CEF4'
