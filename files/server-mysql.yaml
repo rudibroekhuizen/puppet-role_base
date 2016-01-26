@@ -25,7 +25,7 @@ role_mysql::grants:
     user: 'application-user@localhost'
   'application-user@%/mydb.*':
     privileges:
-      - SELECT
+      - ALL
     table: 'mydb.*'
     user: 'application-user@%'
 
