@@ -1,8 +1,10 @@
 classes:
   - role_mysql
 
-# Install MySQL server using mysql::server
+# Install MySQL server using mysql::server: root_password
 role_mysql::root_password: 'mypass'
+
+# Install MySQL server using mysql::server: override_options
 role_mysql::override_options:
   mysqld:
     bind-address: '0.0.0.0'
