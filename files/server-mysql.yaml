@@ -20,7 +20,7 @@ role_mysql::grants:
     table: 'mydb.*'
     user: 'my@localhost'
 
-# Create databases using mysql::db
+# Create databases using mysql::db with initial user
 role_mysql::db_hash:
   mydb:
     user: 'myuser'
