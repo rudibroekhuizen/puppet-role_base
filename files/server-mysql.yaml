@@ -8,25 +8,31 @@ role_mysql::override_options:
 
 # Install MySQL server using mysql::server: users
 role_mysql::users:
-  my@localhost:
+  application-user@localhost:
+    ensure: 'present'
+    password_hash: '*6C8989366EAF75BB670AD8EA7A7FC1176A95CEF4'
+  application-user@%:
     ensure: 'present'
     password_hash: '*6C8989366EAF75BB670AD8EA7A7FC1176A95CEF4'
 
 # Install MySQL server using mysql::server: grants
 role_mysql::grants:
-  'my@localhost/mydb.*':
+  'application-user@localhost/mydb.*':
     privileges:
-      - all
+      - ALL
     table: 'mydb.*'
-    user: 'my@localhost'
+    user: 'application-user@localhost'
+  'application-user@%/mydb.*':
+    privileges:
+      - SELECT
+    table: 'mydb.*'
+    user: 'application-user@%'
 
 # Create databases using mysql::db with initial user
 role_mysql::db_hash:
   mydb:
-    user: 'myuser'
+    user: 'manager'
     password: 'mypass'
     host: 'localhost'
     grant:
       - SELECT
-      - UPDATE
-    import_timeout: 900
