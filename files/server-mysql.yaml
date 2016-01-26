@@ -1,8 +1,7 @@
 # Example YAML file to override parameters using hiera or the Foreman
 
-role_mysql::root_password: 'mypass'
-
 # Install MySQL server
+role_mysql::root_password: 'mypass'
 role_mysql::override_options:
   mysqld:
     bind-address: '0.0.0.0'
