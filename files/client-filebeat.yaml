@@ -1,6 +1,13 @@
 classes:
   - filebeat
-  
+
+filebeat::prospector:
+  syslogs:
+    paths:
+      - '/var/log/auth.log',
+      - '/var/log/syslog'
+    log_type: 'syslog-beat'
+
 filebeat::outputs:
   logstash:
     hosts:
