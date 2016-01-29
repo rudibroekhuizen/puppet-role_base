@@ -1,10 +1,10 @@
 classes:
   - filebeat
 
-filebeat::prospector:
+filebeat::prospectors:
   syslogs:
     paths:
-      - '/var/log/auth.log',
+      - '/var/log/auth.log'
       - '/var/log/syslog'
     log_type: 'syslog-beat'
 
