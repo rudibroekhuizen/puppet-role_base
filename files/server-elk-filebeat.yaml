@@ -7,7 +7,7 @@ role_elasticsearch::clustername:
   cluster-filebeat
 
 role_logstash::configfile:
-  logstash-filebeat-001.conf
+  logstash-filebeat-01.conf
 
 kibana::kibana_hash:
   '':
