@@ -9,6 +9,8 @@ role_elasticsearch::clustername:
 role_logstash::configfile:
   logstash-filebeat-01.conf
 
+kibana::kibana_password:
+  password
 kibana::kibana_hash:
   '':
     host: 'localhost'
