@@ -1,0 +1,14 @@
+classes:
+  - role_elasticsearch
+  - role_logstash
+  - role_kibana
+
+role_elasticsearch::clustername:
+  cluster-filebeat
+
+role_logstash::configfile:
+  logstash-filebeat-001.conf
+
+kibana::kibana_hash:
+  '':
+    host: 'localhost'
