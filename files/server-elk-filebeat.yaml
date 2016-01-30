@@ -1,7 +1,7 @@
 classes:
   - role_elasticsearch
   - role_logstash
-  - role_kibana
+  - kibana
 
 role_elasticsearch::clustername:
   'cluster-filebeat'
