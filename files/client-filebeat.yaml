@@ -7,7 +7,7 @@ filebeat::prospectors:
     paths:
       - '/var/log/auth.log'
       - '/var/log/syslog'
-    log_type: 'syslog-beat'
+    doc_type: 'syslog-beat'
 
 filebeat::outputs:
   logstash:
