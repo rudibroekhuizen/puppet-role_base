@@ -1,6 +1,5 @@
 classes:
-  - role_elasticsearch
-  - kibana
+  - role_base::server-elk.pp
 
 kibana::kibana_hash:
   '':
