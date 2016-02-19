@@ -1,6 +1,6 @@
-# == Class: server-elk
+# == Class: role_base::server-elk
 #
-class server-elk {
+class role_base::server-elk {
   include role_elasticsearch
   include kibana
 }
