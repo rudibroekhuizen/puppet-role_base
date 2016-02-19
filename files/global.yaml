@@ -92,7 +92,7 @@ base::users_hash:
       type: "ssh-rsa"
       key: "AAAAB3NzaC1yc2EAAAABJQAAAIEAmdU9//WJ4BqGWoH1TW3VmRnIcTbCaog38evKayf6hNe/jBuLRU9/MjDLsd3CfiLXVMKmMPOaGiovXQ5r4R0sSq9GknZU+SBB1oYLQUDi/+XseJG1dnTucDQ/Gz5gyV1QvWf86aaT7169qRCy7iWRIoRYaua/R3HIpWMXrNlzL/0="
 
-role_base::owner_email: 
+base::owner_email: 
   rudi.broekhuizen@naturalis.nl
 
 role_cron::cron_job:
