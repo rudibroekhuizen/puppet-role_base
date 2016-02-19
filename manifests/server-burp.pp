@@ -1,5 +1,5 @@
-# == Class: role_base::server-elk
+# == Class: role_base::server-burp
 #
-class role_base::server-elk {
+class role_base::server-burp {
   class { 'role_burp': }
 }
