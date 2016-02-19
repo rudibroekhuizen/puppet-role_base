@@ -1,7 +1,7 @@
 # Check workstation-02.yaml for burp settings
 
 classes:
-  - role_burp
+  - role_base::server-burp
 
 # burp general
 burp::version: 1.4.36
