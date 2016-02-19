@@ -37,4 +37,6 @@
 #
 class role_base {
   
+  include base
+  
 }
