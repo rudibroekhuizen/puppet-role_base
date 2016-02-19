@@ -1,12 +1,11 @@
-role_base::repos_array_debian:
+base::repos_array_debian:
   - ppa:wireshark-dev/stable
 #  - ppa:webupd8team/java
 
-
-role_base::packages_attribute_defaults:
+base::packages_attribute_defaults:
   ensure: installed
 
-role_base::packages_hash_debian:
+base::packages_hash_debian:
   htop:
     ensure: latest
   iftop:
@@ -30,7 +29,7 @@ role_base::packages_hash_debian:
   r10k:
     provider: gem
   
-role_base::packages_hash_redhat:
+base::packages_hash_redhat:
   htop:
     ensure: latest
   iftop:
@@ -44,13 +43,7 @@ role_base::packages_hash_redhat:
   screen:
     {}
   
-role_topdesk::username:
-  username
-
-role_topdesk::password:
-  password
-
-role_base::users_hash:
+base::users_hash:
   rudi.broekhuizen:
     comment: "Rudi Broekhuizen"
     email: "rudi.broekhuizen@naturalis.nl"
@@ -96,8 +89,8 @@ role_base::users_hash:
       type: "ssh-rsa"
       key: "AAAAB3NzaC1yc2EAAAABJQAAAIEAmdU9//WJ4BqGWoH1TW3VmRnIcTbCaog38evKayf6hNe/jBuLRU9/MjDLsd3CfiLXVMKmMPOaGiovXQ5r4R0sSq9GknZU+SBB1oYLQUDi/+XseJG1dnTucDQ/Gz5gyV1QvWf86aaT7169qRCy7iWRIoRYaua/R3HIpWMXrNlzL/0="
 
-#role_base:
-#  owner_email: rudi.broekhuizen@naturalis.nl
+role_base::owner_email: 
+  rudi.broekhuizen@naturalis.nl
 
 role_cron::cron_job:
   test:
