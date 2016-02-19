@@ -1,5 +1,5 @@
 classes:
-  - role_base::server-elk.pp
+  - role_base::server-elk
 
 kibana::kibana_hash:
   '':
