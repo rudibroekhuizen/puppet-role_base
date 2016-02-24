@@ -25,7 +25,7 @@ mod "yelp/uchiwa"
 mod "nanliu/staging"
 #mod "torrancew/cron"
 #mod "gbrown/yumrepos"
-mod "joshbeard/display"
+#mod "joshbeard/display"
 
 # Installs from git
 mod 'base',
