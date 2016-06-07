@@ -116,5 +116,5 @@ mod 'filebeat',
 :git => 'https://github.com/pcfens/puppet-filebeat',
 :ref => 'v0.5.0'
 
-mod 'openvpn',
-:git => 'https://github.com/luxflux/puppet-openvpn'
+mod 'openvpn_client',
+:git => 'https://github.com/thejandroman/puppet-openvpn_client'
