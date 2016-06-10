@@ -1,5 +1,5 @@
 classes:
-  - role_sensu
+  - role_base::server-sensu
 
 role_sensu::client::sensu_server:
   172.16.3.15
