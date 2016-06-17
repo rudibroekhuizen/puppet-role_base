@@ -39,11 +39,11 @@ mod 'role_elasticsearch',
 
 mod 'role_logstash',
 :git => 'https://github.com/rudibroekhuizen/puppet-role_logstash'
-#:ref => 'development'
+#:ref => 'develop'
 
 mod 'role_collectd',
 :git => 'https://github.com/rudibroekhuizen/puppet-role_collectd'
-#:ref => 'development'
+#:ref => 'develop'
 
 mod 'role_snmp',
 :git => 'https://github.com/naturalis/puppet-role_snmp'
@@ -59,7 +59,7 @@ mod 'sqlplus',
 
 mod 'role_sensu',
 :git => 'https://github.com/rudibroekhuizen/puppet-role_sensu',
-:ref => 'development'
+:ref => 'develop'
 
 mod 'burp',
 :git => 'https://github.com/rudibroekhuizen/puppet-burp'
