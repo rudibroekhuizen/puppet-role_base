@@ -2,14 +2,19 @@ classes:
   - role_base::client-openvpn
 
 role_openvpn::openvpn_client_hash:
-  fw1:
-    ca: '/etc/openvpn/fw1.crt'
-    key: '/etc/openvpn/fw1.key'
+  openvpnsettings:
+    ca: '/etc/openvpn/ca.crt'
+    cipher: 'AES-256-CBC'
+    auth_user_pass: '/etc/openvpn/rudi'
+    dev: 'tun'
+    ns_cert_type: 'server'
     port: '1194'
     proto: 'udp'
-    server: '172.16.1.1'
-    
+    server: 'vpn.your.domain'
+    custom_options:
+      - 'tls-auth /etc/openvpn/key.key 1'
+
 role_openvpn::auth_user_pass_hash:
-  jan:
-    path: '/etc/openvpn/jan'
-    content: 'user "/n" password'
+  rudi:
+    path: '/etc/openvpn/rudi'
+    content: "rudi\nverydifficultpassword"
