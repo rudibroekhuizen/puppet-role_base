@@ -9,6 +9,7 @@ role_openvpn::openvpn_client_hash:
     proto: 'udp'
     server: '172.16.1.1'
     
-role_openvpn::file_hash:
+role_openvpn::auth_user_pass_hash:
   jan:
-    
+    path: '/etc/openvpn/jan'
+    content: 'user "/n" password'
