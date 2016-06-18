@@ -1,11 +1,14 @@
 classes:
   - role_base::client-openvpn
 
-role_base::client-openvpn::openvpn_client_hash:
+role_openvpn::openvpn_client_hash:
   fw1:
     ca: '/etc/openvpn/fw1.crt'
     key: '/etc/openvpn/fw1.key'
     port: '1194'
     proto: 'udp'
     server: '172.16.1.1'
+    
+role_openvpn::file_hash:
+  jan:
     
