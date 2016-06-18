@@ -119,3 +119,6 @@ mod 'filebeat',
 
 mod 'openvpn_client',
 :git => 'https://github.com/thejandroman/puppet-openvpn_client'
+
+mod 'role_openvpn',
+:git => 'https://github.com/naturalis/puppet-role_openvpn'
