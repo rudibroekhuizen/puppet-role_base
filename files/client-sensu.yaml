@@ -1,0 +1,8 @@
+classes:
+  - role_base::client-sensu
+
+role_sensu:
+  mode: client
+  sensu_server: sensu-server
+  rabbitmq_password: secret
+  subscriptions: sub-001
