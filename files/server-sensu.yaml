@@ -1,20 +1,17 @@
 classes:
   - role_base::server-sensu
 
+role_sensu::mode:
+  server
+
+role_sensu::rabbitmq_password:
+  secret
+
 role_sensu::sensu_server:
   172.16.3.15
   
-role_sensu::rabbitmq_password:
-  secret
-
 role_sensu::subscriptions:
   sub-001
-
-role_sensu::rabbitmq_password:
-  secret
-
-role_sensu::rabbitmq_password:
-  secret
 
 role_sensu::api_user:
   api_user
