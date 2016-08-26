@@ -2,7 +2,7 @@ classes:
   - role_base::server-mysql
 
 # Install MySQL server using mysql::server: root_password
-role_mysql::root_password: 'mypass'
+role_mysql::mysql_root_password: 'mypass'
 
 # Install MySQL server using mysql::server: override_options
 role_mysql::override_options:
