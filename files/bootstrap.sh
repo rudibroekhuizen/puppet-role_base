@@ -7,8 +7,6 @@
 #
 # Red Hat / CentOS: curl https://raw.githubusercontent.com/pgomersbach/puppet-module-skeleton/master/install.sh -o bootstrap.sh; bash install.sh
 
-PUPPETMAJORVERSION=4
-
 ### Code start ###
 function provision_ubuntu {
     # get release info
