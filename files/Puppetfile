@@ -110,7 +110,7 @@ mod 'httpauth',
 
 mod 'mysql',
 :git => 'https://github.com/puppetlabs/puppetlabs-mysql',
-:ref => '3.6.2'
+:ref => '3.8.0'
 
 mod 'role_mysql',
 :git => 'https://github.com/naturalis/puppet-role_mysql'
