@@ -6,27 +6,21 @@
 # Ubuntu / Debian: wget https://raw.githubusercontent.com/pgomersbach/puppet-module-skeleton/master/install.sh; bash install.sh
 #
 # Red Hat / CentOS: curl https://raw.githubusercontent.com/pgomersbach/puppet-module-skeleton/master/install.sh -o bootstrap.sh; bash install.sh
-# Options: add 3 as parameter to install 4.x release
-# set -e
-# default major version, comment to install puppet 3.x
+
 PUPPETMAJORVERSION=4
 
 ### Code start ###
 function provision_ubuntu {
     # get release info
     if [ -f /etc/lsb-release ]; then
-      . /etc/lsb-release
+        . /etc/lsb-release
     else
       DISTRIB_CODENAME=$(lsb_release -c -s)
     fi
-    if [ $PUPPETMAJOR -eq 4 ]; then
-      REPO_DEB_URL="http://apt.puppetlabs.com/puppetlabs-release-pc1-${DISTRIB_CODENAME}.deb"
-      AGENTNAME="puppet-agent"
-    else
-      REPO_DEB_URL="http://apt.puppetlabs.com/puppetlabs-release-${DISTRIB_CODENAME}.deb"
-      AGENTNAME="puppet"
-    fi
-
+  
+    REPO_DEB_URL="http://apt.puppetlabs.com/puppetlabs-release-pc1-${DISTRIB_CODENAME}.deb"
+    AGENTNAME="puppet-agent"
+   
     # Update the system
     sudo apt-get update -y
     
@@ -62,13 +56,10 @@ function provision_rhel() {
     if [ $? -eq 0 ]; then
       RHMAJOR=6
     fi
-    if [ $PUPPETMAJOR -eq 4 ]; then
-      REPO_RPM_URL="http://yum.puppetlabs.com/puppetlabs-release-pc1-el-${RHMAJOR}.noarch.rpm"
-      AGENTNAME="puppet-agent"
-    else
-      REPO_RPM_URL="http://yum.puppetlabs.com/puppetlabs-release-el-${RHMAJOR}.noarch.rpm"
-      AGENTNAME="puppet"
-    fi
+    
+    REPO_RPM_URL="http://yum.puppetlabs.com/puppetlabs-release-pc1-el-${RHMAJOR}.noarch.rpm"
+    AGENTNAME="puppet-agent"
+
     sudo yum install -y wget git > /dev/null
 
     # Configure repos
@@ -85,17 +76,6 @@ function provision_rhel() {
     sudo yum install -y ruby2.2 ruby2.2-dev bundler libxslt-dev libxml2-dev zlib1g-dev >/dev/null
     return 0
 }
-
-if [ "$#" -gt 0 ]; then
-   if [ "$1" = 3 ]; then
-     PUPPETMAJOR=3
-   else
-     PUPPETMAJOR=4
-  fi
-else
-  PUPPETMAJOR=$PUPPETMAJORVERSION
-fi
-echo $PUPPETMAJOR
 
 grep -i "ubuntu" /etc/issue
 if [ $? -eq 0 ]; then
@@ -117,16 +97,14 @@ if [ -f /etc/redhat-release ]; then
   fi
 fi
 
-if [ $PUPPETMAJOR -eq 4 ]; then
-    # make symlinks
-    echo "Set symlinks"
-    FILES="/opt/puppetlabs/bin/*"
-    for f in $FILES
-    do
-      filename="${f##*/}"
-      sudo ln -f -s "$f" "/usr/local/bin/${filename}"
-    done
-fi
+# Make symlinks
+echo "Set symlinks"
+FILES="/opt/puppetlabs/bin/*"
+for f in $FILES
+  do
+    filename="${f##*/}"
+    sudo ln -f -s "$f" "/usr/local/bin/${filename}"
+  done
 
 # Install r10k
 if [ ! `gem list r10k` ];then
@@ -147,10 +125,8 @@ curl https://raw.githubusercontent.com/rudibroekhuizen/puppet-base/master/files/
 mkdir -p /etc/puppetlabs/puppet/hieradata
 cp /etc/puppetlabs/code/modules/role_base/files/*.yaml /etc/puppetlabs/puppet/hieradata
 
-# Create external fact to set primary data_source, using "meltwater/facts" module
-# Better option: export FACTER_data_source=$1
+# Create external fact to set primary data_source
 if [ -n "$1" ];then
-  #puppet apply -e 'facts::instance { 'data_source': value => '$1', }'
   echo "data_source=$1" > /opt/puppetlabs/facter/facts.d/data_source.txt
 fi
 
