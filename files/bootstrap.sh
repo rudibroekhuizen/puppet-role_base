@@ -133,6 +133,9 @@ if [ ! `gem list r10k` ];then
   gem install r10k --no-rdoc --no-ri
 fi
 
+# Install curl
+sudo apt-get -y install curl
+
 # Download modules from Git and Puppetforge
 curl https://raw.githubusercontent.com/rudibroekhuizen/puppet-role_base/master/files/Puppetfile > /etc/puppetlabs/puppet/Puppetfile
 PUPPETFILE=/etc/puppetlabs/puppet/Puppetfile PUPPETFILE_DIR=/etc/puppetlabs/code/modules r10k --verbose info puppetfile install
