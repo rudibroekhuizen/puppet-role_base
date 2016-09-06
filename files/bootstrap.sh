@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# This script installs puppet 3.x or 4.x on ubuntu and centos, installs bundler, ruby and the puppet module skeleton
+# This script installs Puppet 3.x or 4.x on Ubuntu and Centos, installs bundler and ruby.
 #
 # Usage:
 # Ubuntu / Debian: wget https://raw.githubusercontent.com/pgomersbach/puppet-module-skeleton/master/install.sh; bash install.sh
