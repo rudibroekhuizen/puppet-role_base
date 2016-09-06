@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# This script installs Puppet 3.x or 4.x on Ubuntu and Centos, installs bundler and ruby.
+# This script installs Puppet 4.x on Ubuntu and Centos, installs bundler and ruby.
 #
 # Usage:
 # Ubuntu / Debian: wget https://raw.githubusercontent.com/pgomersbach/puppet-module-skeleton/master/install.sh; bash install.sh
@@ -141,15 +141,14 @@ PUPPETFILE=/etc/puppetlabs/puppet/Puppetfile PUPPETFILE_DIR=/etc/puppetlabs/code
 curl https://raw.githubusercontent.com/rudibroekhuizen/puppet-base/master/files/hiera.yaml > /etc/puppetlabs/puppet/hiera.yaml
 
 # Copy data sources to /etc/puppet/hieradata
-mkdir -p /etc/puppet/hieradata
-cp /etc/puppet/modules/role_base/files/*.yaml /etc/puppet/hieradata
+mkdir -p /etc/puppetlabs/puppet/hieradata
+cp /etc/puppetlabs/code/modules/role_base/files/*.yaml /etc/puppetlabs/puppet/hieradata
 
 # Create external fact to set primary data_source, using "meltwater/facts" module
 # Better option: export FACTER_data_source=$1
 if [ -n "$1" ];then
   #puppet apply -e 'facts::instance { 'data_source': value => '$1', }'
-  mkdir -p /etc/facter/facts.d
-  echo "data_source=$1" > /etc/facter/facts.d/data_source.txt
+  echo "data_source=$1" > /opt/puppetlabs/facter/facts.d/data_source.txt
 fi
 
 # Apply base module
