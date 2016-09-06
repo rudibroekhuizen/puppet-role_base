@@ -13,20 +13,16 @@ PUPPETMAJORVERSION=4
 
 ### Code start ###
 function provision_ubuntu {
-    # get release info
+    REPO_DEB_URL="http://apt.puppetlabs.com/puppetlabs-release-pc1-${DISTRIB_CODENAME}.deb"
+    AGENTNAME="puppet-agent"
+    
+    # Get release info
     if [ -f /etc/lsb-release ]; then
       . /etc/lsb-release
     else
       DISTRIB_CODENAME=$(lsb_release -c -s)
     fi
-    if [ $PUPPETMAJOR -eq 4 ]; then
-      REPO_DEB_URL="http://apt.puppetlabs.com/puppetlabs-release-pc1-${DISTRIB_CODENAME}.deb"
-      AGENTNAME="puppet-agent"
-    else
-      REPO_DEB_URL="http://apt.puppetlabs.com/puppetlabs-release-${DISTRIB_CODENAME}.deb"
-      AGENTNAME="puppet"
-    fi
-
+    
     # Update the system
     sudo apt-get update -y
     
@@ -38,7 +34,7 @@ function provision_ubuntu {
     repo_deb_path=$(mktemp)
     wget --output-document="${repo_deb_path}" "${REPO_DEB_URL}" 2>/dev/null
     sudo dpkg -i "${repo_deb_path}" >/dev/null
-    echo "Install ruby ppa"
+    echo "Install Ruby PPA..."
     sudo apt-get install -y software-properties-common >/dev/null
     sudo apt-add-repository -y ppa:brightbox/ruby-ng >/dev/null
     sudo apt-get update >/dev/null
@@ -117,16 +113,14 @@ if [ -f /etc/redhat-release ]; then
   fi
 fi
 
-if [ $PUPPETMAJOR -eq 4 ]; then
-    # make symlinks
-    echo "Set symlinks"
+    # Make symlinks
+    echo "Set symlinks..."
     FILES="/opt/puppetlabs/bin/*"
     for f in $FILES
     do
       filename="${f##*/}"
       sudo ln -f -s "$f" "/usr/local/bin/${filename}"
     done
-fi
 
 # Install r10k
 if [ ! `gem list r10k` ];then
