@@ -1,5 +1,5 @@
-classes:
-  - filebeat
+#classes:
+#  - filebeat
 
 # Overrides for https://github.com/pcfens/puppet-filebeat
 filebeat::prospectors:
