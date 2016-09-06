@@ -77,7 +77,7 @@ function provision_rhel() {
     wget --output-document="${repo_rpm_path}" "${REPO_RPM_URL}" 2>/dev/null
     sudo rpm -i "${repo_rpm_path}" >/dev/null
 
-    # Install puppet
+    # Install Puppet
     echo "Installing Puppet..."
     sudo yum install -y $AGENTNAME >/dev/null
     echo "Puppet installed!"
