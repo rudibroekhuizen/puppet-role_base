@@ -23,7 +23,7 @@ function provision_ubuntu {
     sudo apt-get update -y
     
     # Set locale
-    sudo locale-gen en_US.UTF-8
+    sudo locale-gen nl_NL.UTF-8
     
     # Configure repos
     echo "Configuring PuppetLabs repo..."
