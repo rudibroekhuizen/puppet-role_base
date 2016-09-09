@@ -125,5 +125,5 @@ mod 'openvpn_client',
 mod 'role_openvpn',
 :git => 'https://github.com/naturalis/puppet-role_openvpn'
 
-mod 'python'
+mod 'python',
 :git => 'https://github.com/stankevich/puppet-python'
