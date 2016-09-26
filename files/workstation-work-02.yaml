@@ -1,5 +1,5 @@
 classes:
-  - workstation_work
+  - role_base::workstation_work
 
 role_base::repos_array_debian:
   - ppa:webupd8team/atom
