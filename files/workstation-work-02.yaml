@@ -1,7 +1,5 @@
 classes:
-  - sqlplus
-  - role_burp
-  - role_tftp
+  - workstation_work
 
 role_base::repos_array_debian:
   - ppa:webupd8team/atom
