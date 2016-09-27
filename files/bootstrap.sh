@@ -128,8 +128,5 @@ if [ -n "$1" ];then
   echo "data_source=$1" > /opt/puppetlabs/facter/facts.d/data_source.txt
 fi
 
-# Apply base module
-puppet apply -e 'include base'
-
-# Apply additional modules
+# Apply manifest as noted in data_source yaml file
 puppet apply -e 'hiera_include('classes')'
