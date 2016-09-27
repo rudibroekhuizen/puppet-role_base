@@ -1,5 +1,8 @@
+classes:
+  - base
+
 base::repos_array_debian:
-  - ppa:wireshark-dev/stable
+#  - ppa:wireshark-dev/stable
 #  - ppa:webupd8team/java
 
 base::packages_attribute_defaults:
