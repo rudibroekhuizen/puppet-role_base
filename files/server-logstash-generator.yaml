@@ -1,5 +1,5 @@
 classes:
-  - role_logstash
+  - role_base::server_logstash
 
 role_logstash::configfile:
   logstash-generator-01.conf
