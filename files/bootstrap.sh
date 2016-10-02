@@ -128,5 +128,5 @@ if [ -n "$1" ];then
   echo "data_source=$1" > /opt/puppetlabs/facter/facts.d/data_source.txt
 fi
 
-# Apply manifest as noted in data_source yaml file
+# Apply manifest as noted in data_source yaml file, hiera_include includes classes from every level of the hiera hierarchy
 puppet apply -e 'hiera_include('classes')'
