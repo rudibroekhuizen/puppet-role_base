@@ -1,6 +1,7 @@
 classes:
   - role_logstash
   - role_elasticsearch
+  - kibana
 
 role_elasticsearch::clustername:
   cluster-pfsense
