@@ -81,6 +81,9 @@ mod 'hammer_cli_foreman',
 mod 'kibana',
 :git => 'https://github.com/rudibroekhuizen/puppet-kibana'
 
+mod 'kibana4',
+:git => 'https://github.com/lesaux/puppet-kibana4'
+
 mod 'role_tftp',
 :git => 'https://github.com/rudibroekhuizen/puppet-role_tftp'
 
