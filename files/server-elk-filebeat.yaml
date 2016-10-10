@@ -7,17 +7,6 @@ role_elasticsearch::clustername:
 role_logstash::configfile:
   'logstash-filebeat-01.conf'
 
-filebeat::prospectors:
-  syslogs:
-    paths:
-      - '/srv/log/messages'
-    doc_type: 'syslog-beat'
-
-filebeat::outputs:
-  logstash:
-    hosts:
-      - 'localhost:5044'
-
 #kibana::kibana_password:
 #  'password'
 #kibana::kibana_hash:
