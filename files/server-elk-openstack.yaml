@@ -1,0 +1,10 @@
+classes:
+  - role_elasticsearch
+  - role_logstash
+  - kibana4
+
+role_elasticsearch::clustername:
+  'cluster-openstack'
+
+role_logstash::configfile:
+  'logstash-syslog-openstack-01.conf'
