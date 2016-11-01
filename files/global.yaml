@@ -29,6 +29,8 @@ base::packages_hash_debian:
     {}
   screen:
     {}
+  grc:
+    {}
   r10k:
     provider: gem
   
