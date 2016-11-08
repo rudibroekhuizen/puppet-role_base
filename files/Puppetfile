@@ -137,3 +137,6 @@ mod 'role_postgresql',
 
 mod 'postgresql',
 :git => 'https://github.com/puppetlabs/puppetlabs-postgresql'
+
+mod 'apache',
+:git => 'https://github.com/puppetlabs/puppetlabs-apache'
