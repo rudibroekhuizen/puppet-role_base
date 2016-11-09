@@ -140,3 +140,6 @@ mod 'postgresql',
 
 mod 'apache',
 :git => 'https://github.com/puppetlabs/puppetlabs-apache'
+
+mod: 'php',
+:git => 'https://github.com/voxpupuli/puppet-php'
