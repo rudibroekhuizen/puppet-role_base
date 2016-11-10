@@ -1,7 +1,19 @@
-# Set up LAMP stack for drupal
+# Set up LAMP stack for Drupal
 classes:
-  - role_base::server_mysql
+  - role_apache
+  - role_mysql
   - php
+
+# Apache
+role_apache::vhosts_hash:
+  drupal:
+    servername: 'default'
+    serveraliases:
+      - 'root.*.lh'
+    virtual_docroot: '/var/www/%2'
+    directoryindex: 'index.php index.htm index.html'
+    docroot_owner: 'www-data'
+    docroot_group: 'www-data'
 
 # MySQL root_password
 role_mysql::mysql_root_password: 'mypass'
