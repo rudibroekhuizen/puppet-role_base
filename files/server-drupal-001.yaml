@@ -10,6 +10,7 @@ role_apache::vhosts_hash:
     servername: 'default'
     serveraliases:
       - 'root.*.lh'
+    docroot: '/var/www/drupal'
     virtual_docroot: '/var/www/%2'
     directoryindex: 'index.php index.htm index.html'
     docroot_owner: 'www-data'
