@@ -1,16 +1,15 @@
+# Set up LAMP stack for drupal
 classes:
   - role_base::server_mysql
   - php
 
 # MySQL root_password
 role_mysql::mysql_root_password: 'mypass'
-
 # MySQL override_options
 role_mysql::override_options:
   mysqld:
     bind-address: '0.0.0.0'
     max_allowed_packet: '512M'
-
 # MySQL users
 role_mysql::users:
   'drupal@localhost':
@@ -19,7 +18,6 @@ role_mysql::users:
   'drupal@%':
     ensure: 'present'
     password: 'mypass'
-
 # MySQL grants
 role_mysql::grants:
   'drupal@localhost/drupaldb.*':
@@ -32,7 +30,6 @@ role_mysql::grants:
       - ALL
     table: 'drupaldb.*'
     user: 'drupal@%'
-
 # MySQL create databases with extra user
 role_mysql::db_hash:
   drupaldb:
@@ -42,7 +39,7 @@ role_mysql::db_hash:
     grant:
       - SELECT
 
-# PHP settings
+# PHP
 php::ensure: latest
 php::manage_repos: true
 php::fpm: true
