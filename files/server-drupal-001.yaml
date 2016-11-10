@@ -22,12 +22,12 @@ role_mysql::users:
 
 # MySQL grants
 role_mysql::grants:
-  'drupal@localhost/mydb.*':
+  'drupal@localhost/drupaldb.*':
     privileges:
       - ALL
     table: 'drupaldb.*'
     user: 'drupal@localhost'
-  'drupal@%/mydb.*':
+  'drupal@%/drupaldb.*':
     privileges:
       - ALL
     table: 'drupaldb.*'
