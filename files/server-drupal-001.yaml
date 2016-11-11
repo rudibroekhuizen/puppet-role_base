@@ -29,6 +29,9 @@ role_mysql::users:
   'drupal@localhost':
     ensure: 'present'
     password: 'mypass'
+  'drupal@%':
+    ensure: 'present'
+    password: 'mypass'
 # MySQL grants
 role_mysql::grants:
   'drupal@localhost/drupaldb.*':
@@ -36,6 +39,11 @@ role_mysql::grants:
       - ALL
     table: 'drupaldb.*'
     user: 'drupal@localhost'
+  'drupal@%/drupaldb.*':
+    privileges:
+      - ALL
+    table: 'drupaldb.*'
+    user: 'drupal@%'
 # MySQL create databases with extra user
 role_mysql::db_hash:
   drupaldb:
