@@ -23,8 +23,8 @@ base::packages_hash_debian:
     {}
   mc:
     {}
-  curl:
-    {}
+# curl:
+#   {}
   sudo:
     {}
   screen:
