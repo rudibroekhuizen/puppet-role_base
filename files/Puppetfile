@@ -144,5 +144,8 @@ mod 'apache',
 mod 'php',
 :git => 'https://github.com/voxpupuli/puppet-php'
 
+mod 'role_php',
+:git => 'https://github.com/rudibroekhuizen/puppet-role_php'
+
 mod 'role_apache',
 :git => 'https://github.com/rudibroekhuizen/puppet-role_apache'
