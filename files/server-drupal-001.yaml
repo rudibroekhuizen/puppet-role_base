@@ -7,14 +7,15 @@ classes:
 # Apache
 role_apache::vhosts_hash:
   drupal:
+    directoryindex: 'index.php index.htm index.html'
+    docroot: '/var/www/drupal'
+    docroot_owner: 'www-data'
+    docroot_group: 'www-data'
+    override: 'ALL'
     servername: 'default'
     serveraliases:
       - 'root.*.lh'
-    docroot: '/var/www/drupal'
     virtual_docroot: '/var/www/%2'
-    directoryindex: 'index.php index.htm index.html'
-    docroot_owner: 'www-data'
-    docroot_group: 'www-data'
 
 # MySQL root_password
 role_mysql::mysql_root_password: 'mypass'
