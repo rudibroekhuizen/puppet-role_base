@@ -15,7 +15,8 @@ role_apache::vhosts_hash:
     servername: 'default'
     serveraliases:
       - 'root.*.lh'
-    virtual_docroot: '/var/www/%2'
+    virtual_docroot: '/var/www/drupal'
+    port: '80'
 
 # MySQL root_password
 role_mysql::mysql_root_password: 'mypass'
@@ -64,15 +65,5 @@ role_php::settings:
    Date/date.timezone: 'Europe/Berlin'
 # PHP extensions
 role_php::extensions:
-#  bcmath: {}
-#  xmlrpc: {}
   gd: {}
   mysql: {}
-#  imagick:
-#    provider: pecl
-#  apc:
-#    provider: pecl
-#    settings:
-#      'apc/stat': 1
-#      'apc/stat_ctime': 1
-#    sapi: 'fpm'
