@@ -7,7 +7,7 @@ classes:
 # Apache
 role_apache::vhosts_hash:
   drupal:
-    directoryindex: 'index.php index.htm index.html'
+    directoryindex: 'index.php'
     docroot: '/var/www/drupal'
     docroot_owner: 'www-data'
     docroot_group: 'www-data'
