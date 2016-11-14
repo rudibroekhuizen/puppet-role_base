@@ -149,3 +149,6 @@ mod 'role_php',
 
 mod 'role_apache',
 :git => 'https://github.com/rudibroekhuizen/puppet-role_apache'
+
+mod 'letsencrypt',
+:git => 'https://forge.puppet.com/danzilio/letsencrypt'
