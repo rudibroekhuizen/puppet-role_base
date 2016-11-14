@@ -12,9 +12,11 @@ role_apache::vhosts_hash:
     docroot_owner: 'www-data'
     docroot_group: 'www-data'
     override: 'ALL'
-    servername: 'default'
+    port: '80'
+    priority: '5'
+    servername: 'broekhuizen.online'
     serveraliases:
-      - 'root.*.lh'
+      - '*.broekhuizen.online'
     virtual_docroot: '/var/www/drupal'
     port: '80'
 
