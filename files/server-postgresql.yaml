@@ -1,8 +1,21 @@
-classes:
-  - role_postgresql
-
 # Databases
 role_postgresql::db_hash:
   mydb:
     user: 'pg_user'
     password: 'password'
+  drupaldb:
+    user: 'drupal_user'
+    password: 'password'
+
+# Roles
+role_postgresql::role_hash:
+  drupal:
+    user: 'drupal'
+    password: 'password'
+
+# Grants
+role_postgresql::grant_hash:
+  drupal:
+    privilege: 'ALL'
+    db: 'drupaldb'
+    role: 'drupal'
