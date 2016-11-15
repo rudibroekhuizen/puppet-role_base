@@ -1,0 +1,8 @@
+classes:
+  - role_postgresql
+
+# Databases
+role_postgresql::db_hash:
+  mydb:
+    user: 'pg_user'
+    password: 'password'
