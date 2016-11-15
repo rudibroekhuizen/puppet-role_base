@@ -1,3 +1,6 @@
+classes:
+  - role_postgresql
+
 # Databases
 role_postgresql::db_hash:
   mydb:
