@@ -1,6 +1,9 @@
 classes:
   - role_postgresql
 
+# Install settings
+role_postgresql::listen_address: '*'
+
 # Databases
 role_postgresql::db_hash:
   mydb:
