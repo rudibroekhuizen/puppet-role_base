@@ -16,7 +16,7 @@ role_postgresql::db_hash:
 # Roles
 role_postgresql::role_hash:
   drupal:
-    user: 'drupal'
+    user: 'drupal_user'
     password: 'password'
 
 # Grants
@@ -32,6 +32,6 @@ role_postgresql::pg_hba_rule_hash:
     description: 'Allow all'
     type: 'host'
     database: 'drupaldb'
-    user: 'drupal'
+    user: 'drupal_user'
     address: '0.0.0.0/0'
     auth_method: 'md5'
