@@ -25,3 +25,13 @@ role_postgresql::grant_hash:
     privilege: 'ALL'
     db: 'drupaldb'
     role: 'drupal'
+
+# Remote connections
+role_postgresql::pg_hba_rule_hash:
+  all:
+    description: 'Allow all'
+    type: 'host'
+    database: 'drupaldb'
+    user: 'drupal'
+    address: '0.0.0.0/0'
+    auth_method: 'md5'
