@@ -13,7 +13,7 @@ role_apache::vhosts_hash:
     docroot_group: 'www-data'
     override: 'ALL'
     port: '80'
-    priority: '5'
+    priority: '10'
     servername: 'broekhuizen.online'
     serveraliases:
       - '*.broekhuizen.online'
