@@ -63,7 +63,7 @@ role_php::settings:
    PHP/memory_limit: '128M'
    PHP/post_max_size: '32M'
    PHP/upload_max_filesize: '32M'
-   PHP/allow_url_fopen: 'Off'
+   PHP/allow_url_fopen: 'On'  # On for Drush
    Date/date.timezone: 'Europe/Berlin'
 # PHP extensions
 role_php::extensions:
