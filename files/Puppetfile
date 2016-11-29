@@ -56,12 +56,12 @@ mod 'archive',
 mod 'sqlplus',
 :git => 'https://github.com/naturalis/puppet-sqlplus'
 
-mod 'sensu',
-:git => 'https://github.com/sensu/sensu-puppet'
+#mod 'sensu',
+#:git => 'https://github.com/sensu/sensu-puppet'
 
-mod 'role_sensu',
-:git => 'https://github.com/rudibroekhuizen/puppet-role_sensu',
-:ref => 'develop'
+#mod 'role_sensu',
+#:git => 'https://github.com/rudibroekhuizen/puppet-role_sensu',
+#:ref => 'develop'
 
 mod 'burp',
 :git => 'https://github.com/rudibroekhuizen/puppet-burp'
@@ -75,8 +75,8 @@ mod 'role_rsyslog',
 mod 'role_cron',
 :git => 'https://github.com/rudibroekhuizen/puppet-role_cron'
 
-mod 'hammer_cli_foreman',
-:git => 'https://github.com/rudibroekhuizen/puppet-hammer_cli_foreman'
+#mod 'hammer_cli_foreman',
+#:git => 'https://github.com/rudibroekhuizen/puppet-hammer_cli_foreman'
 
 mod 'kibana',
 :git => 'https://github.com/rudibroekhuizen/puppet-kibana'
@@ -155,3 +155,6 @@ mod 'letsencrypt',
 
 mod 'drush',
 :git => 'https://github.com/previousnext/puppet-drush'
+
+mod 'composer',
+:git => 'https://github.com/willdurand/puppet-composer'
