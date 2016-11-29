@@ -152,3 +152,6 @@ mod 'role_apache',
 
 mod 'letsencrypt',
 :git => 'https://forge.puppet.com/danzilio/letsencrypt'
+
+mod 'drush',
+:git => 'https://github.com/previousnext/puppet-drush'
