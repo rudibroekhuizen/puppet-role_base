@@ -154,7 +154,7 @@ mod 'letsencrypt',
 :git => 'https://github.com/danzilio/puppet-letsencrypt'
 
 mod 'drush',
-:git => 'https://github.com/pcfens/puppet-drush'
+:git => 'https://github.com/pcfens/puppet-drush',
 :ref => 'remove_composer_dependency'
 
 #mod 'composer',
