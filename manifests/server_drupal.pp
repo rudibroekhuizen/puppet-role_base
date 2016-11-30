@@ -2,13 +2,9 @@
 #
 class role_base::server_drupal {
 
-  class { 'role_apache': }
-  class { 'role_mysql': }
-  class { 'role_php': }
-
-  drush::drush { 'drush8':
-    version   => '8',
-    link_name => '/usr/local/bin/drush8',
-  }
+  class { 'role_apache': } ->
+  class { 'role_mysql': } ->
+  class { 'role_php': } ->
+  class { 'drush': }
 
 }
