@@ -69,3 +69,8 @@ role_php::extensions:
 role_php::globals:
   php_version: '7.0'
   config_root: '/etc/php/7.0'
+
+drush:
+  drush8:
+    version: '8'
+    link_name: '/usr/local/bin/drush8'
