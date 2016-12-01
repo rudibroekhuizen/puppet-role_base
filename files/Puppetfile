@@ -142,7 +142,8 @@ mod 'apache',
 :git => 'https://github.com/puppetlabs/puppetlabs-apache'
 
 mod 'php',
-:git => 'https://github.com/voxpupuli/puppet-php'
+:git => 'https://github.com/voxpupuli/puppet-php',
+:ref => '380273f'
 
 mod 'role_php',
 :git => 'https://github.com/rudibroekhuizen/puppet-role_php'
