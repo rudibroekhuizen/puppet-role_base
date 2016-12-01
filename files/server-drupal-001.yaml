@@ -2,6 +2,7 @@
 classes:
   - role_base::server_drupal
 
+
 # Apache
 role_apache::vhosts_hash:
   drupal:
@@ -18,14 +19,15 @@ role_apache::vhosts_hash:
     virtual_docroot: '/var/www/drupal'
     port: '80'
 
-# MySQL root_password
+
+# MySQL
 role_mysql::mysql_root_password: 'mypass'
-# MySQL override_options
+role_mysql::server_package_name: 'mysql-server-5.5' # Ubuntu 14.04
+role_mysql::client_package_name: 'mysql-client-5.5' # Ubuntu 14.04
 role_mysql::override_options:
   mysqld:
     bind-address: '0.0.0.0'
     max_allowed_packet: '512M'
-# MySQL users
 role_mysql::users:
   'drupal@localhost':
     ensure: 'present'
@@ -33,7 +35,6 @@ role_mysql::users:
   'drupal@%':
     ensure: 'present'
     password: 'mypass'
-# MySQL grants
 role_mysql::grants:
   'drupal@localhost/drupaldb.*':
     privileges:
@@ -45,7 +46,6 @@ role_mysql::grants:
       - ALL
     table: 'drupaldb.*'
     user: 'drupal@%'
-# MySQL create databases with extra user
 role_mysql::db_hash:
   drupaldb:
     user: 'manager'
@@ -53,6 +53,7 @@ role_mysql::db_hash:
     host: 'localhost'
     grant:
       - SELECT
+
 
 # PHP settings
 role_php::settings:
