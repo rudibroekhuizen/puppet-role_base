@@ -6,9 +6,6 @@ role_postgresql::listen_address: '*'
 
 # Databases
 role_postgresql::db_hash:
-  mydb:
-    user: 'pg_user'
-    password: 'password'
   drupaldb:
     user: 'drupal_user'
     password: 'password'
