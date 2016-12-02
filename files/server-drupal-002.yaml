@@ -1,6 +1,6 @@
 # Set up LAMP stack for Drupal
 classes:
-  - role_base::server_drupal
+  - role_base::server_drupal_lapp
 
 # Apache
 role_apache::vhosts_hash:
