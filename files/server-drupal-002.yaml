@@ -63,7 +63,7 @@ role_php::settings:
 # PHP extensions
 role_php::extensions:
   gd: {}
-  mysql: {}
+  pgsql: {} # This makes PostgreSQL available
 
 
 drush:
