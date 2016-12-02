@@ -1,6 +1,6 @@
 # Set up LAMP stack for Drupal
 classes:
-  - role_base::server_drupal
+  - role_base::server_drupal_lamp
 
 
 # Apache
