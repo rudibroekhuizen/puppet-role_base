@@ -64,3 +64,9 @@ role_php::settings:
 role_php::extensions:
   gd: {}
   mysql: {}
+
+
+drush:
+  drush8:
+    version: '8'
+    link_name: '/usr/local/bin/drush8'
