@@ -7,7 +7,7 @@ class role_base::server_drupal_lapp {
   }
 
   class { 'role_apache': } ->
-  class { 'role_mysql': } ->
+  class { 'role_postgresql': } ->
   class { 'role_php': } ->
   class { 'drush': 
     stage => post
