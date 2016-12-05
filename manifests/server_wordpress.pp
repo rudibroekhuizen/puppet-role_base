@@ -1,6 +1,6 @@
 # == Class: role_base::server_wordpress
 #
-class role_base::server_drupal_lamp {
+class role_base::server_wordpress {
 
   #stage { 'post':
   #  require => Stage["main"],
