@@ -1,0 +1,72 @@
+# Set up LAMP stack for Wordpress
+classes:
+  - role_base::server_wordpress
+
+
+# Apache
+role_apache::vhosts_hash:
+  wordpress:
+    directoryindex: 'index.php'
+    docroot: '/var/www/wordpress'
+    docroot_owner: 'www-data'
+    docroot_group: 'www-data'
+    override: 'ALL'
+    port: '80'
+    priority: '10'
+    servername: 'broekhuizen.online'
+    serveraliases:
+      - '*.broekhuizen.online'
+    virtual_docroot: '/var/www/wordpress'
+    port: '80'
+
+
+# MySQL
+role_mysql::mysql_root_password: 'mypass'
+role_mysql::server_package_name: 'mysql-server-5.6' # Ubuntu 14.04
+role_mysql::client_package_name: 'mysql-client-5.6' # Ubuntu 14.04
+role_mysql::override_options:
+  mysqld:
+    bind-address: '0.0.0.0'
+    max_allowed_packet: '512M'
+role_mysql::users:
+  'wordpress@localhost':
+    ensure: 'present'
+    password: 'mypass'
+  'wordpress@%':
+    ensure: 'present'
+    password: 'mypass'
+role_mysql::grants:
+  'wordpress@localhost/wordpressdb.*':
+    privileges:
+      - ALL
+    table: 'wordpressdb.*'
+    user: 'wordpress@localhost'
+  'wordpress@%/wordpressdb.*':
+    privileges:
+      - ALL
+    table: 'wordpressdb.*'
+    user: 'wordpress@%'
+role_mysql::db_hash:
+  wordpressdb:
+    user: 'manager'
+    password: 'mypass'
+    host: 'localhost'
+    grant:
+      - SELECT
+
+
+# PHP settings
+role_php::settings:
+  PHP/max_execution_time: '90'
+  PHP/max_input_time: '300'
+  PHP/memory_limit: '128M'
+  PHP/post_max_size: '32M'
+  PHP/upload_max_filesize: '32M'
+  PHP/allow_url_fopen: 'On'
+  Date/date.timezone: 'Europe/Berlin'
+role_php::extensions:
+  gd: {}
+  mysql: {}
+role_php::globals:
+  php_version: '7.0'
+  config_root: '/etc/php/7.0'
