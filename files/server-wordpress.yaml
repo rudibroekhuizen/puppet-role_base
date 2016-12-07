@@ -36,18 +36,18 @@ role_mysql::users:
     ensure: 'present'
     password: 'mypass'
 role_mysql::grants:
-  'wordpress@localhost/wordpressdb.*':
+  'wordpress@localhost/wordpress.*':
     privileges:
       - ALL
-    table: 'wordpressdb.*'
+    table: 'wordpress.*'
     user: 'wordpress@localhost'
-  'wordpress@%/wordpressdb.*':
+  'wordpress@%/wordpress.*':
     privileges:
       - ALL
-    table: 'wordpressdb.*'
+    table: 'wordpress.*'
     user: 'wordpress@%'
 role_mysql::db_hash:
-  wordpressdb:
+  wordpress:
     user: 'manager'
     password: 'mypass'
     host: 'localhost'
