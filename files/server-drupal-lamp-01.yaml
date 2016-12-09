@@ -64,9 +64,10 @@ role_php::settings:
   PHP/upload_max_filesize: '32M'
   PHP/allow_url_fopen: 'On'  # On for Drush
   Date/date.timezone: 'Europe/Berlin'
-#role_php::extensions:
+role_php::extensions:
 #  gd: {}
-#  mysql: {}
+mysqli:
+  package_prefix: 'php7.0-'
 role_php::globals:
   php_version: '7.0'
   config_root: '/etc/php/7.0'
