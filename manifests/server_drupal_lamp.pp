@@ -13,8 +13,8 @@ class role_base::server_drupal_lamp {
     stage => post
   }
   
-  package { 'libapache2-mod-php7.0':
-    ensure => 'installed',
-  }
+  #package { 'libapache2-mod-php7.0':
+  #  ensure => 'installed',
+  #}
 
 }
