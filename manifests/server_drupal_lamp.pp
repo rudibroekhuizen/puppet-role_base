@@ -6,9 +6,10 @@ class role_base::server_drupal_lamp {
     require => Stage["main"],
   }
 
+  class { 'role_php': } ->
+  class { 'role_mysql': } ->
   class { 'role_apache': }
-  class { 'role_mysql': }
-  class { 'role_php': }
+  
   
   class { 'drush': 
     stage => post
