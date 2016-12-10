@@ -3,21 +3,18 @@
 class role_base::server_drupal_lamp {
 
   stage { 'pre':
-    before => Stage["main"],
+    before => Stage["main"]
   }
 
   stage { 'post':
-    require => Stage["main"],
+    require => Stage["main"]
   }
 
-  # Pre
-  class { 'role_php':
-    stage => pre
-  }
-  
-  # Main
+  class { 'role_php': }
   class { 'role_mysql': }
-  class { 'role_apache': }
+  class { 'role_apache': 
+    require => Class['::php:repo']
+  }
   
   # Post
   class { 'drush': 
