@@ -77,3 +77,9 @@ drush:
   drush8:
     version: '8'
     link_name: '/usr/local/bin/drush8'
+
+
+# Letsencrypt
+role_apache::letsencrypt_config:
+  email: 'rudi.broekhuizen@naturalis.nl'
+  server: 'https://acme-staging.api.letsencrypt.org/directory'
