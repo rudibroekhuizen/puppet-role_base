@@ -32,20 +32,20 @@ role_mysql::users:
   'drupal@localhost':
     ensure: 'present'
     password: 'mypass'
-  'drupal@%':
-    ensure: 'present'
-    password: 'mypass'
+#  'drupal@%':
+#    ensure: 'present'
+#    password: 'mypass'
 role_mysql::grants:
   'drupal@localhost/drupaldb.*':
     privileges:
       - ALL
     table: 'drupaldb.*'
     user: 'drupal@localhost'
-  'drupal@%/drupaldb.*':
-    privileges:
-      - ALL
-    table: 'drupaldb.*'
-    user: 'drupal@%'
+ # 'drupal@%/drupaldb.*':
+ #   privileges:
+ #     - ALL
+ #   table: 'drupaldb.*'
+ #   user: 'drupal@%'
 role_mysql::db_hash:
   drupaldb:
     user: 'manager'
