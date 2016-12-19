@@ -16,6 +16,8 @@ role_apache::vhosts_hash:
     servername: 'broekhuizen.online'
     serveraliases:
       - '*.broekhuizen.online'
+    rewrites:
+      - '^/(.*) https://%{HTTP_HOST}/$1 [NC,R=301,L]'
     virtual_docroot: '/var/www/drupal'
     port: '80'
 
