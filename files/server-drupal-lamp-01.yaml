@@ -20,7 +20,15 @@ role_apache::vhosts_hash:
   drupal_80:
     servername: 'broekhuizen.online'
     port: '80'
+    directoryindex: 'index.php'
+    docroot: '/var/www/drupal'
+    docroot_owner: 'www-data'
+    docroot_group: 'www-data'
+    override: 'ALL'
     priority: '10'
+    serveraliases:
+      - '*.broekhuizen.online'
+    virtual_docroot: '/var/www/drupal'
     redirect_source: '/'
     redirect_dest: 'https://broekhuizen.online'
     redirect_status: 'permanent'
