@@ -5,21 +5,25 @@ classes:
 
 # Apache
 role_apache::vhosts_hash:
-  drupal:
+  drupal_443:
+    servername: 'broekhuizen.online'
+    port: '443'
     directoryindex: 'index.php'
     docroot: '/var/www/drupal'
     docroot_owner: 'www-data'
     docroot_group: 'www-data'
     override: 'ALL'
-    port: '80'
-    priority: '10'
-    servername: 'broekhuizen.online'
+    priority: '5'
     serveraliases:
       - '*.broekhuizen.online'
-    rewrites:
-      - https_redirect: '^/(.*) https://%{HTTP_HOST}/$1 [NC,R=301,L]'
     virtual_docroot: '/var/www/drupal'
+  drupal_80:
+    servername: 'broekhuizen.online'
     port: '80'
+    priority: '10'
+    redirect_source: '/'
+    redirect_dest: 'https://broekhuizen.online'
+    redirect_status: 'permanent'
 
 
 # MySQL
