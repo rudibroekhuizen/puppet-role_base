@@ -13,7 +13,7 @@ role_apache::vhosts_hash:
     docroot_owner: 'www-data'
     docroot_group: 'www-data'
     override: 'ALL'
-    priority: '5'
+    priority: '10'
     serveraliases:
       - '*.broekhuizen.online'
     virtual_docroot: '/var/www/drupal'
