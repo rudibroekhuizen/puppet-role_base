@@ -8,12 +8,13 @@ role_apache::vhosts_hash:
   drupal_443:
     servername: 'broekhuizen.online'
     port: '443'
+    ssl: 'true'
     directoryindex: 'index.php'
     docroot: '/var/www/drupal'
     docroot_owner: 'www-data'
     docroot_group: 'www-data'
     override: 'ALL'
-    priority: '10'
+    priority: '5'
     serveraliases:
       - '*.broekhuizen.online'
     virtual_docroot: '/var/www/drupal'
