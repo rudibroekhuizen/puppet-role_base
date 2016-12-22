@@ -150,9 +150,12 @@ mod 'role_php',
 mod 'role_apache',
 :git => 'https://github.com/rudibroekhuizen/puppet-role_apache'
 
-mod 'certbot',
-:git => 'https://github.com/danzilio/puppet-letsencrypt',
-:ref => 'certbot2'
+#mod 'certbot',
+#:git => 'https://github.com/danzilio/puppet-letsencrypt',
+#:ref => 'certbot2'
+
+mod 'letsencrypt',
+:git => 'https://github.com/voxpupuli/puppet-letsencrypt'
 
 mod 'drush',
 :git => 'https://github.com/pcfens/puppet-drush',
