@@ -161,5 +161,5 @@ mod 'drush',
 :git => 'https://github.com/pcfens/puppet-drush',
 :ref => 'remove_composer_dependency'
 
-#mod 'composer',
-#:git => 'https://github.com/willdurand/puppet-composer'
+mod 'docker',
+:git => 'https://github.com/garethr/garethr-docker'
