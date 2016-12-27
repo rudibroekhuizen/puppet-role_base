@@ -1,46 +1,63 @@
-# Set up LAMP stack for Drupal
+# Set up LAPP stack for Drupal (Linux, Apache, PostgreSQL, php)
 classes:
   - role_base::server_drupal_lapp
 
+
 # Apache
 role_apache::vhosts_hash:
-  drupal:
+  drupal_443:
+    servername: 'broekhuizen.online'
+    port: '443'
+    ssl: true
     directoryindex: 'index.php'
     docroot: '/var/www/drupal'
     docroot_owner: 'www-data'
     docroot_group: 'www-data'
     override: 'ALL'
-    port: '80'
-    priority: '10'
-    servername: 'broekhuizen.online'
+    priority: '5'
     serveraliases:
       - '*.broekhuizen.online'
     virtual_docroot: '/var/www/drupal'
+  drupal_80:
+    servername: 'broekhuizen.online'
     port: '80'
+    directoryindex: 'index.php'
+    docroot: '/var/www/drupal'
+    docroot_owner: 'www-data'
+    docroot_group: 'www-data'
+    override: 'ALL'
+    priority: '10'
+    serveraliases:
+      - '*.broekhuizen.online'
+    virtual_docroot: '/var/www/drupal'
+    #redirect_source: '/'
+    #redirect_dest: 'https://broekhuizen.online'
+    #redirect_status: 'permanent'
 
-# PostGreSQL
+
+# PostgreSQL
 role_postgresql::listen_address: '*'
 
-# Databases
+# PostgreSQL databases
 role_postgresql::db_hash:
   drupaldb:
     user: 'drupal_user'
     password: 'password'
 
-# Roles
+# PostgreSQL roles
 role_postgresql::role_hash:
   drupal:
     user: 'drupal_user'
     password: 'password'
 
-# Grants
+# PostGreSQL grants
 role_postgresql::grant_hash:
   drupal:
     privilege: 'ALL'
     db: 'drupaldb'
     role: 'drupal'
 
-# Remote connections
+# PostgreSQL remote connections
 role_postgresql::pg_hba_rule_hash:
   all:
     description: 'Allow all'
@@ -51,7 +68,7 @@ role_postgresql::pg_hba_rule_hash:
     auth_method: 'md5'
 
 
-# PHP settings
+# Php settings
 role_php::settings:
   PHP/max_execution_time: '90'
   PHP/max_input_time: '300'
@@ -60,13 +77,22 @@ role_php::settings:
   PHP/upload_max_filesize: '32M'
   PHP/allow_url_fopen: 'On'  # On for Drush
   Date/date.timezone: 'Europe/Berlin'
-# PHP extensions
 role_php::extensions:
-  gd: {}
-  pgsql: {} # This makes PostgreSQL available
-
+  gd:
+    package_prefix: 'php7.0-'
+  pgsql:
+    package_prefix: 'php7.0-'
+role_php::globals:
+  php_version: '7.0'
+  config_root: '/etc/php/7.0'
 
 drush:
   drush8:
     version: '8'
     link_name: '/usr/local/bin/drush8'
+
+
+# Letsencrypt
+role_apache::letsencrypt_config:
+  email: 'rudi.broekhuizen@naturalis.nl'
+  server: 'https://acme-staging.api.letsencrypt.org/directory'
