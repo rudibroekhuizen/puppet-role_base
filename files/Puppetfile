@@ -11,7 +11,7 @@ mod "puppetlabs-inifile"
 mod "ispavailability/file_concat"
 mod "elasticsearch/elasticsearch"
 mod "elasticsearch/logstash"
-mod "pdxcat/collectd"
+#mod "pdxcat/collectd"
 mod "maestrodev/wget"
 #mod "stahnma/epel"
 mod "puppetlabs/git"
@@ -40,8 +40,8 @@ mod 'role_logstash',
 :git => 'https://github.com/rudibroekhuizen/puppet-role_logstash'
 #:ref => 'develop'
 
-mod 'role_collectd',
-:git => 'https://github.com/rudibroekhuizen/puppet-role_collectd'
+#mod 'role_collectd',
+#:git => 'https://github.com/rudibroekhuizen/puppet-role_collectd'
 #:ref => 'develop'
 
 mod 'role_snmp',
