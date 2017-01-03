@@ -44,14 +44,14 @@ role_mysql::override_options:
     bind-address: '0.0.0.0'
     max_allowed_packet: '512M'
 role_mysql::users:
-  'drupal@localhost':
+  'drupal_user@localhost':
     ensure: 'present'
     password: 'mypass'
 #  'drupal@%':
 #    ensure: 'present'
 #    password: 'mypass'
 role_mysql::grants:
-  'drupal@localhost/drupaldb.*':
+  'drupal_user@localhost/drupaldb.*':
     privileges:
       - ALL
     table: 'drupaldb.*'
