@@ -55,12 +55,12 @@ role_mysql::grants:
     privileges:
       - ALL
     table: 'drupaldb.*'
-    user: 'drupal@localhost'
+    user: 'drupal_user@localhost'
  # 'drupal_user@%/drupaldb.*':
  #   privileges:
  #     - ALL
  #   table: 'drupaldb.*'
- #   user: 'drupal@%'
+ #   user: 'drupal_user@%'
 role_mysql::db_hash:
   drupaldb:
     user: 'manager'
