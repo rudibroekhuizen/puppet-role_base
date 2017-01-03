@@ -47,7 +47,7 @@ role_mysql::users:
   'drupal_user@localhost':
     ensure: 'present'
     password: 'mypass'
-#  'drupal@%':
+#  'drupal_user@%':
 #    ensure: 'present'
 #    password: 'mypass'
 role_mysql::grants:
@@ -56,7 +56,7 @@ role_mysql::grants:
       - ALL
     table: 'drupaldb.*'
     user: 'drupal@localhost'
- # 'drupal@%/drupaldb.*':
+ # 'drupal_user@%/drupaldb.*':
  #   privileges:
  #     - ALL
  #   table: 'drupaldb.*'
