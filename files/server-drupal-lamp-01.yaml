@@ -115,6 +115,7 @@ filebeat::prospectors:
   global_status:
     paths:
       - '/var/log/mysql/global_status.json'
+    doc_type: 'mysql_global_status'
 
 filebeat::outputs:
   logstash:
