@@ -43,10 +43,10 @@ role_mysql::override_options:
   mysqld: # http://dev.mysql.com/doc/refman/5.5/en/mysqld-option-tables.html
     bind-address: '0.0.0.0'
     general_log: 1
-    general_log_file: '/var/log/mysql/general.log'
+    general_log_file: '/var/log/mysql/general_log.log'
     max_allowed_packet: '512M'
     slow_query_log: 1
-    slow_query_log_file: '/var/log/mysql/slow_query.log'
+    slow_query_log_file: '/var/log/mysql/slow_query_log.log'
 role_mysql::users:
   'drupal_user@localhost':
     ensure: 'present'
@@ -102,3 +102,19 @@ drush:
 role_apache::letsencrypt_config:
   email: 'rudi.broekhuizen@naturalis.nl'
   server: 'https://acme-staging.api.letsencrypt.org/directory'
+
+
+# Filebeat, overrides for https://github.com/pcfens/puppet-filebeat
+filebeat::prospectors:
+  syslogs:
+    paths:
+      - '/var/log/mysql/error.log'
+    doc_type: 'mysql_error_log'
+  global_status:
+    paths:
+      - '/var/log/mysql/global_status.json'
+
+filebeat::outputs:
+  logstash:
+    hosts:
+      - '172.16.1.25:5044'
