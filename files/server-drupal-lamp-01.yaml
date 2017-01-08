@@ -92,6 +92,8 @@ role_php::globals:
   php_version: '7.0'
   config_root: '/etc/php/7.0'
 
+
+# Install Drush
 drush:
   drush8:
     version: '8'
