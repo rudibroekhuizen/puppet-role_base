@@ -33,6 +33,8 @@ base::packages_hash_debian:
     {}
   r10k:
     provider: gem
+  jq:
+    {}
   
 base::packages_hash_redhat:
   htop:
