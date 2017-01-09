@@ -115,12 +115,12 @@ role_apache::letsencrypt_config:
 
 
 # Filebeat, overrides for https://github.com/pcfens/puppet-filebeat
-filebeat::major_version: '5'
+#filebeat::major_version: '5'
 filebeat::prospectors:
-#  syslogs:
-#    paths:
-#      - '/var/log/mysql/error.log'
-#    doc_type: 'mysql_error_log'
+  syslog:
+    paths:
+      - '/var/log/mysql/error.log'
+    doc_type: 'syslog'
   general_log:
     paths:
       - '/var/log/mysql/general_log.json'
