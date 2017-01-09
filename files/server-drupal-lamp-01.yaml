@@ -107,10 +107,10 @@ role_apache::letsencrypt_config:
 
 
 # Query mysql.general_log table every minute
-role_cron::cron_job:
-  mysql_general_log:
-    minute: '*/1'
-    command: "echo "select * from mysql.general_log where event_time >= DATE_SUB(NOW(),INTERVAL 1 MINUTE);" | mysqlsh --schema=mysql --json=raw --sqlc --uri root@127.0.0.1:3306 | jq -c '.rows[]' > /var/log/mysql/general_log.json"
+#role_cron::cron_job:
+#  mysql_general_log:
+#    minute: '*/1'
+#    command: "echo "select * from mysql.general_log where event_time >= DATE_SUB(NOW(),INTERVAL 1 MINUTE);" | mysqlsh --schema=mysql --json=raw --sqlc --uri root@127.0.0.1:3306 | jq -c '.rows[]' > /var/log/mysql/general_log.json"
 
 
 # Filebeat, overrides for https://github.com/pcfens/puppet-filebeat
