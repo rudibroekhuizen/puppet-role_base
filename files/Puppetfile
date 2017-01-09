@@ -14,7 +14,10 @@ mod "elasticsearch/logstash"
 mod "maestrodev/wget"
 #mod "stahnma/epel"
 mod "puppetlabs/git"
+
 mod "saz/timezone"
+mod "stm/debconf" # required by saz/timezone
+
 mod "meltwater/facts"
 mod "razorsedge/snmp"
 mod "saz/rsyslog"
