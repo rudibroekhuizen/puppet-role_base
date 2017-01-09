@@ -125,7 +125,6 @@ filebeat::prospectors:
     paths:
       - '/var/log/mysql/general_log.json'
     doc_type: 'mysql_general_log'
-    json.message_key: 'event'
     json.keys_under_root: true
 
 filebeat::outputs:
