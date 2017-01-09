@@ -125,8 +125,8 @@ filebeat::prospectors:
     paths:
       - '/var/log/mysql/general_log.json'
     doc_type: 'mysql_general_log'
-    json.keys_under_root: true
 
 filebeat::outputs:
-  elasticsearch:
-    - 'localhost:9200'
+  logstash:
+    hosts:
+      - '172.16.1.25:5044'
