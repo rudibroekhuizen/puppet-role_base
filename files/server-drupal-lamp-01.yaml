@@ -115,19 +115,19 @@ role_apache::letsencrypt_config:
 
 
 # Filebeat, overrides for https://github.com/pcfens/puppet-filebeat
+filebeat::package_ensure: '5.1.1'
 filebeat::prospectors:
-  syslogs:
-    paths:
-      - '/var/log/mysql/error.log'
-    doc_type: 'mysql_error_log'
-  global_status:
+#  syslogs:
+#    paths:
+#      - '/var/log/mysql/error.log'
+#    doc_type: 'mysql_error_log'
+  general_log:
     paths:
       - '/var/log/mysql/general_log.json'
     doc_type: 'mysql_general_log'
+    json.message_key: 'event'
+    json.keys_under_root: true
 
 filebeat::outputs:
-  logstash:
-    hosts:
-      - '172.16.1.25:5044'
-
-
+  elasticsearch:
+    - 'localhost:9200'
