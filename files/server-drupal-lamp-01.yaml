@@ -37,8 +37,8 @@ role_apache::vhosts_hash:
 
 # MySQL
 role_mysql::mysql_root_password: 'mypass'
-role_mysql::server_package_name: 'mysql-server-5.6' # Ubuntu 14.04
-role_mysql::client_package_name: 'mysql-client-5.6' # Ubuntu 14.04
+#role_mysql::server_package_name: 'mysql-server-5.6' # Ubuntu 14.04
+#role_mysql::client_package_name: 'mysql-client-5.6' # Ubuntu 14.04
 role_mysql::override_options:
   mysqld: # http://dev.mysql.com/doc/refman/5.5/en/mysqld-option-tables.html
     bind-address: '0.0.0.0'
