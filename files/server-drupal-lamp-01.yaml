@@ -115,7 +115,7 @@ role_apache::letsencrypt_config:
 
 
 # Filebeat, overrides for https://github.com/pcfens/puppet-filebeat
-#filebeat::major_version: '5'
+filebeat::major_version: '5'
 filebeat::prospectors:
   syslog:
     paths:
