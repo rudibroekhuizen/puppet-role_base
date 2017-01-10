@@ -12,5 +12,7 @@ class role_base::server_drupal_lamp {
   class { 'drush': 
     stage => post
   }
-  
+
+  class { 'filebeat': } 
+ 
 }
