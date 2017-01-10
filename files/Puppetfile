@@ -9,7 +9,7 @@ mod "puppetlabs/java"
 mod "puppetlabs-xinetd"
 mod "puppetlabs-inifile"
 mod "ispavailability/file_concat"
-mod "elasticsearch/logstash"
+#mod "elasticsearch/logstash"
 #mod "pdxcat/collectd"
 mod "maestrodev/wget"
 #mod "stahnma/epel"
@@ -40,6 +40,9 @@ mod 'elasticsearch',
 
 mod 'role_elasticsearch',
 :git => 'https://github.com/naturalis/puppet-role_elasticsearch'
+
+mod 'logstash',
+:git => 'https://github.com/elastic/puppet-logstash'
 
 mod 'role_logstash',
 :git => 'https://github.com/rudibroekhuizen/puppet-role_logstash'
