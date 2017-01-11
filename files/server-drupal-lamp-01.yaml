@@ -74,6 +74,11 @@ role_mysql::db_hash:
     grant:
       - SELECT
 
+# For mysqlsh on ubuntu1404
+base::packages_hash_debian:
+  libpython2.7:
+    {}
+
 
 # PHP settings
 role_php::settings:
