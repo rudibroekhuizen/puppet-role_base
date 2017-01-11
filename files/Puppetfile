@@ -9,7 +9,6 @@ mod "puppetlabs/concat"
 mod "puppetlabs-xinetd"
 mod "puppetlabs-inifile"
 mod "ispavailability/file_concat"
-#mod "elasticsearch/logstash"
 #mod "pdxcat/collectd"
 mod "maestrodev/wget"
 #mod "stahnma/epel"
@@ -62,7 +61,8 @@ mod 'role_test',
 :git => 'https://github.com/rudibroekhuizen/puppet-role_test'
 
 mod 'archive',
-:git => 'https://github.com/camptocamp/puppet-archive'
+:git => 'https://github.com/voxpupuli/puppet-archive'
+#:git => 'https://github.com/camptocamp/puppet-archive'
 
 mod 'sqlplus',
 :git => 'https://github.com/naturalis/puppet-sqlplus'
