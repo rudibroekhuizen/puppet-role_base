@@ -5,7 +5,7 @@ mod "puppetlabs/vcsrepo"
 mod "puppetlabs/rabbitmq"
 mod "puppetlabs/tftp"
 mod "puppetlabs/concat"
-mod "puppetlabs/java"
+#mod "puppetlabs/java"
 mod "puppetlabs-xinetd"
 mod "puppetlabs-inifile"
 mod "ispavailability/file_concat"
@@ -34,6 +34,9 @@ mod 'base',
 
 mod 'role_base',
 :git => 'https://github.com/rudibroekhuizen/puppet-role_base'
+
+mod 'oracle_java',
+:git => 'https://github.com/antoineco/aco-oracle_java'
 
 mod 'elasticsearch',
 :git => 'https://github.com/elastic/puppet-elasticsearch'
