@@ -42,7 +42,7 @@ mod 'elasticsearch',
 :git => 'https://github.com/elastic/puppet-elasticsearch'
 
 mod 'role_elasticsearch',
-:git => 'https://github.com/naturalis/puppet-role_elasticsearch'
+:git => 'https://github.com/rudibroekhuizen/puppet-role_elasticsearch'
 
 mod 'logstash',
 :git => 'https://github.com/elastic/puppet-logstash'
