@@ -130,3 +130,6 @@ filebeat::outputs:
   logstash:
     hosts:
       - '127.0.0.1:5044'
+      
+role_logstash::configfile:
+  logstash-filebeat-mysql.conf
