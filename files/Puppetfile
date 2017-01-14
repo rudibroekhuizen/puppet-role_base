@@ -5,7 +5,6 @@ mod "puppetlabs/vcsrepo"
 mod "puppetlabs/rabbitmq"
 mod "puppetlabs/tftp"
 mod "puppetlabs/concat"
-#mod "puppetlabs/java"
 mod "puppetlabs-xinetd"
 mod "puppetlabs-inifile"
 mod "ispavailability/file_concat"
@@ -174,3 +173,7 @@ mod 'drush',
 
 mod 'docker',
 :git => 'https://github.com/garethr/garethr-docker'
+
+# For kibana5
+mod 'yamlfile',
+:git => 'https://github.com/reidmv/puppet-module-yamlfile'
