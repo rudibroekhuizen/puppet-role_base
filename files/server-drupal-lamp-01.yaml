@@ -44,9 +44,9 @@ role_mysql::override_options:
     bind-address: '0.0.0.0'
     max_allowed_packet: '512M'
     general_log: 1
-    #general_log_file: '/var/log/mysql/general_log.log'
+    general_log_file: '/var/log/mysql/general_log.log'
     slow_query_log: 1
-    #slow_query_log_file: '/var/log/mysql/slow_query_log.log'
+    slow_query_log_file: '/var/log/mysql/slow_query_log.log'
     log_output: 'table'
 role_mysql::users:
   'drupal_user@localhost':
