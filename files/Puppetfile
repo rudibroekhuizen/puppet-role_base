@@ -129,8 +129,8 @@ mod 'role_mysql',
 :git => 'https://github.com/naturalis/puppet-role_mysql'
 
 mod 'filebeat',
-:git => 'https://github.com/pcfens/puppet-filebeat',
-:ref => 'fix_types'
+:git => 'https://github.com/pcfens/puppet-filebeat'
+#:ref => 'fix_types'
 
 mod 'openvpn_client',
 :git => 'https://github.com/thejandroman/puppet-openvpn_client'
