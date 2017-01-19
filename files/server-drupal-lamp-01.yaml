@@ -115,6 +115,7 @@ role_apache::letsencrypt_config:
 
 
 # Filebeat, overrides for https://github.com/pcfens/puppet-filebeat
+# Filebeat will send json lines and set keys at root level
 filebeat::major_version: '5'
 filebeat::prospectors:
   syslog:
@@ -125,7 +126,8 @@ filebeat::prospectors:
     paths:
       - '/var/log/mysql/general_log.json'
     doc_type: 'mysql_general_log'
-    json.message_key: ''
+    json:
+      keys_under_root: true
 
 filebeat::outputs:
   logstash:
