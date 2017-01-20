@@ -186,3 +186,7 @@ mod 'docker',
 # For kibana5
 mod 'yamlfile',
 :git => 'https://github.com/reidmv/puppet-module-yamlfile'
+
+# For kibana5
+mod 'filemapper',
+:git => 'https://github.com/voxpupuli/puppet-filemapper'
