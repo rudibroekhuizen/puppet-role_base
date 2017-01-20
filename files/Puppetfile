@@ -40,6 +40,10 @@ mod 'elasticsearch',
 :git => 'https://github.com/elastic/puppet-elasticsearch',
 :ref => '0.15.1'
 
+# For Elasticsearch
+mod 'sysctl',
+:git => 'https://github.com/thias/puppet-sysctl'
+
 mod 'role_elasticsearch',
 :git => 'https://github.com/rudibroekhuizen/puppet-role_elasticsearch'
 
