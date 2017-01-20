@@ -140,4 +140,4 @@ role_logstash::configfile:
 role_cron::cron_job_hash:
   general_log:
     minute: '*/1'
-    command: "php php.php | jq -c '.[]' >> '/var/log/mysql/general_log.json'"
+    command: "php /usr/local/sbin/php.php | jq -c '.[]' >> '/var/log/mysql/general_log.json'"
