@@ -37,13 +37,15 @@ mod 'oracle_java',
 :git => 'https://github.com/antoineco/aco-oracle_java'
 
 mod 'elasticsearch',
-:git => 'https://github.com/elastic/puppet-elasticsearch'
+:git => 'https://github.com/elastic/puppet-elasticsearch',
+:ref => '0.15.1'
 
 mod 'role_elasticsearch',
 :git => 'https://github.com/rudibroekhuizen/puppet-role_elasticsearch'
 
 mod 'logstash',
-:git => 'https://github.com/elastic/puppet-logstash'
+:git => 'https://github.com/elastic/puppet-logstash',
+:ref => '5.0.3'
 
 mod 'role_logstash',
 :git => 'https://github.com/rudibroekhuizen/puppet-role_logstash'
@@ -129,8 +131,8 @@ mod 'role_mysql',
 :git => 'https://github.com/naturalis/puppet-role_mysql'
 
 mod 'filebeat',
-:git => 'https://github.com/pcfens/puppet-filebeat'
-#:ref => 'fix_types'
+:git => 'https://github.com/pcfens/puppet-filebeat',
+:ref => 'v0.10.2'
 
 mod 'openvpn_client',
 :git => 'https://github.com/thejandroman/puppet-openvpn_client'
