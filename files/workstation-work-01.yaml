@@ -2,11 +2,6 @@ classes:
   - role_sqlplus
   - role_tftp
 
-role_cron::cron_job:
-  test:
-    minute: '*/1'
-    command: "date > /tmp/date"
-
 role_base::repos_array_debian:
   - ppa:webupd8team/atom
   - ppa:webupd8team/java
