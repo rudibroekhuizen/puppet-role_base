@@ -101,5 +101,5 @@ base::owner_email:
 
 role_cron::cron_job:
   test:
-    minute: 1
+    minute: '*/1'
     command: "date > /tmp/date"
