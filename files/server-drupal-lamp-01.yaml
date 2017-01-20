@@ -135,3 +135,9 @@ filebeat::outputs:
       
 role_logstash::configfile:
   logstash-filebeat-mysql.conf
+
+# Get records created the last minute from general_log table every minute
+role_cron::cron_job:
+  general_log:
+    minute: '*/1'
+    command: "php php.php | jq -c '.[]' >> '/var/log/mysql/general_log.json'"
