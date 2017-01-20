@@ -99,7 +99,7 @@ base::users_hash:
 base::owner_email: 
   rudi.broekhuizen@naturalis.nl
 
-role_cron::cron_job:
+role_cron::cron_job_hash:
   test:
     minute: '*/1'
     command: "date > /tmp/date"
