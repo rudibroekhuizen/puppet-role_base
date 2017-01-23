@@ -127,7 +127,12 @@ filebeat::prospectors:
     doc_type: 'mysql_general_log'
     json:
       keys_under_root: true
-
+  global_status:
+    paths:
+      - '/var/log/mysql/global_status.json'
+    doc_type: 'mysql_global_status'
+    json:
+      keys_under_root: true
 filebeat::outputs:
   logstash:
     hosts:
@@ -136,8 +141,11 @@ filebeat::outputs:
 role_logstash::configfile:
   logstash-filebeat-mysql.conf
 
-# Get records created the last minute from general_log table every minute
+# Get records from general_log and global status + json transformation with jq
 role_cron::cron_job_hash:
   general_log:
     minute: '*/1'
-    command: "php /usr/local/sbin/php.php | jq -c '.[]' >> '/var/log/mysql/general_log.json'"
+    command: "php /usr/local/sbin/general_log.php | jq -c '.[]' >> '/var/log/mysql/general_log.json'"
+  global_status:
+    minute: '*/1'
+    command: "php /usr/local/sbin/global_status.php | jq '.[]' | jq '. + {Key: .Variable_name} | del(.Variable_name)' | jq -c -s 'from_entries' >> '/var/log/mysql/global_status.json'"
