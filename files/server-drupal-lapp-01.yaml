@@ -96,3 +96,39 @@ drush:
 role_apache::letsencrypt_config:
   email: 'rudi.broekhuizen@naturalis.nl'
   server: 'https://acme-staging.api.letsencrypt.org/directory'
+
+
+# Filebeat, overrides for https://github.com/pcfens/puppet-filebeat, filebeat will send json lines and set keys at root level
+filebeat::prospectors:
+  syslog:
+    paths:
+      - '/var/log/postgresql/postgresql-9.5-main.log'
+    doc_type: 'psql_syslog'
+  general_log:
+    paths:
+      - '/var/log/postgresql/psql.json'
+    doc_type: 'psql_log'
+    json:
+      keys_under_root: true
+  global_status:
+    paths:
+      - '/var/log/postgresql/psql.json'
+    doc_type: 'psql_log'
+    json:
+      keys_under_root: true
+filebeat::outputs:
+  logstash:
+    hosts:
+      - '127.0.0.1:5044'
+
+
+# Logstash
+role_logstash::configfile:
+  logstash-filebeat-psql.conf
+
+
+# Get records from general_log and global status + json transformation with jq
+role_cron::cron_job_hash:
+  general_log:
+    minute: '*/1'
+    command: ""
