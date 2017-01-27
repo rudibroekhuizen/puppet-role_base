@@ -140,9 +140,11 @@ role_logstash::configfile:
 
 # Get records from general_log and global status + json transformation with jq
 role_cron::cron_job_hash:
-#  general_log:
-#    minute: '*/1'
-#    command: "php /usr/local/sbin/general_log.php | jq -c '.[]' >> '/var/log/mysql/analytics.json'"
+
+  #select * from mysql.general_log where event_time >= DATE_SUB(NOW(),INTERVAL 1 MINUTE);
+  #  general_log:
+  #    minute: '*/1'
+  #    command: "php /usr/local/sbin/general_log.php | jq -c '.[]' >> '/var/log/mysql/analytics.json'"
 
   # SELECT * FROM sys.metrics;
   global_status:
