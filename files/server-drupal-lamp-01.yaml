@@ -121,31 +121,35 @@ filebeat::prospectors:
     paths:
       - '/var/log/mysql/error.log'
     doc_type: 'syslog'
-  general_log:
+  mysql_analytics:
     paths:
-      - '/var/log/mysql/general_log.json'
-    doc_type: 'mysql_general_log'
-    json:
-      keys_under_root: true
-  global_status:
-    paths:
-      - '/var/log/mysql/global_status.json'
-    doc_type: 'mysql_global_status'
+      - '/var/log/mysql/analytics.json'
+    doc_type: 'mysql_analytics'
     json:
       keys_under_root: true
 filebeat::outputs:
   logstash:
     hosts:
       - '127.0.0.1:5044'
-      
+
+
+# Logstash
 role_logstash::configfile:
   logstash-filebeat-mysql.conf
 
+
 # Get records from general_log and global status + json transformation with jq
 role_cron::cron_job_hash:
-  general_log:
-    minute: '*/1'
-    command: "php /usr/local/sbin/general_log.php | jq -c '.[]' >> '/var/log/mysql/general_log.json'"
+#  general_log:
+#    minute: '*/1'
+#    command: "php /usr/local/sbin/general_log.php | jq -c '.[]' >> '/var/log/mysql/analytics.json'"
+
+  # SELECT * FROM sys.metrics;
   global_status:
     minute: '*/1'
-    command: "php /usr/local/sbin/global_status.php | jq '.[]' | jq '. + {Key: .Variable_name} | del(.Variable_name)' | jq -c -s 'from_entries' >> '/var/log/mysql/global_status.json'"
+    command: "php /usr/local/sbin/global_status.php | jq '.[]' >> '/var/log/mysql/analytics.json'"
+
+  # SELECT * FROM sys.statement_analysis where last_seen >= DATE_SUB(NOW(),INTERVAL 1 MINUTE);
+  statement_analysis:
+    minute: '*/1'
+    command: "php /usr/local/sbin/statement_analytics.php | jq '.[]' >> '/var/log/mysql/analytics.json'"
