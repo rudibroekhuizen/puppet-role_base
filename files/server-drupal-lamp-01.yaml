@@ -149,9 +149,9 @@ role_cron::cron_job_hash:
   # SELECT * FROM sys.metrics;
   global_status:
     minute: '*/1'
-    command: "php /usr/local/sbin/global_status.php | jq '.[]' >> '/var/log/mysql/analytics.json'"
+    command: "php /usr/local/sbin/global_status.php | jq -c '.[]' >> '/var/log/mysql/analytics.json'"
 
   # SELECT * FROM sys.statement_analysis where last_seen >= DATE_SUB(NOW(),INTERVAL 1 MINUTE);
   statement_analysis:
     minute: '*/1'
-    command: "php /usr/local/sbin/statement_analytics.php | jq '.[]' >> '/var/log/mysql/analytics.json'"
+    command: "php /usr/local/sbin/statement_analysis.php | jq -c '.[]' >> '/var/log/mysql/analytics.json'"
