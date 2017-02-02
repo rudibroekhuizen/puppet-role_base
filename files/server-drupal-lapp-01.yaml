@@ -113,7 +113,7 @@ filebeat::prospectors:
   pg_stat_statements:
     paths:
       - '/var/log/postgresql/pg_stat_statements.json'
-    doc_type: 'pg_stat_statements.json'
+    doc_type: 'pg_stat_statements'
     json:
       keys_under_root: true
 filebeat::outputs:
