@@ -108,7 +108,7 @@ role_apache::letsencrypt_config:
 
 
 # Query mysql.general_log table every minute
-#role_cron::cron_job:
+#role_cron::cron_job_hash:
 #  mysql_general_log:
 #    minute: '*/1'
 #    command: "echo "select * from mysql.general_log where event_time >= DATE_SUB(NOW(),INTERVAL 1 MINUTE);" | mysqlsh --schema=mysql --json=raw --sqlc --uri root@127.0.0.1:3306 | jq -c '.rows[]' > /var/log/mysql/general_log.json"
