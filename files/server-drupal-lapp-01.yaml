@@ -116,6 +116,12 @@ filebeat::prospectors:
     doc_type: 'pg_stat_statements'
     json:
       keys_under_root: true
+  pg_stat_database:
+    paths:
+      - '/var/log/postgresql/pg_stat_database.json'
+    doc_type: 'pg_stat_database'
+    json:
+      keys_under_root: true
 filebeat::outputs:
   logstash:
     hosts:
