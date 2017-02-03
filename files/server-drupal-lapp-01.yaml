@@ -122,6 +122,12 @@ filebeat::prospectors:
     doc_type: 'pg_stat_database'
     json:
       keys_under_root: true
+  pg_stat_all_tables:
+    paths:
+      - '/var/log/postgresql/pg_stat_all_tables.json'
+    doc_type: 'pg_stat_all_tables'
+    json:
+      keys_under_root: true
 filebeat::outputs:
   logstash:
     hosts:
@@ -147,3 +153,8 @@ role_cron::cron_job_hash:
   pg_stat_database:
     minute: '*/1'
     command: "psql postgresql://analytics:password@localhost/postgres -c \"select row_to_json(pg_stat_database) from pg_stat_database\" | head -n-2 | tail -n+3 | jq -c . >> /var/log/postgresql/pg_stat_database.json"
+
+  # Per database
+  pg_stat_all_tables:
+    minute: '*/1'
+    command: "psql postgresql://analytics:password@localhost/drupaldb -c \"select row_to_json(pg_stat_all_tables) from pg_stat_all_tables\" | head -n-2 | tail -n+3 | jq -c . >> /var/log/postgresql/pg_stat_all_tables.json"
