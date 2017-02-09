@@ -158,3 +158,9 @@ role_cron::cron_job_hash:
   pg_stat_all_tables:
     minute: '*/1'
     command: "psql postgresql://analytics:password@localhost/drupaldb -c \"select row_to_json(pg_stat_all_tables) from pg_stat_all_tables\" | head -n-2 | tail -n+3 | jq -c . >> /var/log/postgresql/pg_stat_all_tables.json"
+
+  # Per database pg_buffercache
+  pg_buffercache_drupaldb:
+    minute: '*/1'
+    command: "psql postgresql://analytics:password@localhost/drupaldb -f /opt/postgresql/pg_buffercache.sql | head -n-2 | tail -n+3 | jq -c . >> /var/log/postgresql/pg_buffercache_drupaldb.json"
+
