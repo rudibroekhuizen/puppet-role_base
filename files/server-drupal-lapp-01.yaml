@@ -142,25 +142,18 @@ role_logstash::configfile:
 # Analytics
 role_cron::cron_job_hash:
 
-  pg_stat_activity:
+  pg_stat_database:
     minute: '*/1'
-    command: "psql postgresql://analytics:password@localhost/postgres -c \"select row_to_json(pg_stat_activity) from pg_stat_activity where query_start > NOW() - interval '1 minutes'\" | head -n-2 | tail -n+3 | jq -c . >> /var/log/postgresql/pg_stat_activity.json"
+    command: "psql postgresql://analytics:password@localhost/postgres -f /opt/postgresql/pg_stat_database.sql | head -n-2 | tail -n+3 | jq -c . >> /var/log/postgresql/pg_stat_database.json"
 
   pg_stat_statements:
     minute: '*/1'
-    command: "psql postgresql://analytics:password@localhost/postgres -c \"select row_to_json(pg_stat_statements) from pg_stat_statements\" | head -n-2 | tail -n+3 | jq -c . >> /var/log/postgresql/pg_stat_statements.json"
+    command: "psql postgresql://analytics:password@localhost/postgres -f /opt/postgresql/pg_stat_statements.sql | head -n-2 | tail -n+3 | jq -c . >> /var/log/postgresql/pg_stat_statements.json"
 
-  pg_stat_database:
-    minute: '*/1'
-    command: "psql postgresql://analytics:password@localhost/postgres -c \"select row_to_json(pg_stat_database) from pg_stat_database\" | head -n-2 | tail -n+3 | jq -c . >> /var/log/postgresql/pg_stat_database.json"
-
-  # Per database
   pg_stat_all_tables:
     minute: '*/1'
-    command: "psql postgresql://analytics:password@localhost/drupaldb -c \"select row_to_json(pg_stat_all_tables) from pg_stat_all_tables\" | head -n-2 | tail -n+3 | jq -c . >> /var/log/postgresql/pg_stat_all_tables.json"
+    command: "psql postgresql://analytics:password@localhost/postgres -f /opt/postgresql/pg_stat_all_tables.sql | head -n-2 | tail -n+3 | jq -c . >> /var/log/postgresql/pg_stat_all_tables.json"
 
-  # Per database pg_buffercache
-  pg_buffercache_drupaldb:
+  pg_statio_all_tables:
     minute: '*/1'
-    command: "psql postgresql://analytics:password@localhost/drupaldb -f /opt/postgresql/pg_buffercache.sql | head -n-2 | tail -n+3 | jq -c . >> /var/log/postgresql/pg_buffercache_drupaldb.json"
-
+    command: "psql postgresql://analytics:password@localhost/postgres -f /opt/postgresql/pg_statio_all_tables.sql | head -n-2 | tail -n+3 | jq -c . >> /var/log/postgresql/pg_statio_all_tables.json"
