@@ -190,3 +190,7 @@ mod 'yamlfile',
 # For kibana5
 mod 'filemapper',
 :git => 'https://github.com/voxpupuli/puppet-filemapper'
+
+mod 'role_waarneming',
+:git => 'https://github.com/naturalis/puppet-role_waarneming',
+:ref => '1604'
