@@ -19,7 +19,6 @@ mod "stm/debconf" # required by saz/timezone
 mod "meltwater/facts"
 mod "razorsedge/snmp"
 mod "saz/rsyslog"
-mod "arioch/redis"
 mod "yelp/uchiwa"
 mod "nanliu/staging"
 #mod "torrancew/cron"
@@ -198,3 +197,7 @@ mod 'role_waarneming',
 
 # Waarneming.nl
 mod "landcareresearch/pgbouncer"
+
+# Waarneming.nl
+mod 'puppet-redis',
+:git => 'https://github.com/arioch/puppet-redis'
