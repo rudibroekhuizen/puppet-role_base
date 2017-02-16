@@ -1,6 +1,10 @@
 classes:
   - role_waarneming
 
+role_waarneming::conf::db_host: '127.0.0.1'
+role_waarneming::conf::db_name: 'waarneming'
+role_waarneming::conf::postgresql_version: '9.5'
+role_waarneming::conf::pgbouncer_port: 5432
 role_waarneming::conf::waarneming_password: 'changeme'
 role_waarneming::conf::local_be_password: 'changeme'
 role_waarneming::conf::local_nl_password: 'changeme'
