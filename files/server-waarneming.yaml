@@ -1,5 +1,5 @@
 classes:
-  - role_waarneming
+  - role_waarneming::db
 
 role_waarneming::conf::db_host: '127.0.0.1'
 role_waarneming::conf::db_name: 'waarneming'
@@ -18,9 +18,9 @@ role_waarneming::db::config_entries:
   max_connections:
     value: 150
   shared_buffers:
-    value: '16GB'
+    value: '2GB' 
   effective_cache_size:
-    value: '56GB'
+    value: '4GB'
   max_stack_depth:
     value: '7680kB'
   temp_buffers:
