@@ -14,7 +14,7 @@ role_waarneming::conf::hisko_password: 'changeme'
 role_waarneming::conf::hugo_password: 'changeme'
 role_waarneming::conf::obs_password: 'changeme'
 
-config_entries:
+role_waarneming::db::config_entries:
   max_connections:
     value: 150
   shared_buffers:
