@@ -191,6 +191,10 @@ mod 'yamlfile',
 mod 'filemapper',
 :git => 'https://github.com/voxpupuli/puppet-filemapper'
 
+# Waarneming.nl
 mod 'role_waarneming',
 :git => 'https://github.com/naturalis/puppet-role_waarneming',
 :ref => '1604'
+
+# Waarneming.nl
+mod "landcareresearch/pgbouncer"
