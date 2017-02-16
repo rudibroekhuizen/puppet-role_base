@@ -190,14 +190,18 @@ mod 'yamlfile',
 mod 'filemapper',
 :git => 'https://github.com/voxpupuli/puppet-filemapper'
 
-# Waarneming.nl
+# For waarneming.nl
 mod 'role_waarneming',
 :git => 'https://github.com/naturalis/puppet-role_waarneming',
 :ref => '1604'
 
-# Waarneming.nl
+# For waarneming.nl
 mod "landcareresearch/pgbouncer"
 
-# Waarneming.nl
+# For waarneming.nl
 mod 'puppet-redis',
 :git => 'https://github.com/arioch/puppet-redis'
+
+# For waarneming.nl
+mod 'puppet-locales',
+:git => 'https://github.com/saz/puppet-locales'
