@@ -1,7 +1,7 @@
 # Overrides for https://github.com/naturalis/puppet-role_waarneming
 
 classes:
-  - role_waarneming::db
+  - role_base::server_waarneming
 
 # web
 role_waarneming::conf::web_host: '127.0.0.1'
