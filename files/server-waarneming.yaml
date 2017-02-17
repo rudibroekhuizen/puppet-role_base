@@ -1,3 +1,5 @@
+# Overrides for https://github.com/naturalis/puppet-role_waarneming
+
 classes:
   - role_waarneming::db
 
