@@ -78,3 +78,38 @@ role_cron::cron_job_hash:
     minute: '*/1'
     command: "psql postgresql://analytics:changeme@localhost/postgres -f /opt/postgresql/pg_stat_database.sql | head -n-2 | tail -n+3 | jq -c . >> /var/log/postgresql/pg_stat_database.json"
  
+ 
+ # Filebeat
+ filebeat::prospectors:
+  syslog:
+    paths:
+      - '/var/log/postgresql/postgresql-9.5-main.log'
+    doc_type: 'pq_syslog'
+  pg_stat_statements:
+    paths:
+      - '/var/log/postgresql/pg_stat_statements.json'
+    doc_type: 'pg_stat_statements'
+    json:
+      keys_under_root: true
+  pg_stat_database:
+    paths:
+      - '/var/log/postgresql/pg_stat_database.json'
+    doc_type: 'pg_stat_database'
+    json:
+      keys_under_root: true
+  pg_stat_all_tables:
+    paths:
+      - '/var/log/postgresql/pg_stat_all_tables.json'
+    doc_type: 'pg_stat_all_tables'
+    json:
+      keys_under_root: true
+  pg_statio_all_tables:
+    paths:
+      - '/var/log/postgresql/pg_statio_all_tables.json'
+    doc_type: 'pg_statio_all_tables'
+    json:
+      keys_under_root: true
+filebeat::outputs:
+  logstash:
+    hosts:
+      - '127.0.0.1:5044'
