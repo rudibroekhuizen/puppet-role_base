@@ -58,3 +58,23 @@ role_waarneming::db::config_entries:
     value: 2
   track_activity_query_size:
     value: 8192
+
+# Analytics
+role_cron::cron_job_hash:
+
+  pg_stat_all_tables:
+    minute: '*/1'
+    command: "psql postgresql://analytics:changeme@localhost/postgres -f /opt/postgresql/pg_stat_all_tables.sql | head -n-2 | tail -n+3 | jq -c . >> /var/log/postgresql/pg_stat_all_tables.json"
+
+  pg_statio_all_tables:
+    minute: '*/1'
+    command: "psql postgresql://analytics:changeme@localhost/postgres -f /opt/postgresql/pg_statio_all_tables.sql | head -n-2 | tail -n+3 | jq -c . >> /var/log/postgresql/pg_statio_all_tables.json"
+ 
+  pg_stat_statements:
+    minute: '*/1'
+    command: "psql postgresql://analytics:changeme@localhost/postgres -f /opt/postgresql/pg_stat_statements.sql | head -n-2 | tail -n+3 | jq -c . >> /var/log/postgresql/pg_stat_statements.json"
+
+  pg_stat_database:
+    minute: '*/1'
+    command: "psql postgresql://analytics:changeme@localhost/postgres -f /opt/postgresql/pg_stat_database.sql | head -n-2 | tail -n+3 | jq -c . >> /var/log/postgresql/pg_stat_database.json"
+ 
