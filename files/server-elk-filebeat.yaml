@@ -5,7 +5,7 @@ role_elasticsearch::clustername:
   'cluster-filebeat'
 
 role_logstash::configfile:
-  'logstash-filebeat-mysql.conf'
+  'logstash-filebeat-psql.conf'
 
 #kibana::kibana_password:
 #  'password'
