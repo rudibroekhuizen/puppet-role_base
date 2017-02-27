@@ -109,6 +109,10 @@ role_cron::cron_job_hash:
     doc_type: 'pg_statio_all_tables'
     json:
       keys_under_root: true
+  iostat:
+    paths:
+      - "/var/log/postgresql/iostat.plain"
+    doc_type: iostat
 filebeat::outputs:
   logstash:
     hosts:
