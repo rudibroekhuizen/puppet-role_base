@@ -58,6 +58,10 @@ role_waarneming::db::config_entries:
     value: 2
   track_activity_query_size:
     value: 8192
+  shared_preload_libraries:
+    value: 'pg_stat_statements'
+  pg_stat_statements.track:
+    value: 'all'
 
 # Analytics
 role_cron::cron_job_hash:
