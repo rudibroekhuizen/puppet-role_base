@@ -78,6 +78,10 @@ role_cron::cron_job_hash:
     minute: '*/1'
     command: "psql postgresql://analytics:changeme@localhost/postgres -f /opt/postgresql/pg_stat_database.sql | head -n-2 | tail -n+3 | jq -c . >> /var/log/postgresql/pg_stat_database.json"
  
+  iostat:
+    minute: '*/1'
+    command: "/bin/bash /opt/postgresql/iostat.sh"
+ 
  
  # Filebeat
  filebeat::prospectors:
