@@ -82,6 +82,10 @@ role_cron::cron_job_hash:
     minute: '*/1'
     command: "psql postgresql://analytics:changeme@localhost/postgres -f /opt/postgresql/pg_stat_database.sql | head -n-2 | tail -n+3 | jq -c . >> /var/log/postgresql/pg_stat_database.json"
  
+  pg_stat_activity:
+    minute: "*/1"
+    command: "psql postgresql://analytics:6ce4ee95-6e53@localhost/waarneming -f /opt/postgresql/pg_stat_activity.sql head -n-2 | tail -n+3 | jq -c . >> /var/log/postgresql/pg_stat_activity.json"
+ 
   iostat:
     minute: '*/1'
     command: "/bin/bash /opt/postgresql/iostat.sh"
