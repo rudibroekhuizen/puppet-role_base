@@ -47,7 +47,7 @@ mod 'role_elasticsearch',
 :git => 'https://github.com/rudibroekhuizen/puppet-role_elasticsearch'
 
 mod 'curator',
-:git => 'https://github.com/tubemogul/puppet-curator'
+:git => 'https://github.com/cristifalcas/puppet-curator'
 
 mod 'logstash',
 :git => 'https://github.com/elastic/puppet-logstash',
