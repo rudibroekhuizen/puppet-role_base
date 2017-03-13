@@ -121,6 +121,12 @@ role_cron::cron_job_hash:
     doc_type: 'pg_statio_all_tables'
     json:
       keys_under_root: true
+  pg_stat_activity:
+    paths:
+      - "/var/log/postgresql/pg_stat_activity.json"
+    doc_type: "pg_stat_activity"
+    json:
+      keys_under_root: true
   iostat:
     paths:
       - "/var/log/postgresql/iostat.plain"
