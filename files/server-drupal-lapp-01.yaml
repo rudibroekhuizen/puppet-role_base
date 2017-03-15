@@ -128,6 +128,13 @@ filebeat::prospectors:
     doc_type: 'pg_stat_all_tables'
     json:
       keys_under_root: true
+  pg_stat_activity:
+    paths:
+      - "/var/log/postgresql/pg_stat_activity.json"
+    doc_type: pg_stat_activity
+    json:
+      keys_under_root: true
+      
 filebeat::outputs:
   logstash:
     hosts:
@@ -157,3 +164,7 @@ role_cron::cron_job_hash:
   pg_statio_all_tables:
     minute: '*/1'
     command: "psql postgresql://analytics:password@localhost/postgres -f /opt/postgresql/pg_statio_all_tables.sql | head -n-2 | tail -n+3 | jq -c . >> /var/log/postgresql/pg_statio_all_tables.json"
+    
+  pg_stat_activity:
+    minute: "*/1"
+    command: "psql postgresql://analytics:6ce4ee95-6e53@localhost/waarneming -f /opt/postgresql/pg_stat_activity.sql | head -n-2 | tail -n+3 | jq -c . >> /var/log/postgresql/pg_stat_activity.json"
