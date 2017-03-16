@@ -193,9 +193,12 @@ mod 'yamlfile',
 mod 'filemapper',
 :git => 'https://github.com/voxpupuli/puppet-filemapper'
 
-# For metricbeat
-mod 'yaml_settings',
+mod 'metricbeat',
 :git => 'https://github.com/cataphract/puppet-yaml_settings'
+
+# For metricbeat
+mod 'metricbeat',
+:git => 'https://github.com/rudibroekhuizen/puppet-metricbeat'
 
 # For waarneming.nl
 mod 'role_waarneming',
