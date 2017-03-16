@@ -6,9 +6,3 @@ role_elasticsearch::clustername:
 
 role_logstash::configfile:
   'logstash-filebeat-psql.conf'
-
-#kibana::kibana_password:
-#  'password'
-#kibana::kibana_hash:
-#  '':
-#    host: 'localhost'
