@@ -22,6 +22,7 @@ role_waarneming::conf::git_repo_rev_php: 'master'
 role_waarneming::conf::git_repo_rev_django: 'master'
 
 # db
+role_waarneming::conf::web_host: '127.0.0.1'
 role_waarneming::conf::db_host: '127.0.0.1'
 role_waarneming::conf::db_name: 'waarneming'
 role_waarneming::conf::postgresql_version: '9.5'
@@ -35,6 +36,7 @@ role_waarneming::conf::hisko_password: 'changeme'
 role_waarneming::conf::hugo_password: 'changeme'
 role_waarneming::conf::obs_password: 'changeme'
 role_waarneming::conf::analytics_password: 'changeme'
+role_waarneming::conf::obs_be_password: 'changeme'
 
 #db
 role_waarneming::db::config_entries:
