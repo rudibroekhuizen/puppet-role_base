@@ -1,27 +1,9 @@
 # Overrides for https://github.com/naturalis/puppet-role_waarneming
 
 classes:
-  - role_base::server_waarneming
+  - role_base::server_waarneming_db
 
-# web
-role_waarneming::conf::web_host: '127.0.0.1'
-role_waarneming::conf::waarneming_key: undef
-role_waarneming::conf::waarneming_crt: undef
-role_waarneming::conf::waarneming_server_name: 'server_name'
-role_waarneming::conf::observation_key: undef
-role_waarneming::conf::observation_crt: undef
-role_waarneming::conf::observation_server_name: '.observation.org'
-role_waarneming::conf::wnimg_key: undef
-role_waarneming::conf::wnimg_crt: undef
-role_waarneming::conf::wnimg_server_name: '.wnimg.nl'
-role_waarneming::conf::git_repo_key_php: undef
-role_waarneming::conf::git_repo_key_django: undef
-role_waarneming::conf::git_repo_url_php: 'ssh://git@bitbucket.org/zostera/waarneming.git'
-role_waarneming::conf::git_repo_url_django: 'ssh://git@bitbucket.org/zostera/obs.git'
-role_waarneming::conf::git_repo_rev_php: 'master'
-role_waarneming::conf::git_repo_rev_django: 'master'
-
-# db
+# conf.pp
 role_waarneming::conf::web_host: '127.0.0.1'
 role_waarneming::conf::db_host: '127.0.0.1'
 role_waarneming::conf::db_name: 'waarneming'
@@ -38,7 +20,7 @@ role_waarneming::conf::obs_password: 'changeme'
 role_waarneming::conf::analytics_password: 'changeme'
 role_waarneming::conf::obs_be_password: 'changeme'
 
-#db
+# db.pp
 role_waarneming::db::config_entries:
   max_connections:
     value: 150        # default: 100
