@@ -199,8 +199,7 @@ mod 'metricbeat',
 
 # For waarneming.nl
 mod 'role_waarneming',
-:git => 'https://github.com/naturalis/puppet-role_waarneming',
-:ref => '1604'
+:git => 'https://github.com/naturalis/puppet-role_waarneming'
 
 # For waarneming.nl
 mod "landcareresearch/pgbouncer"
