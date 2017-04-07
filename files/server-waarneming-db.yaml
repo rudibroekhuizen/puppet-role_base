@@ -75,8 +75,8 @@ role_cron::cron_job_hash:
     command: "/bin/bash /opt/postgresql/iostat.sh"
  
  
- # Filebeat
- filebeat::prospectors:
+# Filebeat
+filebeat::prospectors:
   syslog:
     paths:
       - '/var/log/postgresql/postgresql-9.5-main.log'
