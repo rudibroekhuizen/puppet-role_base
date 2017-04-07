@@ -119,7 +119,7 @@ role_cron::cron_job_hash:
 filebeat::prospectors:
   syslog:
     paths:
-      - '/var/log/postgresql/postgresql-9.5-main.log'
+      - '/var/log/postgresql/postgresql-9.6-main.log'
     doc_type: 'pq_syslog'
   pg_stat_statements:
     paths:
