@@ -3,7 +3,47 @@
 classes:
   - role_base::server_waarneming_db
 
-# conf.pp
+# web parameters: expects a value
+role_waarneming::conf::ssh_key_b1: undef
+role_waarneming::conf::ssh_key_b2: undef
+role_waarneming::conf::ssh_key_bt: undef
+role_waarneming::conf::ssh_key_bh: undef
+role_waarneming::conf::ssh_key_waarneming: undef
+role_waarneming::conf::ssh_key_obs: undef
+role_waarneming::conf::ssh_key_hugo: undef
+role_waarneming::conf::ssh_key_dylan: undef
+role_waarneming::conf::ssh_key_folkert: undef
+role_waarneming::conf::ssh_key_hisko: undef
+role_waarneming::conf::git_repo_key_php: undef
+role_waarneming::conf::git_repo_key_django: undef
+role_waarneming::conf::waarneming_nl_crt: undef
+role_waarneming::conf::waarneming_nl_key: undef
+role_waarneming::conf::observation_org_crt: undef
+role_waarneming::conf::observation_org_key: undef
+role_waarneming::conf::observations_be_crt: undef
+role_waarneming::conf::observations_be_key: undef
+role_waarneming::conf::waarnemingen_be_crt: undef
+role_waarneming::conf::waarnemingen_be_key: undef
+role_waarneming::conf::www_wnimg_nl_crt: undef
+role_waarneming::conf::www_wnimg_nl_key: undef
+role_waarneming::conf::web_host: undef
+role_waarneming::conf::waarneming_key: undef
+role_waarneming::conf::waarneming_crt: undef
+role_waarneming::conf::waarneming_server_name: undef
+role_waarneming::conf::observation_key: undef
+role_waarneming::conf::observation_crt: undef
+role_waarneming::conf::observation_server_name: undef
+role_waarneming::conf::wnimg_key: undef
+role_waarneming::conf::wnimg_crt: undef
+role_waarneming::conf::wnimg_server_name: undef
+role_waarneming::conf::git_repo_key_php: undef
+role_waarneming::conf::git_repo_key_django: undef
+role_waarneming::conf::git_repo_url_php: undef
+role_waarneming::conf::git_repo_url_django: undef
+role_waarneming::conf::git_repo_rev_php: undef
+role_waarneming::conf::git_repo_rev_django: undef
+
+# db conf.pp
 role_waarneming::conf::web_host: '127.0.0.1'
 role_waarneming::conf::db_host: '127.0.0.1'
 role_waarneming::conf::db_name: 'waarneming'
