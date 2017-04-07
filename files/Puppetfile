@@ -182,6 +182,9 @@ mod 'drush',
 mod 'docker',
 :git => 'https://github.com/garethr/garethr-docker'
 
+mod 'misc',
+:git => 'https://github.com/rudibroekhuizen/puppet-misc'
+
 # For kibana5
 mod 'yamlfile',
 :git => 'https://github.com/reidmv/puppet-module-yamlfile'
