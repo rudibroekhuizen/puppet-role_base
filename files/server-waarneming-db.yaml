@@ -88,7 +88,7 @@ role_waarneming::db::config_entries:
     value: 'all'
 
 # Analytics
-role_cron::cron_job_hash:
+misc::cron::cron_job_hash:
 
   pg_stat_all_tables:
     minute: '*/1'
