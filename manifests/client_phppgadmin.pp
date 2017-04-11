@@ -8,8 +8,8 @@ class role_base::client_phppgadmin (
 ) {
 
   file { $path:
-    ensure         => directory,
-    owner          => $user,
+    ensure => directory,
+    owner  => $user,
   } ->
   
   vcsrepo { $path:
