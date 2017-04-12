@@ -11,7 +11,7 @@ class role_base::client_phppgadmin (
     ensure => directory,
     owner  => $user,
   } ->
-  
+
   vcsrepo { $path:
     ensure   => present,
     provider => git,
@@ -19,11 +19,26 @@ class role_base::client_phppgadmin (
     user     => $user,
     revision => $revision,
   }
-  
+
   class { 'nginx': }
-  
+
   nginx::resource::server { 'phppgadmin':
-    www_root => '/srv/phppgadmin', 
+    www_root => '/srv/phppgadmin',
+  }
+
+  nginx::resource::location { "phppgadmin":
+    ensure              => present,
+    server              => 'phppgadmin',
+    www_root            => '/srv/phppgadmin',
+    location            => '~ \.php$',
+    location_cfg_append => {
+      'fastcgi_split_path_info' => '^(.+\.php)(/.+)$',
+      'fastcgi_param'           => 'SCRIPT_FILENAME $document_root/$fastcgi_script_name',
+      'fastcgi_pass'            => '127.0.0.1:9000',
+      'fastcgi_index'           => 'index.php',
+      'include'                 => 'fastcgi_params'
+    },
+    notify              => Class['nginx::service'],
   }
 
 }
