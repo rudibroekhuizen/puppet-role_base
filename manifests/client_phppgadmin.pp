@@ -23,7 +23,8 @@ class role_base::client_phppgadmin (
   class { 'nginx': }
 
   nginx::resource::server { 'phppgadmin':
-    www_root => '/srv/phppgadmin',
+    www_root             => '/srv/phppgadmin',
+    use_default_location => false
   }
 
   nginx::resource::location { "phppgadmin":
