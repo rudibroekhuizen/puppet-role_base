@@ -20,6 +20,7 @@ class role_base::client_phppgadmin (
     revision => $revision,
   }
 
+  class { 'php': } ->
   class { 'nginx': }
 
   nginx::resource::server { 'phppgadmin':
