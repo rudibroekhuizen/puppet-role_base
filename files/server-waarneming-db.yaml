@@ -121,7 +121,7 @@ filebeat::prospectors:
   syslog:
     paths:
       - '/var/log/postgresql/postgresql-9.6-main.log'
-    doc_type: 'pq_syslog'
+    doc_type: 'pg_syslog'
   pg_stat_statements:
     paths:
       - '/var/log/postgresql/pg_stat_statements.json'
