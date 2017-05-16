@@ -1,39 +1,82 @@
-# Installs from the puppet forge
-mod "puppetlabs/apt"
-mod "puppetlabs/stdlib"
-mod "puppetlabs/vcsrepo"
-mod "puppetlabs/rabbitmq"
-mod "puppetlabs/tftp"
-mod "puppetlabs/concat"
-mod "puppetlabs-xinetd"
-mod "puppetlabs-inifile"
-mod "ispavailability/file_concat"
 #mod "pdxcat/collectd"
-mod "maestrodev/wget"
 #mod "stahnma/epel"
-mod "puppetlabs/git"
 
-mod "saz/timezone"
-mod "stm/debconf" # required by saz/timezone
+mod 'git',
+:git => 'https://github.com/puppetlabs/puppetlabs-git',
+:ref => 'master'
 
-mod "meltwater/facts"
-mod "razorsedge/snmp"
-mod "saz/rsyslog"
-mod "yelp/uchiwa"
-mod "nanliu/staging"
-#mod "torrancew/cron"
-#mod "gbrown/yumrepos"
-#mod "joshbeard/display"
+mod 'apt',
+:git => 'https://github.com/puppetlabs/puppetlabs-apt',
+:ref => 'master'
 
-# Installs from git
+mod 'stdlib',
+:git => 'https://github.com/puppetlabs/puppetlabs-stdlib',
+:ref => 'master'
+
+mod 'vcsrepo',
+:git => 'https://github.com/puppetlabs/puppetlabs-vcsrepo',
+:ref => 'master'
+
+mod 'tftp',
+:git => 'https://github.com/puppetlabs/puppetlabs-tftp',
+:ref => 'master'
+
+mod 'concat',
+:git => 'https://github.com/puppetlabs/puppetlabs-concat',
+:ref => 'master'
+
+mod 'xinetd',
+:git => 'https://github.com/puppetlabs/puppetlabs-xinetd',
+:ref => 'master'
+
+mod 'inifile',
+:git => 'https://github.com/puppetlabs/puppetlabs-inifile',
+:ref => 'master'
+
+mod 'file_concat',
+:git => 'https://github.com/electrical/puppet-lib-file_concat',
+:ref => 'master'
+
+mod 'wget',
+:git => 'https://github.com/maestrodev/puppet-wget',
+:ref => 'master'
+
+mod 'rsyslog',
+:git => 'https://github.com/saz/puppet-rsyslog',
+:ref => 'master'
+
+mod 'timezone',
+:git => 'https://github.com/saz/puppet-timezone',
+:ref => 'master'
+
+# required by saz/timezone
+mod 'debconf',
+:git => 'https://github.com/smoeding/puppet-debconf',
+:ref => 'master'
+
+mod 'facts',
+:git => 'https://github.com/meltwater/puppet-facts',
+:ref => 'master'
+
+mod 'snmp',
+:git => 'https://github.com/razorsedge/puppet-snmp',
+:ref => 'master'
+
+mod 'staging',
+:git => 'https://github.com/nanliu/puppet-staging',
+:ref => 'master'
+
 mod 'base',
-:git => 'https://github.com/rudibroekhuizen/puppet-base'
+:git => 'https://github.com/rudibroekhuizen/puppet-base',
+:ref => 'master'
 
 mod 'role_base',
-:git => 'https://github.com/rudibroekhuizen/puppet-role_base'
+:git => 'https://github.com/rudibroekhuizen/puppet-role_base',
+:ref => 'master'
 
-mod 'oracle_java',
-:git => 'https://github.com/antoineco/aco-oracle_java'
+#mod 'oracle_java',
+#:git => 'https://github.com/antoineco/aco-oracle_java',
+#:ref => 'master'
 
 mod 'elasticsearch',
 :git => 'https://github.com/elastic/puppet-elasticsearch',
@@ -41,38 +84,40 @@ mod 'elasticsearch',
 
 # For Elasticsearch
 mod 'sysctl',
-:git => 'https://github.com/thias/puppet-sysctl'
+:git => 'https://github.com/thias/puppet-sysctl',
+:ref => 'master'
 
 mod 'role_elasticsearch',
-:git => 'https://github.com/rudibroekhuizen/puppet-role_elasticsearch'
+:git => 'https://github.com/rudibroekhuizen/puppet-role_elasticsearch',
+:ref => 'master'
 
 mod 'curator',
-:git => 'https://github.com/cristifalcas/puppet-curator'
+:git => 'https://github.com/cristifalcas/puppet-curator',
+:ref => 'master'
 
 mod 'logstash',
 :git => 'https://github.com/elastic/puppet-logstash',
 :ref => '5.0.3'
 
 mod 'role_logstash',
-:git => 'https://github.com/rudibroekhuizen/puppet-role_logstash'
-#:ref => 'develop'
+:git => 'https://github.com/rudibroekhuizen/puppet-role_logstash',
+:ref => 'master'
 
 #mod 'role_collectd',
-#:git => 'https://github.com/rudibroekhuizen/puppet-role_collectd'
+#:git => 'https://github.com/rudibroekhuizen/puppet-role_collectd',
 #:ref => 'develop'
 
 mod 'role_snmp',
-:git => 'https://github.com/naturalis/puppet-role_snmp'
-
-mod 'role_test',
-:git => 'https://github.com/rudibroekhuizen/puppet-role_test'
+:git => 'https://github.com/naturalis/puppet-role_snmp',
+:ref => 'master'
 
 mod 'archive',
-:git => 'https://github.com/voxpupuli/puppet-archive'
-#:git => 'https://github.com/camptocamp/puppet-archive'
+:git => 'https://github.com/voxpupuli/puppet-archive',
+:ref => 'master'
 
 mod 'sqlplus',
-:git => 'https://github.com/naturalis/puppet-sqlplus'
+:git => 'https://github.com/naturalis/puppet-sqlplus',
+:ref => 'master'
 
 #mod 'sensu',
 #:git => 'https://github.com/sensu/sensu-puppet'
@@ -81,14 +126,19 @@ mod 'sqlplus',
 #:git => 'https://github.com/rudibroekhuizen/puppet-role_sensu',
 #:ref => 'develop'
 
+#mod "yelp/uchiwa"
+
 mod 'burp',
-:git => 'https://github.com/rudibroekhuizen/puppet-burp'
+:git => 'https://github.com/rudibroekhuizen/puppet-burp',
+:ref => 'master'
 
 mod 'role_burp',
-:git => 'https://github.com/rudibroekhuizen/puppet-role_burp'
+:git => 'https://github.com/rudibroekhuizen/puppet-role_burp',
+:ref => 'master'
 
 mod 'role_rsyslog',
-:git => 'https://github.com/naturalis/puppet-role_rsyslog'
+:git => 'https://github.com/naturalis/puppet-role_rsyslog',
+:ref => 'master'
 
 #mod 'hammer_cli_foreman',
 #:git => 'https://github.com/rudibroekhuizen/puppet-hammer_cli_foreman'
@@ -100,10 +150,12 @@ mod 'role_rsyslog',
 #:git => 'https://github.com/lesaux/puppet-kibana4'
 
 mod 'kibana5',
-:git => 'https://github.com/rtib/puppet-kibana5'
+:git => 'https://github.com/rtib/puppet-kibana5',
+:ref => 'master'
 
 mod 'role_tftp',
-:git => 'https://github.com/rudibroekhuizen/puppet-role_tftp'
+:git => 'https://github.com/rudibroekhuizen/puppet-role_tftp',
+:ref => 'master'
 
 mod 'logrotate',
 :git => 'https://github.com/yo61/puppet-logrotate',
@@ -134,39 +186,52 @@ mod 'mysql',
 :ref => '3.9.0'
 
 mod 'role_mysql',
-:git => 'https://github.com/naturalis/puppet-role_mysql'
+:git => 'https://github.com/naturalis/puppet-role_mysql',
+:ref => 'master'
 
 mod 'filebeat',
 :git => 'https://github.com/pcfens/puppet-filebeat',
 :ref => 'v0.10.2'
 
 mod 'openvpn_client',
-:git => 'https://github.com/thejandroman/puppet-openvpn_client'
+:git => 'https://github.com/thejandroman/puppet-openvpn_client',
+:ref => 'master'
 
 mod 'role_openvpn',
-:git => 'https://github.com/naturalis/puppet-role_openvpn'
+:git => 'https://github.com/naturalis/puppet-role_openvpn',
+:ref => 'master'
 
 mod 'python',
-:git => 'https://github.com/stankevich/puppet-python'
+:git => 'https://github.com/stankevich/puppet-python',
+:ref => 'master'
 
 mod 'role_postgresql',
-:git => 'https://github.com/rudibroekhuizen/puppet-role_postgresql'
+:git => 'https://github.com/rudibroekhuizen/puppet-role_postgresql',
+:ref => 'master'
 
 mod 'postgresql',
-:git => 'https://github.com/puppetlabs/puppetlabs-postgresql'
+:git => 'https://github.com/puppetlabs/puppetlabs-postgresql',
+:ref => 'master'
+
+mod 'pgbouncer',
+:git => 'https://github.com/covermymeds/puppet-pgbouncer',
+:ref => 'master'
 
 mod 'apache',
-:git => 'https://github.com/puppetlabs/puppetlabs-apache'
+:git => 'https://github.com/puppetlabs/puppetlabs-apache',
+:ref => 'master'
 
 mod 'php',
 :git => 'https://github.com/voxpupuli/puppet-php',
 :ref => '380273f'
 
 mod 'role_php',
-:git => 'https://github.com/rudibroekhuizen/puppet-role_php'
+:git => 'https://github.com/rudibroekhuizen/puppet-role_php',
+:ref => 'master'
 
 mod 'role_apache',
-:git => 'https://github.com/rudibroekhuizen/puppet-role_apache'
+:git => 'https://github.com/rudibroekhuizen/puppet-role_apache',
+:ref => 'master'
 
 #mod 'certbot',
 #:git => 'https://github.com/danzilio/puppet-letsencrypt',
@@ -180,32 +245,36 @@ mod 'drush',
 :ref => 'remove_composer_dependency'
 
 mod 'docker',
-:git => 'https://github.com/garethr/garethr-docker'
+:git => 'https://github.com/garethr/garethr-docker',
+:ref => 'master'
 
 mod 'misc',
-:git => 'https://github.com/rudibroekhuizen/puppet-misc'
+:git => 'https://github.com/rudibroekhuizen/puppet-misc',
+:ref => 'master'
 
 # For kibana5
 mod 'yamlfile',
-:git => 'https://github.com/reidmv/puppet-module-yamlfile'
+:git => 'https://github.com/reidmv/puppet-module-yamlfile',
+:ref => 'master'
 
 # For kibana5
 mod 'filemapper',
-:git => 'https://github.com/voxpupuli/puppet-filemapper'
+:git => 'https://github.com/voxpupuli/puppet-filemapper',
+:ref => 'master'
 
 mod 'yaml_settings',
-:git => 'https://github.com/cataphract/puppet-yaml_settings'
+:git => 'https://github.com/cataphract/puppet-yaml_settings',
+:ref => 'master'
 
 # For metricbeat
 mod 'metricbeat',
-:git => 'https://github.com/rudibroekhuizen/puppet-metricbeat'
+:git => 'https://github.com/rudibroekhuizen/puppet-metricbeat',
+:ref => 'master'
 
 # For waarneming.nl
 mod 'role_waarneming',
-:git => 'https://github.com/naturalis/puppet-role_waarneming'
-
-# For waarneming.nl
-mod "landcareresearch/pgbouncer"
+:git => 'https://github.com/naturalis/puppet-role_waarneming',
+:ref => 'master'
 
 # For waarneming.nl
 mod 'puppet-redis',
