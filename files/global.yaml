@@ -103,3 +103,10 @@ role_cron::cron_job_hash:
   test:
     minute: '*/1'
     command: "date > /tmp/date"
+
+filebeat::prospectors:
+  syslogs:
+    paths:
+      - '/var/log/auth.log'
+      - '/var/log/syslog'
+    doc_type: 'syslog'
