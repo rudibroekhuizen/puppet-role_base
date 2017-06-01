@@ -110,3 +110,8 @@ filebeat::prospectors:
       - '/var/log/auth.log'
       - '/var/log/syslog'
     doc_type: 'syslog'
+
+filebeat::outputs:
+  logstash:
+    hosts:
+      - '172.16.1.25:5044'
