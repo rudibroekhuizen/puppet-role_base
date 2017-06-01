@@ -110,8 +110,8 @@ role_apache::letsencrypt_config:
 filebeat::prospectors:
   syslog:
     paths:
-      - '/var/log/postgresql/postgresql-9.5-main.log'
-    doc_type: 'pq_syslog'
+      - '/var/log/postgresql/*.csv'
+    doc_type: 'pg_log'
   pg_stat_activity:
     paths:
       - '/var/log/postgresql/pg_stat_activity.json'
