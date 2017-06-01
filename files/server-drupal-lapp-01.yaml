@@ -146,13 +146,11 @@ filebeat::prospectors:
 filebeat::outputs:
   logstash:
     hosts:
-      - '127.0.0.1:5044'
-
+      - 'logstash:5044'
 
 # Logstash
 role_logstash::configfile:
   logstash-filebeat-psql.conf
-
 
 # Analytics
 role_cron::cron_job_hash:
