@@ -49,6 +49,10 @@ role_postgresql::role_hash:
   drupal:
     user: 'drupal_user'
     password: 'password'
+  analytics:
+    user: 'analytics'
+    password: 'password'
+    superuser: true
 
 # PostGreSQL grants
 role_postgresql::grant_hash:
