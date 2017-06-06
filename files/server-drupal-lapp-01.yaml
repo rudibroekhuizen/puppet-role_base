@@ -78,11 +78,12 @@ role_postgresql::pg_hba_rule_hash:
 # PostgreSQL postgresql.conf
 role_postgresql::config_values:
   logging_collector: 'on'
-  log_destination: 'csvlog'
+  log_destination: 'syslog' #csvlog
   log_min_messages: 'DEBUG5'
   log_rotation_age: '1d'
   log_rotation_size: '1GB'
   log_directory: '/var/log/postgresql'
+  log_line_prefix: 'start_prefix{"log_time":"%m","process_id":"%p","user_name":"%u","database_name":"%d"}end_prefix log_line: '
 
 # Php settings
 role_php::settings:
