@@ -145,12 +145,6 @@ filebeat::prospectors:
     doc_type: 'pg_stat_all_tables'
     json:
       keys_under_root: true
-  pg_stat_activity:
-    paths:
-      - "/var/log/postgresql/pg_stat_activity.json"
-    doc_type: pg_stat_activity
-    json:
-      keys_under_root: true
       
 filebeat::outputs:
   logstash:
