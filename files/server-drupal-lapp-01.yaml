@@ -85,6 +85,20 @@ role_postgresql::config_values:
   log_directory: '/var/log/postgresql'
   log_line_prefix: 'start_prefix{"log_time":"%m","application_name":"%a","user_name":"%u","database_name":"%d","remote_host":"%r","process_id":"%p","command_tag":"%i","sql_state":"%e","session_id":"%c","session_line_number":"%l","virtual_transaction_id":"%v","session_id":"%c"}end_prefix log_line: '
 
+# Pgbouncer
+pgbouncer::user:
+  'postgres'
+pgbouncer::group:
+  'postgres'
+pgbouncer::databases:
+  - source_db: 'drupaldb'
+    host: 'localhost'
+    dest_db: 'drupaldb'
+    auth_user: 'drupal_user'
+pgbouncer::userlist:
+  - user: 'drupal_user'
+    password: 'password'
+
 # Php settings
 role_php::settings:
   PHP/max_execution_time: '90'
