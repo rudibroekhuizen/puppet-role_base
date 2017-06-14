@@ -83,7 +83,7 @@ role_postgresql::config_values:
   log_rotation_age: '1d'
   log_rotation_size: '1GB'
   log_directory: '/var/log/postgresql'
-  log_line_prefix: 'start_prefix{"log_time":"%m","application_name":"%a","user_name":"%u","database_name":"%d","remote_host":"%r","process_id":"%p","command_tag":"%i","sql_state":"%e","session_id":"%c","session_line_number":"%l","virtual_transaction_id":"%v","session_id":"%c"}end_prefix log_line: '
+  log_line_prefix: 'start_prefix{"log_time":"%m","application_name":"%a","user_name":"%u","database_name":"%d","remote_host":"%r","process_id":"%p","command_tag":"%i","sql_state":"%e","session_id":"%c","session_line_number":%l,"virtual_transaction_id":"%v","session_id":"%c"}end_prefix log_line: '
 
 # Pgbouncer
 pgbouncer::user:
