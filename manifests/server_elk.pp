@@ -20,3 +20,4 @@ class role_base::server_elk {
   
   #class { 'role_rsyslog': }
 }
+
