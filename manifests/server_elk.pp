@@ -2,6 +2,7 @@
 #
 class role_base::server_elk {
 
+  # Override default modules loaded by Puppetfile
   $vcsrepo_hash.each |$title, $vcsrepo| {
     vcsrepo { $title:
       provider => git,
