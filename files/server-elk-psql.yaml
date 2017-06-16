@@ -1,6 +1,11 @@
 classes:
   - role_base::server_elk
 
+# Override default modules loaded by Puppetfile
+role_base::server_elk::vcsrepo_hash:
+  '/etc/puppetlabs/code/modules/logstash':
+    source: 'https://github.com/elastic/puppet-logstash'
+
 role_elasticsearch::clustername:
   'cluster-filebeat'
 
