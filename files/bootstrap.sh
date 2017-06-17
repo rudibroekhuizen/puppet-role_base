@@ -106,9 +106,9 @@ for f in $FILES
   done
 
 # Install r10k
-if [ ! 'gem list r10k' ];then
+#if [ ! 'gem list r10k' ];then
   gem install r10k --no-rdoc --no-ri
-fi
+#fi
 
 # Install curl
 sudo apt-get -y install curl
