@@ -3,8 +3,14 @@ classes:
 
 # Override default modules loaded by Puppetfile
 misc::vcsrepo::vcsrepo_hash:
+  'elasticsearch':
+    source: 'https://github.com/elastic/puppet-elasticsearch'
+  'role_elasticsearch':
+    source: 'https://github.com/rudibroekhuizen/puppet-role_elasticsearch'
   'logstash':
     source: 'https://github.com/elastic/puppet-logstash'
+  'role_logstash':
+    source: 'https://github.com/rudibroekhuizen/puppet-role_logstash'
 
 role_elasticsearch::clustername:
   'cluster-filebeat'
