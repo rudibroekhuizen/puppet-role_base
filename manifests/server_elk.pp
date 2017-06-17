@@ -6,10 +6,11 @@ class role_base::server_elk {
     before => Stage["main"],
   }
 
-
+  # Download Puppet modules from Github
   class { 'misc::vcsrepo': 
     stage => pre
   }
+
   #class { 'role_elasticsearch': }
   class { 'role_logstash': }
   #class { 'kibana5': }
