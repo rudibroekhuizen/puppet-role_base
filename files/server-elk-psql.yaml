@@ -2,7 +2,7 @@ classes:
   - role_base::server_elk
 
 # Override default modules loaded by Puppetfile
-role_vcsrepo::vcsrepo_hash:
+misc::vcsrepo::vcsrepo_hash:
   'logstash':
     source: 'https://github.com/elastic/puppet-logstash'
 
