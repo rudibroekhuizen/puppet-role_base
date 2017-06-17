@@ -1,7 +1,7 @@
 classes:
   - role_base::server_elk
 
-# Override default modules loaded by Puppetfile
+# Puppet modules needed
 misc::vcsrepo::vcsrepo_hash:
   'elasticsearch':
     source: 'https://github.com/elastic/puppet-elasticsearch'
@@ -11,7 +11,9 @@ misc::vcsrepo::vcsrepo_hash:
     source: 'https://github.com/elastic/puppet-logstash'
   'role_logstash':
     source: 'https://github.com/rudibroekhuizen/puppet-role_logstash'
-
+  'kibana5':
+    source: 'https://github.com/rtib/puppet-kibana5'    
+    
 role_elasticsearch::clustername:
   'cluster-filebeat'
 
