@@ -13,7 +13,7 @@ base::vcsrepo_hash:
     source: 'https://github.com/rudibroekhuizen/puppet-role_logstash'
   'kibana5':
     source: 'https://github.com/rtib/puppet-kibana5'
-  'curator'
+  'curator':
     source: 'https://github.com/rudibroekhuizen/puppet-curator'
 
 role_elasticsearch::clustername:
