@@ -15,7 +15,9 @@ base::vcsrepo_hash:
     source: 'https://github.com/rtib/puppet-kibana5'
   'curator':
     source: 'https://github.com/rudibroekhuizen/puppet-curator'
-
+  'datacat':
+    source: 'https://github.com/richardc/puppet-datacat'
+    
 role_elasticsearch::clustername:
   'cluster-filebeat'
 
