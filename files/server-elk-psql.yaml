@@ -2,7 +2,7 @@ classes:
   - role_base::server_elk
 
 # Puppet modules needed
-misc::vcsrepo::vcsrepo_hash:
+base::vcsrepo_hash:
   'elasticsearch':
     source: 'https://github.com/elastic/puppet-elasticsearch'
   'role_elasticsearch':
