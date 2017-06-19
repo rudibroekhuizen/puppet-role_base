@@ -1,5 +1,5 @@
-classes:
-  - base
+#classes:
+#  - base
 
 #base::repos_array_debian:
 #  - ppa:wireshark-dev/stable
