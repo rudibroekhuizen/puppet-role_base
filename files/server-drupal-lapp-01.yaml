@@ -23,6 +23,7 @@ base::vcsrepo_hash:
     source: 'https://github.com/voxpupuli/puppet-letsencrypt'
   'drush':
     source: 'https://github.com/pcfens/puppet-drush'
+    revision: 'remove_composer_dependency'
   'filebeat':
     source: 'https://github.com/pcfens/puppet-filebeat'   
  
