@@ -173,9 +173,9 @@ mod 'archive',
 #:git => 'https://github.com/jfryman/puppet-nginx',
 #:ref => 'v0.2.7'
 
-#mod 'datacat',
-#:git => 'https://github.com/richardc/puppet-datacat',
-#:ref => '0.6.2'
+mod 'datacat',
+:git => 'https://github.com/richardc/puppet-datacat',
+:ref => '0.6.2'
 
 #mod 'httpauth',
 #:git => 'https://github.com/jamtur01/jamtur01-httpauth',
