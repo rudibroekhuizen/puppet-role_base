@@ -2,6 +2,18 @@
 classes:
   - role_base::server_drupal_lapp
 
+# Puppet modules needed
+base::vcsrepo_hash:
+  'apache':
+    source: 'https://github.com/puppetlabs/puppetlabs-apache'
+  'postgresql':
+    source: 'https://github.com/puppetlabs/puppetlabs-postgresql'
+  'role_postgresql':
+    source: 'https://github.com/rudibroekhuizen/puppet-role_postgresql'
+  'pgbouncer':
+    source: 'https://github.com/covermymeds/puppet-pgbouncer'
+  'php':
+    source: 'https://github.com/voxpupuli/puppet-php'
 
 # Apache
 role_apache::vhosts_hash:
