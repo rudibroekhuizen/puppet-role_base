@@ -2,6 +2,7 @@
 classes:
   - role_base::server_drupal_lapp
 
+
 # Puppet modules needed
 base::vcsrepo_hash:
   'apache':
@@ -14,6 +15,7 @@ base::vcsrepo_hash:
     source: 'https://github.com/covermymeds/puppet-pgbouncer'
   'php':
     source: 'https://github.com/voxpupuli/puppet-php'
+
 
 # Apache
 role_apache::vhosts_hash:
@@ -97,6 +99,7 @@ role_postgresql::config_values:
   log_directory: '/var/log/postgresql'
   log_line_prefix: 'start_prefix{"log_time":"%m","application_name":"%a","user_name":"%u","database_name":"%d","remote_host":"%r","process_id":"%p","command_tag":"%i","sql_state":"%e","session_id":"%c","session_line_number":%l,"virtual_transaction_id":"%v","session_id":"%c"}end_prefix log_line: '
 
+
 # Pgbouncer
 pgbouncer::user:
   'postgres'
@@ -110,6 +113,7 @@ pgbouncer::databases:
 pgbouncer::userlist:
   - user: 'drupal_user'
     password: 'password'
+
 
 # Php settings
 role_php::settings:
