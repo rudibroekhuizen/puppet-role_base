@@ -267,9 +267,9 @@ mod 'yaml_settings',
 :ref => 'master'
 
 # For metricbeat
-mod 'metricbeat',
-:git => 'https://github.com/rudibroekhuizen/puppet-metricbeat',
-:ref => 'master'
+#mod 'metricbeat',
+#:git => 'https://github.com/rudibroekhuizen/puppet-metricbeat',
+#:ref => 'master'
 
 # For waarneming.nl
 mod 'role_waarneming',
@@ -277,8 +277,8 @@ mod 'role_waarneming',
 :ref => 'master'
 
 # For waarneming.nl
-mod 'puppet-redis',
-:git => 'https://github.com/arioch/puppet-redis'
+#mod 'puppet-redis',
+#:git => 'https://github.com/arioch/puppet-redis'
 
 # For waarneming.nl
 mod 'puppet-locales',
