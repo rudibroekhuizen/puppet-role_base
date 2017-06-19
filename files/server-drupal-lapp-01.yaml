@@ -21,6 +21,9 @@ base::vcsrepo_hash:
     source: 'https://github.com/rudibroekhuizen/puppet-role_apache'
   'letsencrypt':
     source: 'https://github.com/voxpupuli/puppet-letsencrypt'
+  'drush':
+    source: 'https://github.com/pcfens/puppet-drush'  
+    
 
 # Apache
 role_apache::vhosts_hash:
