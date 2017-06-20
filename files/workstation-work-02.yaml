@@ -32,26 +32,6 @@ base::packages_hash_debian:
     {}
   libfreerdp-plugins-standard:
     {}
-  htop:
-    ensure: latest
-  iftop:
-    {}
-  augeas-tools:
-    {}
-  vim:
-    {}
-  sysstat:
-    {}
-  zsh:
-    {}
-  mc:
-    {}
-  curl:
-    {}
-  sudo:
-    {}
-  screen:
-    {}
   arandr:
     {}
   p7zip:
@@ -66,10 +46,8 @@ base::packages_hash_debian:
     {}
   glances:
     {}
-  r10k:
-    provider: gem
-  puppet-lint:
-    provider: gem
+#  puppet-lint:
+#    provider: gem
 
 # burp general
 burp::version: 1.4.38
