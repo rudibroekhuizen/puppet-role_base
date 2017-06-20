@@ -68,11 +68,11 @@ mod 'staging',
 
 mod 'base',
 :git => 'https://github.com/rudibroekhuizen/puppet-base',
-:ref => 'master'
+:ref => 'hiera5'
 
 mod 'role_base',
 :git => 'https://github.com/rudibroekhuizen/puppet-role_base',
-:ref => 'master'
+:ref => 'hiera5'
 
 #mod 'oracle_java',
 #:git => 'https://github.com/antoineco/aco-oracle_java',
