@@ -1,5 +1,3 @@
-# global.yaml, will be applied to all instances
-
 #classes:
 #  - base
 
@@ -10,48 +8,6 @@
 #base::packages_attribute_defaults:
   #ensure: installed
 
-base::packages_hash_debian:
-  htop:
-    ensure: latest
-  iftop:
-    {}
-  augeas-tools:
-    {}
-  vim:
-    {}
-  sysstat:
-    {}
-  zsh:
-    {}
-  mc:
-    {}
-# curl:
-#   {}
-  sudo:
-    {}
-  screen:
-    {}
-  grc:
-    {}
-  r10k:
-    provider: gem
-  jq:
-    {}
-
-#base::packages_hash_redhat:
-#  htop:
-#    ensure: latest
-#  iftop:
-#    {}
-#  augeas:
-#    {}
-#  sysstat:
-#    {}
-#  zsh:
-#    {}
-#  screen:
-#    {}
-  
 #base::users_hash:
 #  rudi.broekhuizen:
 #    comment: "Rudi Broekhuizen"
