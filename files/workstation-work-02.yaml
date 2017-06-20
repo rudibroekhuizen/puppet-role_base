@@ -2,9 +2,10 @@ classes:
   - role_base::workstation_work
 
 # Puppet modules needed
+# Docker for Ubuntu 16.04 (Replace deprecated apt::source parameters)
 base::vcsrepo_hash:
   'docker':
-    source: 'https://github.com/garethr/garethr-docker'
+    source: 'https://github.com/memoussati/garethr-docker'
 
 base::repos_array_debian:
   - ppa:webupd8team/atom
