@@ -3,8 +3,8 @@ classes:
 
 # Puppet modules needed
 base::vcsrepo_hash:
-  'motd':
-    source: 'https://github.com/saz/puppet-motd'
+  'docker':
+    source: 'https://github.com/garethr/garethr-docker'
 
 base::repos_array_debian:
   - ppa:webupd8team/atom
