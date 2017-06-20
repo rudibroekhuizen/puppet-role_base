@@ -3,5 +3,5 @@
 class role_base::workstation_work {
   #class { 'sqlplus': }
   #class { 'role_burp': }
-  class { 'role_tftp': }
+  #class { 'role_tftp': }
 }
