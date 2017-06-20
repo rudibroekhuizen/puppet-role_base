@@ -1,12 +1,12 @@
 classes:
   - role_base::workstation_work
 
-role_base::repos_array_debian:
+base::repos_array_debian:
   - ppa:webupd8team/atom
   - ppa:webupd8team/java
   - ppa:remmina-ppa-team/remmina-next
 
-role_base::users_hash:
+base::users_hash:
   rudi.broekhuizen:
     comment: 'Rudi Broekhuizen'
     email: 'rudi.broekhuizen@naturalis.nl'
@@ -20,7 +20,7 @@ role_base::users_hash:
       type: 'ssh-rsa'
       key: 'AAAAB3NzaC1yc2EAAAADAQABAAABAQDeRrVuojExYBWgIV7UlLfYLvzGpW9hSzrjl9qJ7Kb3E/x+kq2ruma3LXlvMzFXoCKJMYvqvXUFj2Dzwh+iJ2bCyh5ilWgTMLvAwzRl1LdAV8IbDVYNZGCHCzXkyxLMAEdxXMHVYl6N/q+RBP+HQCySpwOjv86c5PgXoL4BOnxLy5TAoxSsfvxRcHT42ThYK1C/R5QC8UoBdpJ1RBhQRjBJPMWp9zRyOafNwE7Iti15gKHp04bn9UGqHRTA1ul+Q6YEFzjoqUxe4VCHObM6BS/DpD++TPMXjzU+aeJ8tkxhmYkGRKYJx/KK3uaKPv+/EkODePvwTVshiQ8v9qOXx0YJ'
 
-role_base::packages_hash_debian:
+base::packages_hash_debian:
   remmina:
     {}
   remmina-plugin-rdp:
