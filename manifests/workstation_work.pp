@@ -2,7 +2,8 @@
 #
 class role_base::workstation_work {
   class { 'docker':
-    version => 'latest',
+    use_upstream_package_source => false,
+    docker_users                => ['rudi.broekhuizen'],
   }
   #class { 'sqlplus': }
   #class { 'role_burp': }
