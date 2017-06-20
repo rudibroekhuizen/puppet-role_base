@@ -120,9 +120,9 @@ PUPPETFILE=/etc/puppetlabs/puppet/Puppetfile PUPPETFILE_DIR=/etc/puppetlabs/code
 # Copy hiera.yaml to /etc/puppet for hiera configuration settings
 curl https://raw.githubusercontent.com/rudibroekhuizen/puppet-base/master/files/hiera.yaml > /etc/puppetlabs/puppet/hiera.yaml
 
-# Copy data sources to /etc/puppet/hieradata
-mkdir -p /etc/puppetlabs/puppet/hieradata
-cp /etc/puppetlabs/code/modules/role_base/files/*.yaml /etc/puppetlabs/puppet/hieradata
+# Copy data sources to /etc/puppetlabs/puppet/data
+mkdir -p /etc/puppetlabs/puppet/data
+cp /etc/puppetlabs/code/modules/role_base/files/*.yaml /etc/puppetlabs/puppet/data
 
 # Create external fact to set primary data_source
 if [ -n "$1" ];then
