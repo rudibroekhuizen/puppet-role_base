@@ -1,33 +1,3 @@
----
-base::packages_hash_debian:
-  htop:
-    ensure: latest
-  iftop:
-    {}
-  augeas-tools:
-    {}
-  vim:
-    {}
-  sysstat:
-    {}
-  zsh:
-    {}
-  mc:
-    {}
-# curl:
-#   {}
-  sudo:
-    {}
-  screen:
-    {}
-  grc:
-    {}
-  r10k:
-    provider: gem
-  jq:
-    {}
-
-
 filebeat::prospectors:
   syslogs:
     paths:
