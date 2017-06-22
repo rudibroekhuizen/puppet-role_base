@@ -67,6 +67,8 @@ base::packages_hash_debian:
     {}
   glances:
     {}
+  mysql-client:
+    {}
   r10k:
     provider: gem
 # puppet-lint:
