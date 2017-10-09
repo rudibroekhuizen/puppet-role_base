@@ -5,3 +5,5 @@ classes:
 base::vcsrepo_hash:
   'role_mysql':
     source: 'https://github.com/naturalis/puppet-role_mysql'
+  'mysql':
+    source: 'https://github.com/puppetlabs/puppetlabs-mysql'
