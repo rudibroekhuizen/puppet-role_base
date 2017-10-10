@@ -2,7 +2,7 @@ classes:
   - role_base::server_xenocanto
 
 base::vcsrepo_hash:
-  'role_xenocanto'
+  'role_xenocanto':
     source: 'https://github.com/naturalis/puppet-role_xenocanto'
   'role_mysql':
     source: 'https://github.com/naturalis/puppet-role_mysql'
