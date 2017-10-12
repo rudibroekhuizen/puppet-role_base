@@ -1,44 +1,8 @@
 classes:
   - role_base::server_mysql
 
-# Install MySQL server using mysql::server: root_password
-role_mysql::mysql_root_password: 'mypass'
-
-# Install MySQL server using mysql::server: override_options
-role_mysql::override_options:
-  mysqld:
-    bind-address: '0.0.0.0'
-    max_allowed_packet: '512M'
-role_mysql::server_package_name: 'mysql-server-5.6' # Ubuntu 14.04
-role_mysql::client_package_name: 'mysql-client-5.6' # Ubuntu 14.04
-
-# Install MySQL server using mysql::server: users
-role_mysql::users:
-  'application-user@localhost':
-    ensure: 'present'
-    password: 'mypass'
-  'application-user@%':
-    ensure: 'present'
-    password: 'mypass'
-
-# Install MySQL server using mysql::server: grants
-role_mysql::grants:
-  'application-user@localhost/mydb.*':
-    privileges:
-      - ALL
-    table: 'mydb.*'
-    user: 'application-user@localhost'
-  'application-user@%/mydb.*':
-    privileges:
-      - ALL
-    table: 'mydb.*'
-    user: 'application-user@%'
-
-# Create databases using mysql::db with initial user
-role_mysql::db_hash:
-  mydb:
-    user: 'manager'
-    password: 'mypass'
-    host: 'localhost'
-    grant:
-      - SELECT
+base::vcsrepo_hash:
+  'role_mysql':
+    source: 'https://github.com/naturalis/puppet-role_mysql'
+  'mysql':
+    source: 'https://github.com/puppetlabs/puppetlabs-mysql'
