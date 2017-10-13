@@ -1,5 +1,5 @@
 classes:
-  - role_base::server_mysql
+  - role_mysql
 
 base::vcsrepo_hash:
   'role_mysql':
