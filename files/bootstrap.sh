@@ -134,5 +134,6 @@ puppet apply -e 'include base'
 
 # Apply manifest as noted in data_source yaml file, hiera_include includes classes from every level of the hiera hierarchy
 if [ -n "$1" ];then
-  puppet apply -e 'hiera_include('classes')'
+  #puppet apply -e 'hiera_include('classes')'
+  puppet apply -e "lookup('classes', {merge => unique}).include"
 fi
