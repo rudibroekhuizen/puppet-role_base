@@ -63,7 +63,11 @@ mod 'facts',
 #:ref => 'master'
 
 mod 'staging',
-:git => 'https://github.com/nanliu/puppet-staging',
+:git => 'https://github.com/voxpupuli/puppet-staging',
+:ref => 'master'
+
+mod 'translate',
+:git => 'https://github.com/puppetlabs/puppetlabs-translate',
 :ref => 'master'
 
 mod 'base',
