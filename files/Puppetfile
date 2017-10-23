@@ -266,9 +266,9 @@ mod 'filemapper',
 :git => 'https://github.com/voxpupuli/puppet-filemapper',
 :ref => 'master'
 
-mod 'yaml_settings',
-:git => 'https://github.com/cataphract/puppet-yaml_settings',
-:ref => 'master'
+#mod 'yaml_settings',
+#:git => 'https://github.com/cataphract/puppet-yaml_settings',
+#:ref => 'master'
 
 # For metricbeat
 #mod 'metricbeat',
