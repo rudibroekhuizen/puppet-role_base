@@ -2,5 +2,5 @@ classes:
   - metricbeat
 
 base::vcsrepo_hash:
-  'metricebeat':
+  'metricbeat':
     source: 'https://github.com/seekingalpha/puppet-metricbeat'
