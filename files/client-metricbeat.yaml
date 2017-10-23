@@ -1,0 +1,6 @@
+classes:
+  - metricbeat
+
+base::vcsrepo_hash:
+  'metricebeat':
+    source: 'https://github.com/seekingalpha/puppet-metricbeat'
