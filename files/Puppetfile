@@ -99,9 +99,9 @@ mod 'role_base',
 #:git => 'https://github.com/cristifalcas/puppet-curator',
 #:ref => 'master'
 
-mod 'logstash',
-:git => 'https://github.com/elastic/puppet-logstash',
-:ref => '5.0.3'
+#mod 'logstash',
+#:git => 'https://github.com/elastic/puppet-logstash',
+#:ref => '5.0.3'
 
 #mod 'role_logstash',
 #:git => 'https://github.com/rudibroekhuizen/puppet-role_logstash',
