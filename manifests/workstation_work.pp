@@ -3,6 +3,7 @@
 class role_base::workstation_work {
   
   class { 'docker':
+    package_name => 'docker.io',
     docker_users => ['rudi.broekhuizen'],
   }
   
