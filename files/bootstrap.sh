@@ -71,7 +71,7 @@ curl https://raw.githubusercontent.com/rudibroekhuizen/puppet-role_base/master/f
 PUPPETFILE=/etc/puppet/Puppetfile PUPPETFILE_DIR=/etc/puppet/code/modules r10k --verbose debug puppetfile install
 
 # Copy hiera.yaml to /etc/puppet for hiera configuration settings
-curl https://raw.githubusercontent.com/rudibroekhuizen/puppet-base/master/files/hiera.yaml > /etc/puppet/puppet/hiera.yaml
+curl https://raw.githubusercontent.com/rudibroekhuizen/puppet-base/master/files/hiera.yaml > /etc/puppet/hiera.yaml
 
 # Copy data sources to /etc/puppetlabs/puppet/data
 #mkdir -p /etc/puppetlabs/puppet/data
