@@ -74,6 +74,8 @@ mkdir -p /etc/puppetlabs/puppet/data
 cp /etc/puppetlabs/code/modules/role_base/files/*.yaml /etc/puppetlabs/puppet/data
 
 # Create external fact to set primary data_source
+
+# /etc/facter/facts.d/ for puppet 4 or 5
 if [ -n "$1" ];then
   echo "data_source=$1" > /opt/puppetlabs/facter/facts.d/data_source.txt
 fi
