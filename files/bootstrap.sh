@@ -62,6 +62,10 @@ for f in $FILES
 # Install curl
 sudo apt-get -y install curl
 
+
+# puppetlabs director should be puppet dir /etc/puppet/
+
+
 # Download modules from Git and Puppetforge
 curl https://raw.githubusercontent.com/rudibroekhuizen/puppet-role_base/master/files/Puppetfile > /etc/puppetlabs/puppet/Puppetfile
 PUPPETFILE=/etc/puppetlabs/puppet/Puppetfile PUPPETFILE_DIR=/etc/puppetlabs/code/modules r10k --verbose debug puppetfile install
