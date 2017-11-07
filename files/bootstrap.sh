@@ -12,7 +12,7 @@ else
   DISTRIB_CODENAME=$(lsb_release -c -s)
 fi
 
-if [ $PUPPETMAJOR -eq 4 ]; then
+if [ $PUPPETMAJOR = 4 ]; then
   REPO_DEB_URL="http://apt.puppetlabs.com/puppetlabs-release-pc1-${DISTRIB_CODENAME}.deb"
   AGENTNAME="puppet-agent"
 else
