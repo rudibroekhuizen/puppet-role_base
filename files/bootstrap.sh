@@ -3,7 +3,7 @@
 # This script installs Puppet 4.x or 5.x on Ubuntu and Centos, installs bundler and ruby.
 #
 #
-PUPPETMAJORVERSION=5
+PUPPETMAJORVERSION=4
 
 # get release info
 if [ -f /etc/lsb-release ]; then
