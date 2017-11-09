@@ -71,6 +71,14 @@ base::packages_hash_debian:
     {}
   r10k:
     provider: gem
+  remmina:
+    {}
+  remmina-plugin-rdp:
+    {}
+  remmina-plugin-gnome:
+    {}
+  libfreerdp-plugins-standard:
+
 # puppet-lint:
 #   provider: gem
 
