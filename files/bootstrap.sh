@@ -5,13 +5,14 @@
 #
 PUPPETMAJORVERSION=5
 
-# get release info
+# Get release info
 if [ -f /etc/lsb-release ]; then
     . /etc/lsb-release
 else
   DISTRIB_CODENAME=$(lsb_release -c -s)
 fi
 
+# Check Puppet version
 if [ $PUPPETMAJOR = 4 ]; then
   REPO_DEB_URL="http://apt.puppetlabs.com/puppetlabs-release-pc1-${DISTRIB_CODENAME}.deb"
   AGENTNAME="puppet-agent"
@@ -44,19 +45,10 @@ echo "Install development packages"
 #sudo apt-get -y install ruby2.2 ruby2.2-dev bundler libxslt-dev libxml2-dev zlib1g-dev >/dev/null
 sudo apt-get -y install rubygems >/dev/null
 
-# Make symlinks
-#echo "Set symlinks"
-#FILES="/opt/puppetlabs/bin/*"
-#for f in $FILES
-#  do
-#    filename="${f##*/}"
-#    sudo ln -f -s "$f" "/usr/local/bin/${filename}"
-#  done
-
 # Install r10k
-#if [ ! 'gem list r10k' ];then
+if [ ! 'gem list r10k' ];then
   gem install r10k --no-rdoc --no-ri
-#fi
+fi
 
 # Install curl
 sudo apt-get -y install curl
@@ -83,5 +75,5 @@ fi
 # Apply manifest as noted in data_source yaml file, hiera_include includes classes from every level of the hiera hierarchy
 if [ -n "$1" ];then
   #puppet apply -e 'hiera_include('classes')'
-  puppet apply -e "lookup('classes', {merge => unique}).include"
+  /opt/puppetlabs/bin/puppet apply -e "lookup('classes', {merge => unique}).include"
 fi
