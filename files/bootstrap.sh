@@ -78,7 +78,7 @@ if [ -n "$1" ];then
 fi
 
 # Apply base module
-puppet apply -e 'include base'
+/opt/puppetlabs/bin/puppet apply -e 'include base'
 
 # Apply manifest as noted in data_source yaml file, hiera_include includes classes from every level of the hiera hierarchy
 if [ -n "$1" ];then
