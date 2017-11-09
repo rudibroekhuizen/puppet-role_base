@@ -78,6 +78,7 @@ base::packages_hash_debian:
   remmina-plugin-gnome:
     {}
   libfreerdp-plugins-standard:
+    {}
 
 # puppet-lint:
 #   provider: gem
