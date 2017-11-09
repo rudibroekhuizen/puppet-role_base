@@ -55,27 +55,23 @@ return 0
 #  done
 
 # Install r10k
-#if [ ! 'gem list r10k' ];then
-#  gem install r10k --no-rdoc --no-ri
-#fi
+if [ ! 'gem list r10k' ];then
+  gem install r10k --no-rdoc --no-ri
+fi
 
 # Install curl
 #sudo apt-get -y install curl
 
-
-# puppetlabs director should be puppet dir /etc/puppet/
-
-
 # Download modules from Git and Puppetforge
-curl https://raw.githubusercontent.com/rudibroekhuizen/puppet-role_base/master/files/Puppetfile > /etc/puppet/Puppetfile
-PUPPETFILE=/etc/puppet/Puppetfile PUPPETFILE_DIR=/etc/puppet/code/modules r10k --verbose debug puppetfile install
+curl https://raw.githubusercontent.com/rudibroekhuizen/puppet-role_base/master/files/Puppetfile > /etc/puppetlabs/puppet/Puppetfile
+PUPPETFILE=/etc/puppetlabs/puppet/Puppetfile PUPPETFILE_DIR=/etc/puppetlabs/puppet/code/modules r10k --verbose debug puppetfile install
 
-# Copy hiera.yaml to /etc/puppet for hiera configuration settings
-curl https://raw.githubusercontent.com/rudibroekhuizen/puppet-base/master/files/hiera.yaml > /etc/puppet/hiera.yaml
+# Copy hiera.yaml to /etc/puppetlabs/puppet for hiera configuration settings
+curl https://raw.githubusercontent.com/rudibroekhuizen/puppet-base/master/files/hiera.yaml > /etc/puppetlabs/puppet/hiera.yaml
 
-# Copy data sources to /etc/puppetlabs/puppet/data
-#mkdir -p /etc/puppetlabs/puppet/data
-cp /etc/puppet/code/modules/role_base/files/*.yaml /etc/puppet/data
+# Copy data sources to /etc/puppetlabs/puppetlabs/puppet/data
+mkdir -p /etc/puppetlabs/puppetlabs/puppet/data
+cp /etc/puppetlabs/puppet/code/modules/role_base/files/*.yaml /etc/puppetlabs/puppet/data
 
 # Create external fact to set primary data_source
 
