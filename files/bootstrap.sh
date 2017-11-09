@@ -12,7 +12,7 @@ else
   DISTRIB_CODENAME=$(lsb_release -c -s)
 fi
 
-if [ $PUPPETMAJORVERSION = '4' ]; then
+if [ $PUPPETMAJOR -eq 4 ]; then
   REPO_DEB_URL="http://apt.puppetlabs.com/puppetlabs-release-pc1-${DISTRIB_CODENAME}.deb"
   AGENTNAME="puppet-agent"
 else
@@ -43,41 +43,38 @@ echo "Puppet installed!"
 echo "Install development packages"
 #sudo apt-get -y install ruby2.2 ruby2.2-dev bundler libxslt-dev libxml2-dev zlib1g-dev >/dev/null
 sudo apt-get -y install rubygems >/dev/null
-return 0
 
 # Make symlinks
 #echo "Set symlinks"
 #FILES="/opt/puppetlabs/bin/*"
-#for f in $FILES#
+#for f in $FILES
 #  do
 #    filename="${f##*/}"
 #    sudo ln -f -s "$f" "/usr/local/bin/${filename}"
 #  done
 
 # Install r10k
-if [ ! 'gem list r10k' ];then
+#if [ ! 'gem list r10k' ];then
   gem install r10k --no-rdoc --no-ri
-fi
+#fi
 
 # Install curl
-#sudo apt-get -y install curl
+sudo apt-get -y install curl
 
 # Download modules from Git and Puppetforge
 curl https://raw.githubusercontent.com/rudibroekhuizen/puppet-role_base/master/files/Puppetfile > /etc/puppetlabs/puppet/Puppetfile
-PUPPETFILE=/etc/puppetlabs/puppet/Puppetfile PUPPETFILE_DIR=/etc/puppetlabs/puppet/code/modules r10k --verbose debug puppetfile install
+PUPPETFILE=/etc/puppetlabs/puppet/Puppetfile PUPPETFILE_DIR=/etc/puppetlabs/code/modules r10k --verbose debug puppetfile install
 
-# Copy hiera.yaml to /etc/puppetlabs/puppet for hiera configuration settings
+# Copy hiera.yaml to /etc/puppet for hiera configuration settings
 curl https://raw.githubusercontent.com/rudibroekhuizen/puppet-base/master/files/hiera.yaml > /etc/puppetlabs/puppet/hiera.yaml
 
-# Copy data sources to /etc/puppetlabs/puppetlabs/puppet/data
-mkdir -p /etc/puppetlabs/puppetlabs/puppet/data
-cp /etc/puppetlabs/puppet/code/modules/role_base/files/*.yaml /etc/puppetlabs/puppet/data
+# Copy data sources to /etc/puppetlabs/puppet/data
+mkdir -p /etc/puppetlabs/puppet/data
+cp /etc/puppetlabs/code/modules/role_base/files/*.yaml /etc/puppetlabs/puppet/data
 
 # Create external fact to set primary data_source
-
-#  for puppet 4 or 5
 if [ -n "$1" ];then
-  echo "data_source=$1" > /etc/facter/facts.d/data_source.txt
+  echo "data_source=$1" > /opt/puppetlabs/facter/facts.d/data_source.txt
 fi
 
 # Apply base module
