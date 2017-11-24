@@ -5,6 +5,5 @@ base::vcsrepo_hash:
   'role_oradb':
     source: 'https://github.com/naturalis/puppet-role_oradb'
     revision: '11.2.0.4'
-    
   'oradb':
     source: 'https://github.com/biemond/biemond-oradb'
