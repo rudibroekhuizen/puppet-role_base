@@ -7,3 +7,4 @@ base::vcsrepo_hash:
     revision: '11.2.0.4'
   'oradb':
     source: 'https://github.com/biemond/biemond-oradb'
+    revision: 'v3.0.11'
