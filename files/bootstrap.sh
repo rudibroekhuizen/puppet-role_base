@@ -73,7 +73,8 @@ function provision_rhel() {
     sudo yum install -y $AGENTNAME >/dev/null
     echo "Puppet installed!"
     echo "Install development packages"
-    sudo yum install -y ruby2.2 ruby2.2-dev bundler libxslt-dev libxml2-dev zlib1g-dev >/dev/null
+    sudo yum install -y epel-release >/dev/null
+    sudo yum install -y ruby >/dev/null
     return 0
 }
 
