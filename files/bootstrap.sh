@@ -74,8 +74,8 @@ function provision_rhel() {
     echo "Puppet installed!"
     echo "Install development packages"
     sudo yum install -y epel-release >/dev/null
-    sudo yum install -y ruby >/dev/null
-    gem install semantic_puppet:0.1.0 --no-rdoc --no-ri # For r10k
+    #sudo yum install -y ruby >/dev/null
+    sudo /opt/puppetlabs/puppet/bin/gem install r10k
     return 0
 }
 
