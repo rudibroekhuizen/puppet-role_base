@@ -43,6 +43,9 @@ function provision_ubuntu {
     filename="${f##*/}"
     sudo ln -f -s "$f" "/usr/local/bin/${filename}"
   done
+  
+  # Install curl
+  sudo apt-get -y install curl
   return 0
 }
 
@@ -101,9 +104,6 @@ if [ -f /etc/redhat-release ]; then
       provision_rhel
   fi
 fi
-
-# Install curl
-sudo apt-get -y install curl
 
 # Download modules from Git and Puppetforge
 curl https://raw.githubusercontent.com/rudibroekhuizen/puppet-role_base/master/files/Puppetfile > /etc/puppetlabs/puppet/Puppetfile
