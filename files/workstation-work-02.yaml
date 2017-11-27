@@ -79,7 +79,13 @@ base::packages_hash_debian:
     {}
   libfreerdp-plugins-standard:
     {}
-
+  virtualbox:
+    {}
+  virtualbox-ext-pack:
+    {}
+  virtualbox-guest-additions-iso:
+    {}
+    
 # puppet-lint:
 #   provider: gem
 
