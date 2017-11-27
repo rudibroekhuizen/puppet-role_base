@@ -1,101 +1,85 @@
 #!/usr/bin/env bash
 #
-# This script installs Puppet 4.x on Ubuntu and Centos, installs bundler and ruby.
+# This script installs Puppet 5.x, bundler and ruby on Ubuntu and Centos.
 #
-# Usage:
-# Ubuntu / Debian: wget https://raw.githubusercontent.com/pgomersbach/puppet-module-skeleton/master/install.sh; bash install.sh
-#
-# Red Hat / CentOS: curl https://raw.githubusercontent.com/pgomersbach/puppet-module-skeleton/master/install.sh -o bootstrap.sh; bash install.sh
-
 ### Code start ###
 function provision_ubuntu {
-    # get release info
-    if [ -f /etc/lsb-release ]; then
-        . /etc/lsb-release
-    else
-      DISTRIB_CODENAME=$(lsb_release -c -s)
-    fi
+  # Get release info
+  if [ -f /etc/lsb-release ]; then
+    . /etc/lsb-release
+  else
+    DISTRIB_CODENAME=$(lsb_release -c -s)
+  fi
   
-    REPO_DEB_URL="https://apt.puppetlabs.com/puppet5-nightly-release-${DISTRIB_CODENAME}.deb"
-    #REPO_DEB_URL="http://apt.puppetlabs.com/puppetlabs-release-pc1-${DISTRIB_CODENAME}.deb"
-    AGENTNAME="puppet-agent"
+  REPO_DEB_URL="https://apt.puppetlabs.com/puppet5-nightly-release-${DISTRIB_CODENAME}.deb"
+  #REPO_DEB_URL="http://apt.puppetlabs.com/puppetlabs-release-pc1-${DISTRIB_CODENAME}.deb"
+  AGENTNAME="puppet-agent"
    
-    # Update the system
-    sudo apt-get update -y
+  echo "Update the system"
+  sudo apt-get update -y
     
-    # Set locale
-    sudo locale-gen nl_NL.UTF-8
+  echo "Set locale"
+  sudo locale-gen nl_NL.UTF-8
     
-    # Configure repos
-    echo "Configuring PuppetLabs repo..."
-    repo_deb_path=$(mktemp)
-    wget --output-document="${repo_deb_path}" "${REPO_DEB_URL}" 2>/dev/null
-    sudo dpkg -i "${repo_deb_path}" >/dev/null
-    echo "Install ruby ppa"
-    sudo apt-get install -y software-properties-common >/dev/null
-    sudo apt-add-repository -y ppa:brightbox/ruby-ng >/dev/null
-    sudo apt-get update >/dev/null
+  echo "Configuring PuppetLabs repo..."
+  repo_deb_path=$(mktemp)
+  wget --output-document="${repo_deb_path}" "${REPO_DEB_URL}" 2>/dev/null
+  sudo dpkg -i "${repo_deb_path}" >/dev/null
+  echo "Install ruby ppa"
+  sudo apt-get install -y software-properties-common >/dev/null
+  sudo apt-add-repository -y ppa:brightbox/ruby-ng >/dev/null
+  sudo apt-get update >/dev/null
     
-    # Install Puppet
-    echo "Installing Puppet..."
-    sudo apt-get -y install git $AGENTNAME >/dev/null
-    echo "Puppet installed!"
-    echo "Install development packages"
-    sudo apt-get -y install ruby2.2 ruby2.2-dev bundler libxslt-dev libxml2-dev zlib1g-dev >/dev/null
-    sudo apt-get -y install rubygems >/dev/null
-    sudo gem install r10k --no-rdoc --no-ri
-    
-    # Make symlinks
-    echo "Set symlinks"
-    FILES="/opt/puppetlabs/bin/*"
-    for f in $FILES
-    do
-      filename="${f##*/}"
-      sudo ln -f -s "$f" "/usr/local/bin/${filename}"
-    done
-    return 0
+  echo "Installing Puppet..."
+  sudo apt-get -y install git $AGENTNAME >/dev/null
+  sudo apt-get -y install ruby2.2 ruby2.2-dev bundler libxslt-dev libxml2-dev zlib1g-dev >/dev/null
+  sudo apt-get -y install rubygems >/dev/null
+  sudo gem install r10k --no-rdoc --no-ri
+
+  echo "Create symlinks"
+  FILES="/opt/puppetlabs/bin/*"
+  for f in $FILES
+  do
+    filename="${f##*/}"
+    sudo ln -f -s "$f" "/usr/local/bin/${filename}"
+  done
+  return 0
 }
 
 function provision_rhel() {
-    # Get release info
-    grep -i "7" /etc/redhat-release
-    if [ $? -eq 0 ]; then
-      RHMAJOR=7
-    fi
-    grep -i "6" /etc/redhat-release
-    if [ $? -eq 0 ]; then
-      RHMAJOR=6
-    fi
-    REPO_RPM_URL="https://yum.puppetlabs.com/puppet5/puppet5-release-el-${RHMAJOR}.noarch.rpm"
-    #REPO_RPM_URL="http://yum.puppetlabs.com/puppetlabs-release-pc1-el-${RHMAJOR}.noarch.rpm"
-    AGENTNAME="puppet-agent"
+  echo "Get release info"
+  grep -i "7" /etc/redhat-release
+  if [ $? -eq 0 ]; then
+    RHMAJOR=7
+  fi
+  grep -i "6" /etc/redhat-release
+  if [ $? -eq 0 ]; then
+    RHMAJOR=6
+  fi
+  REPO_RPM_URL="https://yum.puppetlabs.com/puppet5/puppet5-release-el-${RHMAJOR}.noarch.rpm"
+  #REPO_RPM_URL="http://yum.puppetlabs.com/puppetlabs-release-pc1-el-${RHMAJOR}.noarch.rpm"
+  AGENTNAME="puppet-agent"
 
-    sudo yum install -y wget git > /dev/null
+  sudo yum install -y wget git > /dev/null
 
-    # Configure repos
-    echo "Configuring PuppetLabs repo..."
-    repo_rpm_path=$(mktemp)
-    wget --output-document="${repo_rpm_path}" "${REPO_RPM_URL}" 2>/dev/null
-    sudo rpm -i "${repo_rpm_path}" >/dev/null
+  echo "Configuring PuppetLabs repo..."
+  repo_rpm_path=$(mktemp)
+  wget --output-document="${repo_rpm_path}" "${REPO_RPM_URL}" 2>/dev/null
+  sudo rpm -i "${repo_rpm_path}" >/dev/null
 
-    # Install Puppet
-    echo "Installing Puppet..."
-    sudo yum install -y $AGENTNAME >/dev/null
-    echo "Puppet installed!"
-    echo "Install development packages"
-    #sudo yum install -y epel-release >/dev/null
-    #sudo yum install -y ruby >/dev/null
-    sudo /opt/puppetlabs/puppet/bin/gem install r10k
-    sudo ln -s /opt/puppetlabs/puppet/bin/r10k /usr/bin/
-    
-    echo "Set symlinks"
-    FILES="/opt/puppetlabs/bin/*"
-    for f in $FILES
-    do
-      filename="${f##*/}"
-      sudo ln -f -s "$f" "/usr/bin/${filename}"
-    done
-    return 0
+  echo "Installing Puppet..."
+  sudo yum install -y $AGENTNAME >/dev/null
+  sudo /opt/puppetlabs/puppet/bin/gem install r10k
+  sudo ln -s /opt/puppetlabs/puppet/bin/r10k /usr/bin/
+
+  echo "Set symlinks"
+  FILES="/opt/puppetlabs/bin/*"
+  for f in $FILES
+  do
+    filename="${f##*/}"
+    sudo ln -f -s "$f" "/usr/bin/${filename}"
+  done
+  return 0
 }
 
 grep -i "ubuntu" /etc/issue
