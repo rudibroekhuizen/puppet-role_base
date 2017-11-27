@@ -57,8 +57,7 @@ function provision_rhel() {
     if [ $? -eq 0 ]; then
       RHMAJOR=6
     fi
-    
-    REPO_RPM_URL="http://yum.puppetlabs.com/puppetlabs-release-el-${RHMAJOR}.noarch.rpm"
+    REPO_RPM_URL="https://yum.puppetlabs.com/puppet5/puppet5-release-el-${RHMAJOR}.noarch.rpm"
     #REPO_RPM_URL="http://yum.puppetlabs.com/puppetlabs-release-pc1-el-${RHMAJOR}.noarch.rpm"
     AGENTNAME="puppet-agent"
 
