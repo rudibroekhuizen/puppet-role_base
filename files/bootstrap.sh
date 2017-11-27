@@ -73,9 +73,10 @@ function provision_rhel() {
     sudo yum install -y $AGENTNAME >/dev/null
     echo "Puppet installed!"
     echo "Install development packages"
-    sudo yum install -y epel-release >/dev/null
+    #sudo yum install -y epel-release >/dev/null
     #sudo yum install -y ruby >/dev/null
     sudo /opt/puppetlabs/puppet/bin/gem install r10k
+    sudo ln -s /opt/puppetlabs/puppet/bin/r10k /opt/puppetlabs/bin/
     return 0
 }
 
