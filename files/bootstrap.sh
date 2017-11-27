@@ -43,6 +43,7 @@ function provision_ubuntu {
     echo "Install development packages"
     sudo apt-get -y install ruby2.2 ruby2.2-dev bundler libxslt-dev libxml2-dev zlib1g-dev >/dev/null
     sudo apt-get -y install rubygems >/dev/null
+    sudo gem install r10k --no-rdoc --no-ri
     return 0
 }
 
@@ -57,7 +58,8 @@ function provision_rhel() {
       RHMAJOR=6
     fi
     
-    REPO_RPM_URL="http://yum.puppetlabs.com/puppetlabs-release-pc1-el-${RHMAJOR}.noarch.rpm"
+    REPO_RPM_URL="http://yum.puppetlabs.com/puppetlabs-release-el-${RHMAJOR}.noarch.rpm"
+    #REPO_RPM_URL="http://yum.puppetlabs.com/puppetlabs-release-pc1-el-${RHMAJOR}.noarch.rpm"
     AGENTNAME="puppet-agent"
 
     sudo yum install -y wget git > /dev/null
@@ -109,10 +111,7 @@ for f in $FILES
     sudo ln -f -s "$f" "/usr/local/bin/${filename}"
   done
 
-# Install r10k
-#if [ ! 'gem list r10k' ];then
-  gem install r10k --no-rdoc --no-ri
-#fi
+
 
 # Install curl
 sudo apt-get -y install curl
