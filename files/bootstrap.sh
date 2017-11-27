@@ -44,6 +44,15 @@ function provision_ubuntu {
     sudo apt-get -y install ruby2.2 ruby2.2-dev bundler libxslt-dev libxml2-dev zlib1g-dev >/dev/null
     sudo apt-get -y install rubygems >/dev/null
     sudo gem install r10k --no-rdoc --no-ri
+    
+    # Make symlinks
+    echo "Set symlinks"
+    FILES="/opt/puppetlabs/bin/*"
+    for f in $FILES
+    do
+      filename="${f##*/}"
+      sudo ln -f -s "$f" "/usr/local/bin/${filename}"
+    done
     return 0
 }
 
@@ -78,6 +87,14 @@ function provision_rhel() {
     #sudo yum install -y ruby >/dev/null
     sudo /opt/puppetlabs/puppet/bin/gem install r10k
     sudo ln -s /opt/puppetlabs/puppet/bin/r10k /usr/bin/
+    
+    echo "Set symlinks"
+    FILES="/opt/puppetlabs/bin/*"
+    for f in $FILES
+    do
+      filename="${f##*/}"
+      sudo ln -f -s "$f" "/usr/bin/${filename}"
+    done
     return 0
 }
 
@@ -100,17 +117,6 @@ if [ -f /etc/redhat-release ]; then
       provision_rhel
   fi
 fi
-
-# Make symlinks
-echo "Set symlinks"
-FILES="/opt/puppetlabs/bin/*"
-for f in $FILES
-  do
-    filename="${f##*/}"
-    sudo ln -f -s "$f" "/usr/local/bin/${filename}"
-  done
-
-
 
 # Install curl
 sudo apt-get -y install curl
