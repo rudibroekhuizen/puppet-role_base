@@ -45,6 +45,10 @@ mod 'wget',
 #:git => 'https://github.com/saz/puppet-rsyslog',
 #:ref => 'master'
 
+mod 'sudo',
+:git => 'https://github.com/saz/puppet-sudo',
+:ref => 'master'
+
 mod 'timezone',
 :git => 'https://github.com/saz/puppet-timezone',
 :ref => 'master'
