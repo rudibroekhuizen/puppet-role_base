@@ -1,5 +1,5 @@
 classes:
-  - role_base::server_waarneming_db
+  - role_base::server_waarneming_db_slave
 
 base::vcsrepo_hash:
   'role_waarneming':
@@ -10,16 +10,17 @@ base::vcsrepo_hash:
     source: 'https://github.com/puppetlabs/puppetlabs-postgresql'       
 
 # web parameters: expects a value
-role_waarneming::conf::ssh_key_b1: 'ssh_key_b1'
-role_waarneming::conf::ssh_key_b2: 'ssh_key_b2'
-role_waarneming::conf::ssh_key_bt: 'ssh_key_bt'
-role_waarneming::conf::ssh_key_bh: 'ssh_key_bh'
+role_waarneming::conf::ssh_key_b1: undef
+role_waarneming::conf::ssh_key_b2: undef
+role_waarneming::conf::ssh_key_bt: undef
+role_waarneming::conf::ssh_key_bh: undef
 role_waarneming::conf::ssh_key_waarneming: undef
 role_waarneming::conf::ssh_key_obs: undef
 role_waarneming::conf::ssh_key_hugo: undef
 role_waarneming::conf::ssh_key_dylan: undef
 role_waarneming::conf::ssh_key_folkert: undef
 role_waarneming::conf::ssh_key_hisko: undef
+role_waarneming::conf::ssh_key_jieter: undef
 role_waarneming::conf::git_repo_key_php: undef
 role_waarneming::conf::git_repo_key_django: undef
 role_waarneming::conf::waarneming_nl_crt: undef
@@ -52,6 +53,7 @@ role_waarneming::conf::git_repo_rev_django: undef
 # db conf.pp
 role_waarneming::conf::web_host: '127.0.0.1'
 role_waarneming::conf::db_host: '127.0.0.1'
+role_waarneming::conf::db_slave_naturalis: '127.0.0.1'
 role_waarneming::conf::db_name: 'waarneming'
 role_waarneming::conf::postgresql_version: '9.6'
 role_waarneming::conf::pgbouncer_port: 5432
