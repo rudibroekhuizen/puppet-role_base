@@ -52,8 +52,8 @@ role_waarneming::conf::git_repo_rev_django: undef
 
 # db conf.pp
 role_waarneming::conf::web_host: '127.0.0.1'
-role_waarneming::conf::db_host: '127.0.0.1'
-role_waarneming::conf::db_slave_naturalis: '127.0.0.1'
+role_waarneming::conf::db_host: '192.168.56.5'
+role_waarneming::conf::db_slave_naturalis: '192.168.56.6'
 role_waarneming::conf::db_name: 'waarneming'
 role_waarneming::conf::postgresql_version: '9.6'
 role_waarneming::conf::pgbouncer_port: 5432
