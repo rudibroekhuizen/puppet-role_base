@@ -1,7 +1,13 @@
-# Overrides for https://github.com/naturalis/puppet-role_waarneming
-
 classes:
   - role_base::server_waarneming_db
+
+base::vcsrepo_hash:
+  'role_waarneming':
+    source: 'https://github.com/naturalis/puppet-role_waarneming'
+  'filebeat':
+    source: 'https://github.com/pcfens/puppet-filebeat'    
+  'postgresql':
+    source: 'https://github.com/puppetlabs/puppetlabs-postgresql'       
 
 # web parameters: expects a value
 role_waarneming::conf::ssh_key_b1: 'ssh_key_b1'
