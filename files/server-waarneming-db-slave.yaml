@@ -1,0 +1,168 @@
+classes:
+  - role_base::server_waarneming_db
+
+base::vcsrepo_hash:
+  'role_waarneming':
+    source: 'https://github.com/naturalis/puppet-role_waarneming'
+  'filebeat':
+    source: 'https://github.com/pcfens/puppet-filebeat'    
+  'postgresql':
+    source: 'https://github.com/puppetlabs/puppetlabs-postgresql'       
+
+# web parameters: expects a value
+role_waarneming::conf::ssh_key_b1: 'ssh_key_b1'
+role_waarneming::conf::ssh_key_b2: 'ssh_key_b2'
+role_waarneming::conf::ssh_key_bt: 'ssh_key_bt'
+role_waarneming::conf::ssh_key_bh: 'ssh_key_bh'
+role_waarneming::conf::ssh_key_waarneming: undef
+role_waarneming::conf::ssh_key_obs: undef
+role_waarneming::conf::ssh_key_hugo: undef
+role_waarneming::conf::ssh_key_dylan: undef
+role_waarneming::conf::ssh_key_folkert: undef
+role_waarneming::conf::ssh_key_hisko: undef
+role_waarneming::conf::git_repo_key_php: undef
+role_waarneming::conf::git_repo_key_django: undef
+role_waarneming::conf::waarneming_nl_crt: undef
+role_waarneming::conf::waarneming_nl_key: undef
+role_waarneming::conf::observation_org_crt: undef
+role_waarneming::conf::observation_org_key: undef
+role_waarneming::conf::observations_be_crt: undef
+role_waarneming::conf::observations_be_key: undef
+role_waarneming::conf::waarnemingen_be_crt: undef
+role_waarneming::conf::waarnemingen_be_key: undef
+role_waarneming::conf::www_wnimg_nl_crt: undef
+role_waarneming::conf::www_wnimg_nl_key: undef
+role_waarneming::conf::web_host: undef
+role_waarneming::conf::waarneming_key: undef
+role_waarneming::conf::waarneming_crt: undef
+role_waarneming::conf::waarneming_server_name: undef
+role_waarneming::conf::observation_key: undef
+role_waarneming::conf::observation_crt: undef
+role_waarneming::conf::observation_server_name: undef
+role_waarneming::conf::wnimg_key: undef
+role_waarneming::conf::wnimg_crt: undef
+role_waarneming::conf::wnimg_server_name: undef
+role_waarneming::conf::git_repo_key_php: undef
+role_waarneming::conf::git_repo_key_django: undef
+role_waarneming::conf::git_repo_url_php: undef
+role_waarneming::conf::git_repo_url_django: undef
+role_waarneming::conf::git_repo_rev_php: undef
+role_waarneming::conf::git_repo_rev_django: undef
+
+# db conf.pp
+role_waarneming::conf::web_host: '127.0.0.1'
+role_waarneming::conf::db_host: '127.0.0.1'
+role_waarneming::conf::db_name: 'waarneming'
+role_waarneming::conf::postgresql_version: '9.6'
+role_waarneming::conf::pgbouncer_port: 5432
+role_waarneming::conf::waarneming_password: 'changeme'
+role_waarneming::conf::local_be_password: 'changeme'
+role_waarneming::conf::local_nl_password: 'changeme'
+role_waarneming::conf::local_xx_password: 'changeme'
+role_waarneming::conf::local_00_password: 'changeme'
+role_waarneming::conf::hisko_password: 'changeme'
+role_waarneming::conf::hugo_password: 'changeme'
+role_waarneming::conf::obs_password: 'changeme'
+role_waarneming::conf::analytics_password: 'changeme'
+role_waarneming::conf::obs_be_password: 'changeme'
+role_waarneming::conf::async_slave_password: 'changeme'
+
+# db.pp
+role_waarneming::db::config_entries:
+  max_connections:
+    value: 150        # default: 100
+  shared_buffers:
+    value: '2GB'      # default: 128MB
+  effective_cache_size:
+    value: '4GB'      # default: 4GB
+  max_stack_depth:
+    value: '7680kB'
+  temp_buffers:
+    value: '16MB'
+  work_mem:
+    value: '16MB'
+  maintenance_work_mem:
+    value: '2GB'
+  sort_mem:
+    value: '64MB'
+  random_page_cost:
+    value: 2
+  track_activity_query_size:
+    value: 8192
+  shared_preload_libraries:
+    value: 'pg_stat_statements'
+  pg_stat_statements.track:
+    value: 'all'
+
+# Analytics
+misc::cron::cron_job_hash:
+
+  pg_stat_all_tables:
+    minute: '*/1'
+    command: "psql postgresql://analytics:changeme@localhost/postgres -f /opt/postgresql/pg_stat_all_tables.sql | head -n-2 | tail -n+3 | jq -c . >> /var/log/postgresql/pg_stat_all_tables.json"
+
+  pg_statio_all_tables:
+    minute: '*/1'
+    command: "psql postgresql://analytics:changeme@localhost/postgres -f /opt/postgresql/pg_statio_all_tables.sql | head -n-2 | tail -n+3 | jq -c . >> /var/log/postgresql/pg_statio_all_tables.json"
+ 
+  pg_stat_statements:
+    minute: '*/1'
+    command: "psql postgresql://analytics:changeme@localhost/postgres -f /opt/postgresql/pg_stat_statements.sql | head -n-2 | tail -n+3 | jq -c . >> /var/log/postgresql/pg_stat_statements.json"
+
+  pg_stat_database:
+    minute: '*/1'
+    command: "psql postgresql://analytics:changeme@localhost/postgres -f /opt/postgresql/pg_stat_database.sql | head -n-2 | tail -n+3 | jq -c . >> /var/log/postgresql/pg_stat_database.json"
+ 
+  pg_stat_activity:
+    minute: "*/1"
+    command: "psql postgresql://analytics:changeme@localhost/waarneming -f /opt/postgresql/pg_stat_activity.sql head -n-2 | tail -n+3 | jq -c . >> /var/log/postgresql/pg_stat_activity.json"
+ 
+  iostat:
+    minute: '*/1'
+    command: "/bin/bash /opt/postgresql/iostat.sh"
+ 
+ 
+# Filebeat
+filebeat::prospectors:
+  syslog:
+    paths:
+      - '/var/log/postgresql/postgresql-9.6-main.log'
+    doc_type: 'pg_syslog'
+  pg_stat_statements:
+    paths:
+      - '/var/log/postgresql/pg_stat_statements.json'
+    doc_type: 'pg_stat_statements'
+    json:
+      keys_under_root: true
+  pg_stat_database:
+    paths:
+      - '/var/log/postgresql/pg_stat_database.json'
+    doc_type: 'pg_stat_database'
+    json:
+      keys_under_root: true
+  pg_stat_all_tables:
+    paths:
+      - '/var/log/postgresql/pg_stat_all_tables.json'
+    doc_type: 'pg_stat_all_tables'
+    json:
+      keys_under_root: true
+  pg_statio_all_tables:
+    paths:
+      - '/var/log/postgresql/pg_statio_all_tables.json'
+    doc_type: 'pg_statio_all_tables'
+    json:
+      keys_under_root: true
+  pg_stat_activity:
+    paths:
+      - "/var/log/postgresql/pg_stat_activity.json"
+    doc_type: "pg_stat_activity"
+    json:
+      keys_under_root: true
+  iostat:
+    paths:
+      - "/var/log/postgresql/iostat.plain"
+    doc_type: iostat
+filebeat::outputs:
+  logstash:
+    hosts:
+      - '127.0.0.1:5044'
