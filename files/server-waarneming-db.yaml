@@ -94,6 +94,16 @@ role_waarneming::db::config_entries:
     value: 'pg_stat_statements'
   pg_stat_statements.track:
     value: 'all'
+  wal_level:
+    value: 'replica'
+  max_wal_senders:
+    value: 2
+  max_worker_processes:
+    value: 16
+  max_parallel_workers_per_gather:
+    value: 2
+  wal_keep_segments:
+    value: 512
 
 # Analytics
 misc::cron::cron_job_hash:
