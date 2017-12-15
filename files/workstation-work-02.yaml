@@ -4,7 +4,7 @@ classes:
 # Puppet modules needed
 base::vcsrepo_hash:
   'docker':
-    source: 'https://forge.puppet.com/puppetlabs/docker'
+    source: 'https://github.com/puppetlabs/puppetlabs-docker'
 
 base::repos_array_debian:
   - ppa:webupd8team/atom
