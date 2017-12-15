@@ -2,7 +2,6 @@ classes:
   - role_base::workstation_work
 
 # Puppet modules needed
-# Docker for Ubuntu 16.04 (Replace deprecated apt::source parameters)
 base::vcsrepo_hash:
   'docker':
     source: 'https://forge.puppet.com/puppetlabs/docker'
