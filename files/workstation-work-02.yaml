@@ -5,7 +5,7 @@ classes:
 # Docker for Ubuntu 16.04 (Replace deprecated apt::source parameters)
 base::vcsrepo_hash:
   'docker':
-    source: 'https://github.com/memoussati/garethr-docker'
+    source: 'https://forge.puppet.com/puppetlabs/docker'
 
 base::repos_array_debian:
   - ppa:webupd8team/atom
