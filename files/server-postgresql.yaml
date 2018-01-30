@@ -2,8 +2,8 @@ classes:
   - role_postgresql
 
 base::vcsrepo_hash:
-  'role_postgresql':
-    source: 'https://github.com/rudibroekhuizen/puppet-role_postgresql'
-    revision: 'dev'
+#  'role_postgresql':
+#    source: 'https://github.com/rudibroekhuizen/puppet-role_postgresql'
+#    revision: 'dev'
   'postgresql':
     source: 'https://github.com/puppetlabs/puppetlabs-postgresql'
