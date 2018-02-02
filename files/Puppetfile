@@ -23,7 +23,7 @@ mod 'vcsrepo',
 
 mod 'concat',
 :git => 'https://github.com/puppetlabs/puppetlabs-concat',
-:ref => 'master'
+:ref => '4.1.1'
 
 #mod 'xinetd',
 #:git => 'https://github.com/puppetlabs/puppetlabs-xinetd',
