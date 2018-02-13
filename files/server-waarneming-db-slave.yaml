@@ -55,7 +55,7 @@ role_waarneming::conf::web_host: '127.0.0.1'
 role_waarneming::conf::db_host: '192.168.56.5'
 role_waarneming::conf::db_slave_naturalis: '192.168.56.6'
 role_waarneming::conf::db_name: 'waarneming'
-role_waarneming::conf::postgresql_version: '9.6'
+role_waarneming::conf::postgresql_version: '10'
 role_waarneming::conf::pgbouncer_port: 5432
 role_waarneming::conf::waarneming_password: 'changeme'
 role_waarneming::conf::local_be_password: 'changeme'
@@ -128,7 +128,7 @@ misc::cron::cron_job_hash:
 filebeat::prospectors:
   syslog:
     paths:
-      - '/var/log/postgresql/postgresql-9.6-main.log'
+      - '/var/log/postgresql/postgresql-10-main.log'
     doc_type: 'pg_syslog'
   pg_stat_statements:
     paths:
