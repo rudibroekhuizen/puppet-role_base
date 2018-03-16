@@ -1,6 +1,1 @@
-filebeat::prospectors:
-  syslogs:
-    paths:
-      - '/var/log/auth.log'
-      - '/var/log/syslog'
-    doc_type: 'syslog'
+# placeholder
