@@ -22,8 +22,8 @@ function provision_ubuntu {
   sudo locale-gen nl_NL.UTF-8
     
   echo "Configuring PuppetLabs repo..."
-  repo_deb_path=$(mktemp)
-  wget --output-document="${repo_deb_path}" "${REPO_DEB_URL}" 2>/dev/null
+  REPO_DEB_PATH=$(mktemp)
+  wget --output-document="${REPO_DEB_PATH}" "${REPO_DEB_URL}" 2>/dev/null
   sudo dpkg -i "${repo_deb_path}" >/dev/null
   echo "Install ruby ppa"
   sudo apt-get install -y software-properties-common >/dev/null
