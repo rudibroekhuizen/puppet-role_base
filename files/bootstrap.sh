@@ -11,8 +11,7 @@ function provision_ubuntu {
     DISTRIB_CODENAME=$(lsb_release -c -s)
   fi
   
-  REPO_DEB_URL="https://apt.puppetlabs.com/puppet5-nightly-release-${DISTRIB_CODENAME}.deb"
-  #REPO_DEB_URL="http://apt.puppetlabs.com/puppetlabs-release-pc1-${DISTRIB_CODENAME}.deb"
+  REPO_DEB_URL="https://apt.puppetlabs.com/puppet5-nightly/puppet5-nightly-release-${DISTRIB_CODENAME}.deb"
   AGENTNAME="puppet-agent"
    
   echo "Update the system"
@@ -24,7 +23,7 @@ function provision_ubuntu {
   echo "Configuring PuppetLabs repo..."
   REPO_DEB_PATH=$(mktemp)
   wget --output-document="${REPO_DEB_PATH}" "${REPO_DEB_URL}" 2>/dev/null
-  sudo dpkg -i "${repo_deb_path}" >/dev/null
+  sudo dpkg -i "${REPO_DEB_PATH}" >/dev/null
   echo "Install ruby ppa"
   sudo apt-get install -y software-properties-common >/dev/null
   sudo apt-add-repository -y ppa:brightbox/ruby-ng >/dev/null
