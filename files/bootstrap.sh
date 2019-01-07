@@ -106,7 +106,7 @@ fi
 
 # Download modules from Git and Puppetforge
 curl https://raw.githubusercontent.com/rudibroekhuizen/puppet-role_base/dev/files/Puppetfile > /etc/puppetlabs/puppet/Puppetfile
-PUPPETFILE=/etc/puppetlabs/puppet/Puppetfile PUPPETFILE_DIR=/etc/puppetlabs/code/modules r10k --verbose debug puppetfile install
+cd /etc/puppetlabs/puppet && r10k --verbose debug puppetfile install
 
 # Copy hiera.yaml to /etc/puppet for hiera configuration settings
 curl https://raw.githubusercontent.com/rudibroekhuizen/puppet-base/dev/files/hiera.yaml > /etc/puppetlabs/puppet/hiera.yaml
