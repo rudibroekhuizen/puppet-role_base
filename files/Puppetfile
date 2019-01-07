@@ -1,3 +1,5 @@
+moduledir '/etc/puppetlabs/code/modules'
+
 #mod "pdxcat/collectd"
 #mod "stahnma/epel"
 
