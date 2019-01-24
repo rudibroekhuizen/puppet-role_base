@@ -24,7 +24,6 @@ role_mysql::override_options:
     innodb_log_file_size: 1G
     innodb_file_per_table: true
     skip_name_resolve: 'on'
-    skip-character-set-client-handshake: 'on'
     query_cache_size: 512M
     query_cache_limit: 512M
     thread_cache_size: 16
