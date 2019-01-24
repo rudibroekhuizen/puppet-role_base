@@ -12,7 +12,6 @@ role_mysql::override_options:
     init_connect: 'SET collation_connection = utf8_general_ci' 
     character_set_server: utf8
     collation_server: utf8_general_ci
-    collation_database: utf8_general_ci 
     bind-address: '0.0.0.0'
     max_allowed_packet: '512M'
     innodb_file_per_table: 'on'
