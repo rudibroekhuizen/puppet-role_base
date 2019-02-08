@@ -31,7 +31,7 @@ function provision_ubuntu {
     
   echo "Installing Puppet..."
   sudo apt-get -y install git $AGENTNAME >/dev/null
-  sudo apt-get -y install ruby2.2 ruby2.2-dev bundler libxslt-dev libxml2-dev zlib1g-dev >/dev/null
+  sudo apt-get -y install ruby2.4 ruby2.4-dev bundler libxslt-dev libxml2-dev zlib1g-dev >/dev/null
   sudo apt-get -y install rubygems >/dev/null
   sudo gem install r10k --no-rdoc --no-ri
 
@@ -105,11 +105,11 @@ if [ -f /etc/redhat-release ]; then
 fi
 
 # Download modules from Git and Puppetforge
-curl https://raw.githubusercontent.com/rudibroekhuizen/puppet-role_base/master/files/Puppetfile > /etc/puppetlabs/puppet/Puppetfile
-PUPPETFILE=/etc/puppetlabs/puppet/Puppetfile PUPPETFILE_DIR=/etc/puppetlabs/code/modules r10k --verbose debug puppetfile install
+curl https://raw.githubusercontent.com/rudibroekhuizen/puppet-role_base/dev/files/Puppetfile > /etc/puppetlabs/puppet/Puppetfile
+cd /etc/puppetlabs/puppet && r10k --verbose debug puppetfile install
 
 # Copy hiera.yaml to /etc/puppet for hiera configuration settings
-curl https://raw.githubusercontent.com/rudibroekhuizen/puppet-base/master/files/hiera.yaml > /etc/puppetlabs/puppet/hiera.yaml
+curl https://raw.githubusercontent.com/rudibroekhuizen/puppet-role_base/dev/files/hiera.yaml > /etc/puppetlabs/puppet/hiera.yaml
 
 # Copy data sources to /etc/puppetlabs/puppet/data
 mkdir -p /etc/puppetlabs/puppet/data
