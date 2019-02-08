@@ -32,7 +32,7 @@ function provision_ubuntu {
   echo "Installing Puppet..."
   sudo apt-get -y install git $AGENTNAME >/dev/null
   sudo apt-get -y install ruby2.2 ruby2.2-dev bundler libxslt-dev libxml2-dev zlib1g-dev >/dev/null
-  sudo apt-get -y install rubygems >/dev/null
+  #sudo apt-get -y install rubygems >/dev/null
   sudo gem install r10k --no-rdoc --no-ri
 
   echo "Create symlinks"
