@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# This script installs Puppet 5.x, bundler and ruby on Ubuntu and Centos.
+# This script installs Puppet 5.x, bundler and ruby on Ubuntu 16.04 and Centos.
 #
 ### Code start ###
 function provision_ubuntu {
