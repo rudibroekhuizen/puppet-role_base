@@ -33,7 +33,7 @@ function provision_ubuntu {
   sudo apt-get -y install git $AGENTNAME >/dev/null
   sudo apt-get -y install ruby2.2 ruby2.2-dev bundler libxslt-dev libxml2-dev zlib1g-dev >/dev/null
   #sudo apt-get -y install rubygems >/dev/null
-  sudo gem install r10k --no-rdoc --no-ri
+  sudo gem install r10k --no-rdoc --no-ri -v 2.6.4
 
   echo "Create symlinks"
   FILES="/opt/puppetlabs/bin/*"
