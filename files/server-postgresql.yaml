@@ -3,7 +3,7 @@ classes:
 
 base::vcsrepo_hash:
   'role_postgresql':
-    source: 'https://github.com/rudibroekhuizen/puppet-role_postgresql'
+    source: 'https://github.com/naturalis/puppet-role_postgresql'
     revision: 'dev'
   'postgresql':
     source: 'https://github.com/puppetlabs/puppetlabs-postgresql'
