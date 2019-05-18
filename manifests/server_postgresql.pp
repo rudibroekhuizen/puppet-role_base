@@ -2,6 +2,7 @@
 #
 class role_base::server_postgresql {
 
+  class { 'postgresql::globals': } ->
   class { 'postgresql::server': }
 
   $config_entry = hiera_hash('postgresql::server::config_entry', {})
