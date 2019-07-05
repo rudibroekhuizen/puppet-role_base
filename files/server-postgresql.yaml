@@ -7,3 +7,4 @@ base::vcsrepo_hash:
     revision: 'parseyaml'
   'postgresql':
     source: 'https://github.com/puppetlabs/puppetlabs-postgresql'
+    revision: '6.1.0'
