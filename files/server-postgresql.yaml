@@ -4,7 +4,7 @@ classes:
 base::vcsrepo_hash:
   'role_postgresql':
     source: 'https://github.com/naturalis/puppet-role_postgresql'
-    revision: 'parseyaml'
+    revision: 'master'
   'postgresql':
     source: 'https://github.com/puppetlabs/puppetlabs-postgresql'
     revision: 'v6.1.0'
