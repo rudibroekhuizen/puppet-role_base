@@ -1,0 +1,14 @@
+---
+classes:
+  - role_postgresql
+
+base::vcsrepo_hash:
+  'role_postgresql':
+    source: 'https://github.com/naturalis/puppet-role_postgresql'
+    revision: 'master'
+  'postgresql':
+    source: 'https://github.com/puppetlabs/puppetlabs-postgresql'
+    revision: 'v6.1.0'
+
+manage_recovery_conf: true
+...
