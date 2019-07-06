@@ -13,8 +13,8 @@ base::vcsrepo_hash:
 #role_postgresql::manage_recovery_conf: true
 
 role_postgresql::db:
-  db3:
-    user: 'db3_user'
+  db1:
+    user: 'db1_user'
     password: 'password'
   db4:
     user: 'db4_user'
