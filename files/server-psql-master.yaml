@@ -12,20 +12,20 @@ base::vcsrepo_hash:
     
 #role_postgresql::manage_recovery_conf: true
 
-role_postgresql::db:
-  db1:
-    user: 'db1_user'
-    password: 'password'
-  db4:
-    user: 'db4_user'
-    password: 'password'
+#role_postgresql::db:
+#  db1:
+#    user: 'db1_user'
+#    password: 'password'
+#  db4:
+#    user: 'db4_user'
+#    password: 'password'
 
-role_postgresql::role:
-  user1:
-    password_hash: 'password'
-  replicator:
-    password_hash: 'password'
-    replication: true
-  analytics:
-    password_hash: 'password'                             
+#role_postgresql::role:
+#  user1:
+#    password_hash: 'password'
+#  replicator:
+#    password_hash: 'password'
+#    replication: true
+#  analytics:
+#    password_hash: 'password'                             
 ...
