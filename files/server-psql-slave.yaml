@@ -10,4 +10,4 @@ base::vcsrepo_hash:
     source: 'https://github.com/puppetlabs/puppetlabs-postgresql'
     revision: 'v6.1.0'
     
-#role_postgresql::manage_recovery_conf: true
+role_postgresql::manage_recovery_conf: true
