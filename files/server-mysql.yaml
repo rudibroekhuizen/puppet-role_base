@@ -7,25 +7,25 @@ base::vcsrepo_hash:
   'mysql':
     source: 'https://github.com/puppetlabs/puppetlabs-mysql'
 
-role_mysql::override_options:
-  mysqld:
-    init_connect: 'SET collation_connection = utf8_general_ci' 
-    character_set_server: utf8
-    collation_server: utf8_general_ci
-    bind-address: '0.0.0.0'
-    max_allowed_packet: '512M'
-    innodb_file_per_table: 'on'
-    innodb_flush_log_at_trx_commit: '0'
-    innodb_log_file_size: '1G'
-    innodb_flush_method: 'O_DIRECT'
-    innodb_buffer_pool_instances: '8'
-    innodb_thread_concurrency: '8'
-    innodb_log_file_size: 1G
-    innodb_file_per_table: true
-    skip_name_resolve: 'on'
-    query_cache_size: 512M
-    query_cache_limit: 512M
-    thread_cache_size: 16
-    ssl: true
-  mysqldump:
-    max_allowed_packet: 1024M
+#role_mysql::override_options:
+#  mysqld:
+#    init_connect: 'SET collation_connection = utf8_general_ci' 
+#    character_set_server: utf8
+#    collation_server: utf8_general_ci
+#    bind-address: '0.0.0.0'
+#    max_allowed_packet: '512M'
+#    innodb_file_per_table: 'on'
+#    innodb_flush_log_at_trx_commit: '0'
+#    innodb_log_file_size: '1G'
+#    innodb_flush_method: 'O_DIRECT'
+#    innodb_buffer_pool_instances: '8'
+#    innodb_thread_concurrency: '8'
+#    innodb_log_file_size: 1G
+#    innodb_file_per_table: true
+#    skip_name_resolve: 'on'
+#    query_cache_size: 512M
+#    query_cache_limit: 512M
+#    thread_cache_size: 16
+#    ssl: true
+#  mysqldump:
+#    max_allowed_packet: 1024M
