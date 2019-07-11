@@ -10,13 +10,7 @@ base::vcsrepo_hash:
     source: 'https://github.com/puppetlabs/puppetlabs-postgresql'
     revision: 'v6.1.0'
     
-#role_postgresql::db:
-#  db1:
-#    user: 'db1_user'
-#    password: 'password'
-#  db4:
-#    user: 'db4_user'
-#    password: 'password'
+role_postgresql::db: {}
 
 #role_postgresql::role:
 #  user1:
