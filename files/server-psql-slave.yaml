@@ -10,3 +10,7 @@ base::vcsrepo_hash:
     source: 'https://github.com/puppetlabs/puppetlabs-postgresql'
     revision: 'v6.1.0'
     
+role_postgresql::db: {}
+role_postgresql::database_grant: {}
+role_postgresql::role: {}
+role_postgresql::pg_hba_rule: {}
