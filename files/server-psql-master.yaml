@@ -12,7 +12,7 @@ base::vcsrepo_hash:
     
 role_postgresql::db: {}
 
-role_postgresql::version: 9.6
+#role_postgresql::version: '9.6'
 
 #role_postgresql::role:
 #  user1:
