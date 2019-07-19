@@ -11,7 +11,7 @@ function provision_ubuntu {
     DISTRIB_CODENAME=$(lsb_release -c -s)
   fi
   
-  REPO_DEB_URL="https://apt.puppetlabs.com/puppet5-nightly/puppet5-nightly-release-${DISTRIB_CODENAME}.deb"
+  REPO_DEB_URL="https://apt.puppetlabs.com/puppet5-release-${DISTRIB_CODENAME}.deb"
   AGENTNAME="puppet-agent"
    
   echo "Update the system"
